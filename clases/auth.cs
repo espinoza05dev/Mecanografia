@@ -11,6 +11,10 @@ namespace MECANOGRAFIA.clases
 {
     internal class auth
     {
+<<<<<<< HEAD
+=======
+        clases.helpers h = new clases.helpers();
+>>>>>>> Agregar archivos de proyecto.
 
         public string MakeHash(string password)
         {

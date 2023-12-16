@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ESCRITURA));
             this.RELOJ = new System.Windows.Forms.Timer(this.components);
             this.P_ESCRITURA = new System.Windows.Forms.Panel();
+<<<<<<< HEAD
             this.lblregistro = new System.Windows.Forms.Label();
             this.btncambiarmodos = new System.Windows.Forms.Button();
             this.lblINCIAR_SESION = new System.Windows.Forms.Label();
@@ -40,6 +41,12 @@
             this.lbl1 = new System.Windows.Forms.Label();
             this.txtpalabrasmostradas = new System.Windows.Forms.TextBox();
             this.btnreiniciar = new System.Windows.Forms.Button();
+=======
+            this.lblINCIAR_SESION = new System.Windows.Forms.Label();
+            this.txtpalabrasescritas = new System.Windows.Forms.TextBox();
+            this.lbl1 = new System.Windows.Forms.Label();
+            this.txtpalabrasmostradas = new System.Windows.Forms.TextBox();
+>>>>>>> Agregar archivos de proyecto.
             this.lvPalabras = new System.Windows.Forms.ListView();
             this.PALABRAS_POR_MINUTO = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.PCORRECTAS = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -53,8 +60,11 @@
             this.P_ON = new System.Windows.Forms.Panel();
             this.P_OFF = new System.Windows.Forms.Panel();
             this.P_REGISTRO = new System.Windows.Forms.Panel();
+<<<<<<< HEAD
             this.btnVolverASesion = new System.Windows.Forms.Button();
             this.btnver = new System.Windows.Forms.Button();
+=======
+>>>>>>> Agregar archivos de proyecto.
             this.btncancelar = new System.Windows.Forms.Button();
             this.btnentrar_REGISTRO = new System.Windows.Forms.Button();
             this.txtcontra = new System.Windows.Forms.TextBox();
@@ -66,8 +76,12 @@
             this.RDno = new System.Windows.Forms.RadioButton();
             this.RDsi = new System.Windows.Forms.RadioButton();
             this.CBusuario = new System.Windows.Forms.ComboBox();
+<<<<<<< HEAD
             this.btnVolverAEscritura = new System.Windows.Forms.Button();
             this.btnverSesion = new System.Windows.Forms.Button();
+=======
+            this.registro = new System.Windows.Forms.LinkLabel();
+>>>>>>> Agregar archivos de proyecto.
             this.btncancelar_sesion = new System.Windows.Forms.Button();
             this.btnentrar_INCIOSESION = new System.Windows.Forms.Button();
             this.txtcontra_sesion = new System.Windows.Forms.TextBox();
@@ -80,7 +94,10 @@
             this.eSCRITURAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rECORDSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OPTlogros = new System.Windows.Forms.ToolStripMenuItem();
+<<<<<<< HEAD
             this.pALABRASMALESCRITASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+=======
+>>>>>>> Agregar archivos de proyecto.
             this.dESAFIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OPTdificultades = new System.Windows.Forms.ToolStripMenuItem();
             this.OPTrecordsdifi = new System.Windows.Forms.ToolStripMenuItem();
@@ -88,6 +105,16 @@
             this.rECORDSTEMATICASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mODOPERSONALIZADOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rECORDSMODOPERSONALIZADOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+<<<<<<< HEAD
+=======
+            this.btnVolverASesion = new System.Windows.Forms.Button();
+            this.btnver = new System.Windows.Forms.Button();
+            this.btnVolverAEscritura = new System.Windows.Forms.Button();
+            this.btnverSesion = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnIniciar = new System.Windows.Forms.Button();
+            this.btnreiniciar = new System.Windows.Forms.Button();
+>>>>>>> Agregar archivos de proyecto.
             this.P_ESCRITURA.SuspendLayout();
             this.P_modo.SuspendLayout();
             this.P_REGISTRO.SuspendLayout();
@@ -104,8 +131,12 @@
             // 
             // P_ESCRITURA
             // 
+<<<<<<< HEAD
             this.P_ESCRITURA.Controls.Add(this.lblregistro);
             this.P_ESCRITURA.Controls.Add(this.btncambiarmodos);
+=======
+            this.P_ESCRITURA.Controls.Add(this.button1);
+>>>>>>> Agregar archivos de proyecto.
             this.P_ESCRITURA.Controls.Add(this.lblINCIAR_SESION);
             this.P_ESCRITURA.Controls.Add(this.btnIniciar);
             this.P_ESCRITURA.Controls.Add(this.txtpalabrasescritas);
@@ -115,11 +146,16 @@
             this.P_ESCRITURA.Controls.Add(this.lvPalabras);
             this.P_ESCRITURA.Controls.Add(this.lblSEGUNDOS);
             this.P_ESCRITURA.Controls.Add(this.P_modo);
+<<<<<<< HEAD
             this.P_ESCRITURA.Location = new System.Drawing.Point(2, -2);
+=======
+            this.P_ESCRITURA.Location = new System.Drawing.Point(3, 3);
+>>>>>>> Agregar archivos de proyecto.
             this.P_ESCRITURA.Name = "P_ESCRITURA";
             this.P_ESCRITURA.Size = new System.Drawing.Size(613, 306);
             this.P_ESCRITURA.TabIndex = 12;
             // 
+<<<<<<< HEAD
             // lblregistro
             // 
             this.lblregistro.AutoSize = true;
@@ -153,10 +189,21 @@
             this.lblINCIAR_SESION.Location = new System.Drawing.Point(444, 274);
             this.lblINCIAR_SESION.Name = "lblINCIAR_SESION";
             this.lblINCIAR_SESION.Size = new System.Drawing.Size(157, 26);
+=======
+            // lblINCIAR_SESION
+            // 
+            this.lblINCIAR_SESION.AutoSize = true;
+            this.lblINCIAR_SESION.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblINCIAR_SESION.ForeColor = System.Drawing.Color.Blue;
+            this.lblINCIAR_SESION.Location = new System.Drawing.Point(490, 273);
+            this.lblINCIAR_SESION.Name = "lblINCIAR_SESION";
+            this.lblINCIAR_SESION.Size = new System.Drawing.Size(104, 16);
+>>>>>>> Agregar archivos de proyecto.
             this.lblINCIAR_SESION.TabIndex = 9;
             this.lblINCIAR_SESION.Text = "INCIAR SESION";
             this.lblINCIAR_SESION.Click += new System.EventHandler(this.lblINCIAR_SESION_Click);
             // 
+<<<<<<< HEAD
             // btnIniciar
             // 
             this.btnIniciar.BackColor = System.Drawing.Color.Navy;
@@ -175,6 +222,11 @@
             // txtpalabrasescritas
             // 
             this.txtpalabrasescritas.BackColor = System.Drawing.Color.SteelBlue;
+=======
+            // txtpalabrasescritas
+            // 
+            this.txtpalabrasescritas.BackColor = System.Drawing.Color.Brown;
+>>>>>>> Agregar archivos de proyecto.
             this.txtpalabrasescritas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtpalabrasescritas.Font = new System.Drawing.Font("Humnst777 Blk BT", 15.75F);
             this.txtpalabrasescritas.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -190,18 +242,30 @@
             // lbl1
             // 
             this.lbl1.AutoSize = true;
+<<<<<<< HEAD
             this.lbl1.BackColor = System.Drawing.Color.Navy;
             this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl1.ForeColor = System.Drawing.Color.White;
             this.lbl1.Location = new System.Drawing.Point(461, 72);
             this.lbl1.Name = "lbl1";
             this.lbl1.Size = new System.Drawing.Size(54, 16);
+=======
+            this.lbl1.BackColor = System.Drawing.Color.White;
+            this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl1.Location = new System.Drawing.Point(440, 93);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(83, 25);
+>>>>>>> Agregar archivos de proyecto.
             this.lbl1.TabIndex = 10;
             this.lbl1.Text = "Tiempo";
             // 
             // txtpalabrasmostradas
             // 
+<<<<<<< HEAD
             this.txtpalabrasmostradas.BackColor = System.Drawing.Color.SteelBlue;
+=======
+            this.txtpalabrasmostradas.BackColor = System.Drawing.Color.Brown;
+>>>>>>> Agregar archivos de proyecto.
             this.txtpalabrasmostradas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtpalabrasmostradas.Cursor = System.Windows.Forms.Cursors.No;
             this.txtpalabrasmostradas.Dock = System.Windows.Forms.DockStyle.Top;
@@ -218,6 +282,7 @@
             this.txtpalabrasmostradas.TabStop = false;
             this.txtpalabrasmostradas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+<<<<<<< HEAD
             // btnreiniciar
             // 
             this.btnreiniciar.FlatAppearance.BorderColor = System.Drawing.Color.CadetBlue;
@@ -235,6 +300,11 @@
             // lvPalabras
             // 
             this.lvPalabras.BackColor = System.Drawing.Color.SteelBlue;
+=======
+            // lvPalabras
+            // 
+            this.lvPalabras.BackColor = System.Drawing.Color.Brown;
+>>>>>>> Agregar archivos de proyecto.
             this.lvPalabras.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.PALABRAS_POR_MINUTO,
             this.PCORRECTAS,
@@ -243,6 +313,10 @@
             this.CLletrasomitidas,
             this.CLLetraPosIncorrecta,
             this.CLletraAggIncorrecta});
+<<<<<<< HEAD
+=======
+            this.lvPalabras.Enabled = false;
+>>>>>>> Agregar archivos de proyecto.
             this.lvPalabras.Font = new System.Drawing.Font("Humnst777 Blk BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvPalabras.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvPalabras.HideSelection = false;
@@ -298,12 +372,20 @@
             // lblSEGUNDOS
             // 
             this.lblSEGUNDOS.AutoSize = true;
+<<<<<<< HEAD
             this.lblSEGUNDOS.BackColor = System.Drawing.Color.Navy;
             this.lblSEGUNDOS.Font = new System.Drawing.Font("Futura Md BT", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSEGUNDOS.ForeColor = System.Drawing.Color.White;
             this.lblSEGUNDOS.Location = new System.Drawing.Point(464, 97);
             this.lblSEGUNDOS.Name = "lblSEGUNDOS";
             this.lblSEGUNDOS.Size = new System.Drawing.Size(51, 35);
+=======
+            this.lblSEGUNDOS.BackColor = System.Drawing.Color.White;
+            this.lblSEGUNDOS.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSEGUNDOS.Location = new System.Drawing.Point(463, 69);
+            this.lblSEGUNDOS.Name = "lblSEGUNDOS";
+            this.lblSEGUNDOS.Size = new System.Drawing.Size(36, 25);
+>>>>>>> Agregar archivos de proyecto.
             this.lblSEGUNDOS.TabIndex = 5;
             this.lblSEGUNDOS.Text = "60";
             // 
@@ -349,6 +431,7 @@
             this.P_REGISTRO.Size = new System.Drawing.Size(230, 164);
             this.P_REGISTRO.TabIndex = 8;
             // 
+<<<<<<< HEAD
             // btnVolverASesion
             // 
             this.btnVolverASesion.FlatAppearance.BorderSize = 0;
@@ -384,6 +467,13 @@
             this.btncancelar.Location = new System.Drawing.Point(106, 129);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(120, 30);
+=======
+            // btncancelar
+            // 
+            this.btncancelar.Location = new System.Drawing.Point(106, 129);
+            this.btncancelar.Name = "btncancelar";
+            this.btncancelar.Size = new System.Drawing.Size(115, 30);
+>>>>>>> Agregar archivos de proyecto.
             this.btncancelar.TabIndex = 19;
             this.btncancelar.Text = "CANCELAR";
             this.btncancelar.UseVisualStyleBackColor = true;
@@ -391,6 +481,7 @@
             // 
             // btnentrar_REGISTRO
             // 
+<<<<<<< HEAD
             this.btnentrar_REGISTRO.FlatAppearance.BorderSize = 0;
             this.btnentrar_REGISTRO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnentrar_REGISTRO.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -398,6 +489,11 @@
             this.btnentrar_REGISTRO.Location = new System.Drawing.Point(8, 129);
             this.btnentrar_REGISTRO.Name = "btnentrar_REGISTRO";
             this.btnentrar_REGISTRO.Size = new System.Drawing.Size(92, 30);
+=======
+            this.btnentrar_REGISTRO.Location = new System.Drawing.Point(8, 129);
+            this.btnentrar_REGISTRO.Name = "btnentrar_REGISTRO";
+            this.btnentrar_REGISTRO.Size = new System.Drawing.Size(84, 30);
+>>>>>>> Agregar archivos de proyecto.
             this.btnentrar_REGISTRO.TabIndex = 18;
             this.btnentrar_REGISTRO.Text = "ENTRAR";
             this.btnentrar_REGISTRO.UseVisualStyleBackColor = true;
@@ -405,7 +501,11 @@
             // 
             // txtcontra
             // 
+<<<<<<< HEAD
             this.txtcontra.BackColor = System.Drawing.Color.SteelBlue;
+=======
+            this.txtcontra.BackColor = System.Drawing.Color.Brown;
+>>>>>>> Agregar archivos de proyecto.
             this.txtcontra.Location = new System.Drawing.Point(38, 96);
             this.txtcontra.Name = "txtcontra";
             this.txtcontra.Size = new System.Drawing.Size(130, 27);
@@ -414,7 +514,11 @@
             // 
             // txtusuario
             // 
+<<<<<<< HEAD
             this.txtusuario.BackColor = System.Drawing.Color.SteelBlue;
+=======
+            this.txtusuario.BackColor = System.Drawing.Color.Brown;
+>>>>>>> Agregar archivos de proyecto.
             this.txtusuario.Location = new System.Drawing.Point(38, 32);
             this.txtusuario.MaxLength = 50;
             this.txtusuario.Name = "txtusuario";
@@ -424,22 +528,34 @@
             // lbl4
             // 
             this.lbl4.AutoSize = true;
+<<<<<<< HEAD
             this.lbl4.Font = new System.Drawing.Font("Clarendon Blk BT", 12F);
             this.lbl4.ForeColor = System.Drawing.Color.White;
             this.lbl4.Location = new System.Drawing.Point(41, 72);
             this.lbl4.Name = "lbl4";
             this.lbl4.Size = new System.Drawing.Size(130, 19);
+=======
+            this.lbl4.Location = new System.Drawing.Point(41, 72);
+            this.lbl4.Name = "lbl4";
+            this.lbl4.Size = new System.Drawing.Size(122, 21);
+>>>>>>> Agregar archivos de proyecto.
             this.lbl4.TabIndex = 15;
             this.lbl4.Text = "CONTRASEÑA";
             // 
             // lbl3
             // 
             this.lbl3.AutoSize = true;
+<<<<<<< HEAD
             this.lbl3.Font = new System.Drawing.Font("Clarendon Blk BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl3.ForeColor = System.Drawing.Color.White;
             this.lbl3.Location = new System.Drawing.Point(61, 8);
             this.lbl3.Name = "lbl3";
             this.lbl3.Size = new System.Drawing.Size(90, 19);
+=======
+            this.lbl3.Location = new System.Drawing.Point(61, 8);
+            this.lbl3.Name = "lbl3";
+            this.lbl3.Size = new System.Drawing.Size(82, 21);
+>>>>>>> Agregar archivos de proyecto.
             this.lbl3.TabIndex = 13;
             this.lbl3.Text = "USUARIO";
             // 
@@ -448,6 +564,10 @@
             this.P_INICIOSESION.Controls.Add(this.groupBox1);
             this.P_INICIOSESION.Controls.Add(this.CBusuario);
             this.P_INICIOSESION.Controls.Add(this.btnVolverAEscritura);
+<<<<<<< HEAD
+=======
+            this.P_INICIOSESION.Controls.Add(this.registro);
+>>>>>>> Agregar archivos de proyecto.
             this.P_INICIOSESION.Controls.Add(this.btnverSesion);
             this.P_INICIOSESION.Controls.Add(this.btncancelar_sesion);
             this.P_INICIOSESION.Controls.Add(this.btnentrar_INCIOSESION);
@@ -464,10 +584,16 @@
             // 
             this.groupBox1.Controls.Add(this.RDno);
             this.groupBox1.Controls.Add(this.RDsi);
+<<<<<<< HEAD
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(10, 183);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(161, 50);
+=======
+            this.groupBox1.Location = new System.Drawing.Point(10, 184);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(161, 52);
+>>>>>>> Agregar archivos de proyecto.
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Recordar Usuario:";
@@ -475,11 +601,19 @@
             // RDno
             // 
             this.RDno.AutoSize = true;
+<<<<<<< HEAD
             this.RDno.ForeColor = System.Drawing.Color.White;
             this.RDno.Location = new System.Drawing.Point(82, 20);
             this.RDno.Name = "RDno";
             this.RDno.Size = new System.Drawing.Size(54, 25);
             this.RDno.TabIndex = 23;
+=======
+            this.RDno.Location = new System.Drawing.Point(85, 21);
+            this.RDno.Name = "RDno";
+            this.RDno.Size = new System.Drawing.Size(54, 25);
+            this.RDno.TabIndex = 23;
+            this.RDno.TabStop = true;
+>>>>>>> Agregar archivos de proyecto.
             this.RDno.Text = "NO";
             this.RDno.UseVisualStyleBackColor = true;
             this.RDno.CheckedChanged += new System.EventHandler(this.RDno_CheckedChanged);
@@ -487,17 +621,26 @@
             // RDsi
             // 
             this.RDsi.AutoSize = true;
+<<<<<<< HEAD
             this.RDsi.ForeColor = System.Drawing.Color.White;
             this.RDsi.Location = new System.Drawing.Point(24, 20);
             this.RDsi.Name = "RDsi";
             this.RDsi.Size = new System.Drawing.Size(41, 25);
             this.RDsi.TabIndex = 22;
+=======
+            this.RDsi.Location = new System.Drawing.Point(27, 21);
+            this.RDsi.Name = "RDsi";
+            this.RDsi.Size = new System.Drawing.Size(41, 25);
+            this.RDsi.TabIndex = 22;
+            this.RDsi.TabStop = true;
+>>>>>>> Agregar archivos de proyecto.
             this.RDsi.Text = "SI";
             this.RDsi.UseVisualStyleBackColor = true;
             this.RDsi.CheckedChanged += new System.EventHandler(this.RDsi_CheckedChanged);
             // 
             // CBusuario
             // 
+<<<<<<< HEAD
             this.CBusuario.BackColor = System.Drawing.Color.SteelBlue;
             this.CBusuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBusuario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -545,6 +688,36 @@
             this.btncancelar_sesion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btncancelar_sesion.Name = "btncancelar_sesion";
             this.btncancelar_sesion.Size = new System.Drawing.Size(120, 34);
+=======
+            this.CBusuario.BackColor = System.Drawing.Color.Brown;
+            this.CBusuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBusuario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.CBusuario.FormattingEnabled = true;
+            this.CBusuario.Location = new System.Drawing.Point(88, 28);
+            this.CBusuario.Name = "CBusuario";
+            this.CBusuario.Size = new System.Drawing.Size(116, 29);
+            this.CBusuario.TabIndex = 24;
+            // 
+            // registro
+            // 
+            this.registro.AutoSize = true;
+            this.registro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registro.Location = new System.Drawing.Point(202, 205);
+            this.registro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.registro.Name = "registro";
+            this.registro.Size = new System.Drawing.Size(91, 20);
+            this.registro.TabIndex = 14;
+            this.registro.TabStop = true;
+            this.registro.Text = "Registrarse";
+            this.registro.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.registro_LinkClicked);
+            // 
+            // btncancelar_sesion
+            // 
+            this.btncancelar_sesion.Location = new System.Drawing.Point(190, 131);
+            this.btncancelar_sesion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btncancelar_sesion.Name = "btncancelar_sesion";
+            this.btncancelar_sesion.Size = new System.Drawing.Size(120, 25);
+>>>>>>> Agregar archivos de proyecto.
             this.btncancelar_sesion.TabIndex = 13;
             this.btncancelar_sesion.Text = "CANCELAR";
             this.btncancelar_sesion.UseVisualStyleBackColor = true;
@@ -552,6 +725,7 @@
             // 
             // btnentrar_INCIOSESION
             // 
+<<<<<<< HEAD
             this.btnentrar_INCIOSESION.FlatAppearance.BorderSize = 0;
             this.btnentrar_INCIOSESION.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnentrar_INCIOSESION.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold);
@@ -560,6 +734,12 @@
             this.btnentrar_INCIOSESION.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnentrar_INCIOSESION.Name = "btnentrar_INCIOSESION";
             this.btnentrar_INCIOSESION.Size = new System.Drawing.Size(88, 34);
+=======
+            this.btnentrar_INCIOSESION.Location = new System.Drawing.Point(28, 131);
+            this.btnentrar_INCIOSESION.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnentrar_INCIOSESION.Name = "btnentrar_INCIOSESION";
+            this.btnentrar_INCIOSESION.Size = new System.Drawing.Size(85, 25);
+>>>>>>> Agregar archivos de proyecto.
             this.btnentrar_INCIOSESION.TabIndex = 12;
             this.btnentrar_INCIOSESION.Text = "ENTRAR";
             this.btnentrar_INCIOSESION.UseVisualStyleBackColor = true;
@@ -567,7 +747,11 @@
             // 
             // txtcontra_sesion
             // 
+<<<<<<< HEAD
             this.txtcontra_sesion.BackColor = System.Drawing.Color.SteelBlue;
+=======
+            this.txtcontra_sesion.BackColor = System.Drawing.Color.Brown;
+>>>>>>> Agregar archivos de proyecto.
             this.txtcontra_sesion.Location = new System.Drawing.Point(89, 93);
             this.txtcontra_sesion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtcontra_sesion.Name = "txtcontra_sesion";
@@ -577,7 +761,11 @@
             // 
             // txtusuario_sesion
             // 
+<<<<<<< HEAD
             this.txtusuario_sesion.BackColor = System.Drawing.Color.SteelBlue;
+=======
+            this.txtusuario_sesion.BackColor = System.Drawing.Color.Brown;
+>>>>>>> Agregar archivos de proyecto.
             this.txtusuario_sesion.Location = new System.Drawing.Point(89, 30);
             this.txtusuario_sesion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtusuario_sesion.MaxLength = 50;
@@ -588,54 +776,87 @@
             // lbl6
             // 
             this.lbl6.AutoSize = true;
+<<<<<<< HEAD
             this.lbl6.Font = new System.Drawing.Font("Clarendon Blk BT", 12F);
             this.lbl6.ForeColor = System.Drawing.Color.White;
             this.lbl6.Location = new System.Drawing.Point(85, 69);
             this.lbl6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl6.Name = "lbl6";
             this.lbl6.Size = new System.Drawing.Size(130, 19);
+=======
+            this.lbl6.Location = new System.Drawing.Point(85, 69);
+            this.lbl6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl6.Name = "lbl6";
+            this.lbl6.Size = new System.Drawing.Size(122, 21);
+>>>>>>> Agregar archivos de proyecto.
             this.lbl6.TabIndex = 9;
             this.lbl6.Text = "CONTRASEÑA";
             // 
             // lbl5
             // 
             this.lbl5.AutoSize = true;
+<<<<<<< HEAD
             this.lbl5.Font = new System.Drawing.Font("Clarendon Blk BT", 12F);
             this.lbl5.ForeColor = System.Drawing.Color.White;
             this.lbl5.Location = new System.Drawing.Point(103, 6);
             this.lbl5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl5.Name = "lbl5";
             this.lbl5.Size = new System.Drawing.Size(90, 19);
+=======
+            this.lbl5.Location = new System.Drawing.Point(103, 6);
+            this.lbl5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl5.Name = "lbl5";
+            this.lbl5.Size = new System.Drawing.Size(82, 21);
+>>>>>>> Agregar archivos de proyecto.
             this.lbl5.TabIndex = 7;
             this.lbl5.Text = "USUARIO";
             // 
             // panel1
             // 
+<<<<<<< HEAD
             this.panel1.BackColor = System.Drawing.Color.Navy;
             this.panel1.Controls.Add(this.P_REGISTRO);
             this.panel1.Controls.Add(this.P_INICIOSESION);
             this.panel1.Controls.Add(this.P_ESCRITURA);
             this.panel1.Location = new System.Drawing.Point(-1, 27);
+=======
+            this.panel1.Controls.Add(this.P_REGISTRO);
+            this.panel1.Controls.Add(this.P_INICIOSESION);
+            this.panel1.Controls.Add(this.P_ESCRITURA);
+            this.panel1.Location = new System.Drawing.Point(2, 27);
+>>>>>>> Agregar archivos de proyecto.
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1177, 339);
             this.panel1.TabIndex = 16;
             // 
             // MenuOpciones
             // 
+<<<<<<< HEAD
             this.MenuOpciones.BackColor = System.Drawing.Color.Lavender;
+=======
+            this.MenuOpciones.BackColor = System.Drawing.Color.AliceBlue;
+>>>>>>> Agregar archivos de proyecto.
             this.MenuOpciones.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.OPTLogoSAEG,
             this.eSCRITURAToolStripMenuItem,
             this.dESAFIOSToolStripMenuItem});
             this.MenuOpciones.Location = new System.Drawing.Point(0, 0);
             this.MenuOpciones.Name = "MenuOpciones";
+<<<<<<< HEAD
             this.MenuOpciones.Size = new System.Drawing.Size(1180, 24);
+=======
+            this.MenuOpciones.Size = new System.Drawing.Size(1201, 24);
+>>>>>>> Agregar archivos de proyecto.
             this.MenuOpciones.TabIndex = 19;
             this.MenuOpciones.Text = "menuStrip1";
             // 
             // OPTLogoSAEG
             // 
+<<<<<<< HEAD
             this.OPTLogoSAEG.BackColor = System.Drawing.Color.Transparent;
+=======
+            this.OPTLogoSAEG.BackColor = System.Drawing.Color.Silver;
+>>>>>>> Agregar archivos de proyecto.
             this.OPTLogoSAEG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.OPTLogoSAEG.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.OPTLogoSAEG.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -643,14 +864,21 @@
             this.OPTLogoSAEG.Name = "OPTLogoSAEG";
             this.OPTLogoSAEG.ShowShortcutKeys = false;
             this.OPTLogoSAEG.Size = new System.Drawing.Size(28, 20);
+<<<<<<< HEAD
             this.OPTLogoSAEG.Click += new System.EventHandler(this.OPTLogoSAEG_Click_1);
+=======
+>>>>>>> Agregar archivos de proyecto.
             // 
             // eSCRITURAToolStripMenuItem
             // 
             this.eSCRITURAToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.rECORDSToolStripMenuItem,
+<<<<<<< HEAD
             this.OPTlogros,
             this.pALABRASMALESCRITASToolStripMenuItem});
+=======
+            this.OPTlogros});
+>>>>>>> Agregar archivos de proyecto.
             this.eSCRITURAToolStripMenuItem.Font = new System.Drawing.Font("Humnst777 Blk BT", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eSCRITURAToolStripMenuItem.Image = global::MECANOGRAFIA.Properties.Resources.teclado;
             this.eSCRITURAToolStripMenuItem.Name = "eSCRITURAToolStripMenuItem";
@@ -662,7 +890,11 @@
             this.rECORDSToolStripMenuItem.BackColor = System.Drawing.Color.AliceBlue;
             this.rECORDSToolStripMenuItem.Image = global::MECANOGRAFIA.Properties.Resources.verificar;
             this.rECORDSToolStripMenuItem.Name = "rECORDSToolStripMenuItem";
+<<<<<<< HEAD
             this.rECORDSToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+=======
+            this.rECORDSToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+>>>>>>> Agregar archivos de proyecto.
             this.rECORDSToolStripMenuItem.Text = "RECORDS";
             this.rECORDSToolStripMenuItem.Click += new System.EventHandler(this.rECORDSToolStripMenuItem_Click_1);
             // 
@@ -670,6 +902,7 @@
             // 
             this.OPTlogros.Image = global::MECANOGRAFIA.Properties.Resources.medal;
             this.OPTlogros.Name = "OPTlogros";
+<<<<<<< HEAD
             this.OPTlogros.Size = new System.Drawing.Size(226, 22);
             this.OPTlogros.Text = "LOGROS";
             this.OPTlogros.Click += new System.EventHandler(this.OPTlogros_Click);
@@ -682,6 +915,12 @@
             this.pALABRASMALESCRITASToolStripMenuItem.Text = "PALABRAS MAL ESCRITAS";
             this.pALABRASMALESCRITASToolStripMenuItem.Click += new System.EventHandler(this.pALABRASMALESCRITASToolStripMenuItem_Click);
             // 
+=======
+            this.OPTlogros.Size = new System.Drawing.Size(130, 22);
+            this.OPTlogros.Text = "LOGROS";
+            this.OPTlogros.Click += new System.EventHandler(this.OPTlogros_Click);
+            // 
+>>>>>>> Agregar archivos de proyecto.
             // dESAFIOSToolStripMenuItem
             // 
             this.dESAFIOSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -750,15 +989,103 @@
             this.rECORDSMODOPERSONALIZADOToolStripMenuItem.Name = "rECORDSMODOPERSONALIZADOToolStripMenuItem";
             this.rECORDSMODOPERSONALIZADOToolStripMenuItem.Size = new System.Drawing.Size(276, 22);
             this.rECORDSMODOPERSONALIZADOToolStripMenuItem.Text = "RECORDS MODO PERSONALIZADO";
+<<<<<<< HEAD
             this.rECORDSMODOPERSONALIZADOToolStripMenuItem.Click += new System.EventHandler(this.rECORDSMODOPERSONALIZADOToolStripMenuItem_Click);
+=======
+            // 
+            // btnVolverASesion
+            // 
+            this.btnVolverASesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolverASesion.Image = global::MECANOGRAFIA.Properties.Resources.derecha;
+            this.btnVolverASesion.Location = new System.Drawing.Point(178, 8);
+            this.btnVolverASesion.Name = "btnVolverASesion";
+            this.btnVolverASesion.Size = new System.Drawing.Size(32, 30);
+            this.btnVolverASesion.TabIndex = 20;
+            this.btnVolverASesion.UseVisualStyleBackColor = true;
+            this.btnVolverASesion.Click += new System.EventHandler(this.btnVolverASesion_Click);
+            // 
+            // btnver
+            // 
+            this.btnver.Font = new System.Drawing.Font("Clarendon BT", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnver.Image = global::MECANOGRAFIA.Properties.Resources.show_pwd;
+            this.btnver.Location = new System.Drawing.Point(177, 96);
+            this.btnver.Name = "btnver";
+            this.btnver.Size = new System.Drawing.Size(33, 25);
+            this.btnver.TabIndex = 17;
+            this.btnver.UseVisualStyleBackColor = true;
+            this.btnver.Click += new System.EventHandler(this.btnver_Click);
+            // 
+            // btnVolverAEscritura
+            // 
+            this.btnVolverAEscritura.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolverAEscritura.Image = global::MECANOGRAFIA.Properties.Resources.derecha;
+            this.btnVolverAEscritura.Location = new System.Drawing.Point(289, 3);
+            this.btnVolverAEscritura.Name = "btnVolverAEscritura";
+            this.btnVolverAEscritura.Size = new System.Drawing.Size(32, 30);
+            this.btnVolverAEscritura.TabIndex = 21;
+            this.btnVolverAEscritura.UseVisualStyleBackColor = true;
+            this.btnVolverAEscritura.Click += new System.EventHandler(this.btnVolverAEscritura_Click);
+            // 
+            // btnverSesion
+            // 
+            this.btnverSesion.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnverSesion.Image = global::MECANOGRAFIA.Properties.Resources.show_pwd;
+            this.btnverSesion.Location = new System.Drawing.Point(230, 95);
+            this.btnverSesion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnverSesion.Name = "btnverSesion";
+            this.btnverSesion.Size = new System.Drawing.Size(32, 25);
+            this.btnverSesion.TabIndex = 11;
+            this.btnverSesion.UseVisualStyleBackColor = true;
+            this.btnverSesion.Click += new System.EventHandler(this.btnverSesion_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Image = global::MECANOGRAFIA.Properties.Resources.dia_y_noche;
+            this.button1.Location = new System.Drawing.Point(7, 274);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(26, 21);
+            this.button1.TabIndex = 12;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnIniciar
+            // 
+            this.btnIniciar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIniciar.Image = global::MECANOGRAFIA.Properties.Resources.boton_de_play;
+            this.btnIniciar.Location = new System.Drawing.Point(526, 72);
+            this.btnIniciar.Name = "btnIniciar";
+            this.btnIniciar.Size = new System.Drawing.Size(34, 33);
+            this.btnIniciar.TabIndex = 11;
+            this.btnIniciar.UseVisualStyleBackColor = true;
+            this.btnIniciar.Click += new System.EventHandler(this.btnIniciar_Click);
+            // 
+            // btnreiniciar
+            // 
+            this.btnreiniciar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnreiniciar.Image = global::MECANOGRAFIA.Properties.Resources.sincronizacion;
+            this.btnreiniciar.Location = new System.Drawing.Point(563, 72);
+            this.btnreiniciar.Name = "btnreiniciar";
+            this.btnreiniciar.Size = new System.Drawing.Size(31, 33);
+            this.btnreiniciar.TabIndex = 4;
+            this.btnreiniciar.UseVisualStyleBackColor = true;
+            this.btnreiniciar.Click += new System.EventHandler(this.btnreiniciar_Click);
+>>>>>>> Agregar archivos de proyecto.
             // 
             // ESCRITURA
             // 
             this.AccessibleDescription = "";
             this.AccessibleName = "";
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+<<<<<<< HEAD
             this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(1180, 369);
+=======
+            this.BackColor = System.Drawing.Color.CadetBlue;
+            this.ClientSize = new System.Drawing.Size(1201, 369);
+>>>>>>> Agregar archivos de proyecto.
             this.Controls.Add(this.MenuOpciones);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
@@ -767,7 +1094,11 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ESCRITURA";
+<<<<<<< HEAD
             this.Text = "REVISA CODIGO NO HAY NOMBRE";
+=======
+            this.Text = "ESCRITURA";
+>>>>>>> Agregar archivos de proyecto.
             this.Load += new System.EventHandler(this.ESCRITURA_Load);
             this.P_ESCRITURA.ResumeLayout(false);
             this.P_ESCRITURA.PerformLayout();
@@ -811,6 +1142,10 @@
         private System.Windows.Forms.Label lbl4;
         private System.Windows.Forms.Label lbl3;
         private System.Windows.Forms.Panel P_INICIOSESION;
+<<<<<<< HEAD
+=======
+        private System.Windows.Forms.LinkLabel registro;
+>>>>>>> Agregar archivos de proyecto.
         private System.Windows.Forms.Button btnverSesion;
         private System.Windows.Forms.Button btncancelar_sesion;
         private System.Windows.Forms.Button btnentrar_INCIOSESION;
@@ -819,7 +1154,11 @@
         private System.Windows.Forms.Label lbl6;
         private System.Windows.Forms.Label lbl5;
         private System.Windows.Forms.Panel panel1;
+<<<<<<< HEAD
         private System.Windows.Forms.Button btncambiarmodos;
+=======
+        private System.Windows.Forms.Button button1;
+>>>>>>> Agregar archivos de proyecto.
         private System.Windows.Forms.Button btnVolverASesion;
         private System.Windows.Forms.Button btnVolverAEscritura;
         public System.Windows.Forms.Panel P_ESCRITURA;
@@ -843,7 +1182,10 @@
         private System.Windows.Forms.ToolStripMenuItem OPTlogros;
         private System.Windows.Forms.ToolStripMenuItem mODOPERSONALIZADOToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rECORDSMODOPERSONALIZADOToolStripMenuItem;
+<<<<<<< HEAD
         private System.Windows.Forms.Label lblregistro;
         private System.Windows.Forms.ToolStripMenuItem pALABRASMALESCRITASToolStripMenuItem;
+=======
+>>>>>>> Agregar archivos de proyecto.
     }
 }

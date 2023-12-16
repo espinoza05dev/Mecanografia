@@ -13,7 +13,10 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
     public partial class RECORDS : Form
     {
         clases.db DB = new clases.db();
+<<<<<<< HEAD
         clases.helpers h = new clases.helpers();
+=======
+>>>>>>> Agregar archivos de proyecto.
         
         public RECORDS()
         {
@@ -33,8 +36,12 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
             string ppm, pc, pi,LO, LPOS, LA,prec; 
             DateTime fec;
             DGVdatos.Rows.Clear();
+<<<<<<< HEAD
             if (datos.Rows.Count > 0)
             {
+=======
+            if (datos.Rows.Count > 0) {
+>>>>>>> Agregar archivos de proyecto.
                 foreach (DataRow r in datos.Rows)
                 {
                     ppm = r["PALABRAS_POR_MINUTO"].ToString();
@@ -46,7 +53,11 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
                     LPOS = r["L_POS_M"].ToString();
                     LA = r["L_ADDED_M"].ToString();
 
+<<<<<<< HEAD
                     DGVdatos.Rows.Add(ppm, pc, pi, prec, LO, LPOS, LA, fec);
+=======
+                    DGVdatos.Rows.Add(ppm, pc, pi,prec,LO,LPOS,LA, fec);
+>>>>>>> Agregar archivos de proyecto.
                 }
                 datos.Dispose();
             }
@@ -56,10 +67,15 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
         {
             mecanografia.ESCRITURA esc = new mecanografia.ESCRITURA();
             esc = ((mecanografia.ESCRITURA)Owner);
+<<<<<<< HEAD
             if (esc.usuario_sesion != string.Empty){
                 this.Text = "RECORDS: " + esc.usuario_sesion;
                 cargardatosLV(esc.usuario_sesion);
             }else { h.Warning("Incie sesión para ver sus registro"); this.Dispose(); }
+=======
+            this.Text = "RECORDS: "+ esc.usuario_sesion;
+            cargardatosLV(esc.usuario_sesion);
+>>>>>>> Agregar archivos de proyecto.
         }
 
         private void button1_Click(object sender, EventArgs e)

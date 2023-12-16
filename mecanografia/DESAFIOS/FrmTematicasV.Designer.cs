@@ -56,7 +56,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.label1.ForeColor = System.Drawing.Color.White;
+=======
+>>>>>>> Agregar archivos de proyecto.
             this.label1.Location = new System.Drawing.Point(30, 289);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(233, 31);
@@ -65,7 +68,10 @@
             // 
             // CMBtematicas
             // 
+<<<<<<< HEAD
             this.CMBtematicas.BackColor = System.Drawing.Color.SteelBlue;
+=======
+>>>>>>> Agregar archivos de proyecto.
             this.CMBtematicas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CMBtematicas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.CMBtematicas.FormattingEnabled = true;
@@ -125,8 +131,11 @@
             // 
             // btnIniciar
             // 
+<<<<<<< HEAD
             this.btnIniciar.FlatAppearance.BorderSize = 0;
             this.btnIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+=======
+>>>>>>> Agregar archivos de proyecto.
             this.btnIniciar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciar.Image = global::MECANOGRAFIA.Properties.Resources.boton_de_play;
             this.btnIniciar.Location = new System.Drawing.Point(538, 102);
@@ -138,7 +147,10 @@
             // 
             // txtpalabrasescritas
             // 
+<<<<<<< HEAD
             this.txtpalabrasescritas.BackColor = System.Drawing.Color.SteelBlue;
+=======
+>>>>>>> Agregar archivos de proyecto.
             this.txtpalabrasescritas.Font = new System.Drawing.Font("Humnst777 Blk BT", 15.75F);
             this.txtpalabrasescritas.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtpalabrasescritas.Location = new System.Drawing.Point(19, 102);
@@ -154,7 +166,10 @@
             // 
             this.lbl1.AutoSize = true;
             this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.lbl1.ForeColor = System.Drawing.Color.White;
+=======
+>>>>>>> Agregar archivos de proyecto.
             this.lbl1.Location = new System.Drawing.Point(438, 125);
             this.lbl1.Name = "lbl1";
             this.lbl1.Size = new System.Drawing.Size(104, 31);
@@ -163,7 +178,10 @@
             // 
             // txtpalabrasmostradas
             // 
+<<<<<<< HEAD
             this.txtpalabrasmostradas.BackColor = System.Drawing.Color.SteelBlue;
+=======
+>>>>>>> Agregar archivos de proyecto.
             this.txtpalabrasmostradas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtpalabrasmostradas.Cursor = System.Windows.Forms.Cursors.No;
             this.txtpalabrasmostradas.Enabled = false;
@@ -180,8 +198,11 @@
             // 
             // btnreiniciar
             // 
+<<<<<<< HEAD
             this.btnreiniciar.FlatAppearance.BorderSize = 0;
             this.btnreiniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+=======
+>>>>>>> Agregar archivos de proyecto.
             this.btnreiniciar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnreiniciar.Image = global::MECANOGRAFIA.Properties.Resources.sincronizacion;
             this.btnreiniciar.Location = new System.Drawing.Point(575, 102);
@@ -195,7 +216,10 @@
             // 
             this.lblSEGUNDOS.AutoSize = true;
             this.lblSEGUNDOS.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.lblSEGUNDOS.ForeColor = System.Drawing.Color.White;
+=======
+>>>>>>> Agregar archivos de proyecto.
             this.lblSEGUNDOS.Location = new System.Drawing.Point(471, 98);
             this.lblSEGUNDOS.Name = "lblSEGUNDOS";
             this.lblSEGUNDOS.Size = new System.Drawing.Size(44, 31);
@@ -209,7 +233,11 @@
             // 
             // lvPalabras
             // 
+<<<<<<< HEAD
             this.lvPalabras.BackColor = System.Drawing.Color.SteelBlue;
+=======
+            this.lvPalabras.BackColor = System.Drawing.Color.Brown;
+>>>>>>> Agregar archivos de proyecto.
             this.lvPalabras.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.PALABRAS_POR_MINUTO,
             this.PCORRECTAS,
@@ -274,7 +302,10 @@
             // FrmTematicasV
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+<<<<<<< HEAD
             this.BackColor = System.Drawing.Color.Navy;
+=======
+>>>>>>> Agregar archivos de proyecto.
             this.ClientSize = new System.Drawing.Size(619, 355);
             this.Controls.Add(this.lvPalabras);
             this.Controls.Add(this.toolStrip1);

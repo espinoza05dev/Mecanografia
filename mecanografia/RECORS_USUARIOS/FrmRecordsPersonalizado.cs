@@ -14,7 +14,10 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
     {
         clases.helpers h = new clases.helpers();
         clases.db DB = new clases.db();
+<<<<<<< HEAD
         string query, condicion;
+=======
+>>>>>>> Agregar archivos de proyecto.
         public FrmRecordsPersonalizado()
         {
             InitializeComponent();
@@ -22,6 +25,7 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
 
         private void btnicio_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             mecanografia.ESCRITURA esc = new mecanografia.ESCRITURA();
             this.AddOwnedForm(esc);
             this.Close();
@@ -34,16 +38,34 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
             esc = ((mecanografia.ESCRITURA)Owner);
             query = "SELECT * FROM RECORDS_PERSONALIZADO RP INNER JOIN R_RECORDS_PERSONALIZADO R ON (RP.ID = R.ID) ";
             condicion = $"WHERE RP.NFILE = '{CMBpersonalizado.Text}' AND RP.USUARIO = '{esc.usuario_sesion}'";
+=======
+            this.Close();
+        }
+
+        private void listar_datos(string nfile)
+        {
+            mecanografia.ESCRITURA esc = new mecanografia.ESCRITURA();
+            esc = ((mecanografia.ESCRITURA)Owner);
+>>>>>>> Agregar archivos de proyecto.
             string prec;
             int ppm, c, i,Lo,LposM,Ladded;
             DateTime fecha;
 
+<<<<<<< HEAD
             if (esc.usuario_sesion != string.Empty) {
                 DataTable datos = DB.consulta(query + condicion);
                 DataTable d = DB.recuperar("RECORDS_PERSONALIZADO", "*", $"NFILE = '{CMBpersonalizado.Text}' AND USUARIO = '{esc.usuario_sesion}'");
                 DGVdatos.Rows.Clear();
                 if (datos.Rows.Count > 0){
                     foreach (DataRow r in datos.Rows){
+=======
+            if (esc.usuario_sesion != "") {
+                DataTable datos = DB.recuperar("RECORDS_PERSONALIZADO", "*", $"NFILE = '{nfile}' AND USUARIO = '{esc.usuario_sesion}'");
+                if (datos.Rows.Count > 0)
+                {
+                    foreach (DataRow r in datos.Rows)
+                    {
+>>>>>>> Agregar archivos de proyecto.
                         ppm = Convert.ToInt32(r["PPM"]);
                         c = Convert.ToInt32(r["C"]);
                         i = Convert.ToInt32(r["I"]);
@@ -55,6 +77,7 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
                         DGVdatos.Rows.Add(ppm, c, i, prec, Lo, LposM, Ladded, fecha);
                     }
                     datos.Dispose();
+<<<<<<< HEAD
                 }DGVdatos.Rows.Clear();
                 if (d.Rows.Count > 0){
                     foreach (DataRow r in d.Rows){
@@ -83,6 +106,9 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
             }else if (d1.Rows.Count == 0){
                 CMBpersonalizado.DataSource = DB.recuperar("RECORDS_PERSONALIZADO", "NFILE",$"USUARIO = '{esc.usuario_sesion}'");
                 CMBpersonalizado.DisplayMember = "NFILE";
+=======
+                } else h.Warning($"El usuuario {esc.usuario_sesion} no cuenta con registros"); 
+>>>>>>> Agregar archivos de proyecto.
             }
         }
 
@@ -90,6 +116,7 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
         {
             mecanografia.ESCRITURA esc = new mecanografia.ESCRITURA();
             esc = ((mecanografia.ESCRITURA)Owner);
+<<<<<<< HEAD
             DataTable d = DB.recuperar("RECORDS_PERSONALIZADO", "*");
             if (d.Rows.Count == 0){ h.Warning($"El usuario {esc.usuario_sesion} no cuenta con registros"); this.Close(); }
             this.Text = " Records Personalizado: " + esc.usuario_sesion;
@@ -99,6 +126,14 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
         private void CMBpersonalizado_SelectedIndexChanged(object sender, EventArgs e)
         {
             listar_datos();
+=======
+            this.Text = " Records Personalizado: " + esc.usuario_sesion;
+        }
+
+        private void CMBdificultades_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listar_datos(CMBpersonalizado.Text);
+>>>>>>> Agregar archivos de proyecto.
         }
     }
 }

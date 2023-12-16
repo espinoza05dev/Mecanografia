@@ -131,6 +131,7 @@ namespace MECANOGRAFIA.clases
             return datos;
         }
 
+<<<<<<< HEAD
 
         public DataTable consulta(string query, int debug = 0)
         {
@@ -163,5 +164,7 @@ namespace MECANOGRAFIA.clases
 
             return datos;
         }
+=======
+>>>>>>> Agregar archivos de proyecto.
     }
 }

@@ -23,10 +23,14 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
 
         private void btnicio_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             mecanografia.ESCRITURA esc = new mecanografia.ESCRITURA();
             this.AddOwnedForm(esc);
             this.Close();
             esc.Show();
+=======
+            this.Close();
+>>>>>>> Agregar archivos de proyecto.
         }
 
         private void listar_tematicas(string tema)
@@ -52,7 +56,11 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
                         LA = Convert.ToInt32(r["L_ADDED_M"].ToString());
                         prec = r["PRECISION"].ToString();
                         fec = Convert.ToDateTime(r["FECHA"].ToString());
+<<<<<<< HEAD
                         DGVdatos.Rows.Add(ppm, c, i, prec,LO, LPOS, LA,fec);
+=======
+                        DGVdatos.Rows.Add(ppm, c, i, LO, LPOS, LA, prec, fec);
+>>>>>>> Agregar archivos de proyecto.
                     }
                     d.Dispose();
                 }
