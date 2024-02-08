@@ -181,6 +181,7 @@
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label2.Size = new System.Drawing.Size(293, 16);
             this.label2.TabIndex = 28;
             this.label2.Text = "Seleccione el Record de Texto personalizado";
@@ -189,12 +190,18 @@
             this.label2.TabIndex = 28;
             this.label2.Text = "Seleccione el Record de Dificultad";
 >>>>>>> Agregar archivos de proyecto.
+=======
+            this.label2.Size = new System.Drawing.Size(293, 16);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "Seleccione el Record de Texto personalizado";
+>>>>>>> prueba
             // 
             // CMBpersonalizado
             // 
             this.CMBpersonalizado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CMBpersonalizado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.CMBpersonalizado.FormattingEnabled = true;
+<<<<<<< HEAD
 <<<<<<< HEAD
             this.CMBpersonalizado.Location = new System.Drawing.Point(10, 380);
             this.CMBpersonalizado.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -207,13 +214,19 @@
             "FACIL",
             "INTERMEDIO",
             "DIFICIL"});
+=======
+>>>>>>> prueba
             this.CMBpersonalizado.Location = new System.Drawing.Point(10, 380);
             this.CMBpersonalizado.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.CMBpersonalizado.Name = "CMBpersonalizado";
-            this.CMBpersonalizado.Size = new System.Drawing.Size(139, 23);
+            this.CMBpersonalizado.Size = new System.Drawing.Size(280, 23);
             this.CMBpersonalizado.TabIndex = 27;
+<<<<<<< HEAD
             this.CMBpersonalizado.SelectedIndexChanged += new System.EventHandler(this.CMBdificultades_SelectedIndexChanged);
 >>>>>>> Agregar archivos de proyecto.
+=======
+            this.CMBpersonalizado.SelectedIndexChanged += new System.EventHandler(this.CMBpersonalizado_SelectedIndexChanged);
+>>>>>>> prueba
             // 
             // btnicio
             // 

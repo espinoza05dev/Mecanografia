@@ -135,10 +135,14 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
             mecanografia.ESCRITURA esc = new mecanografia.ESCRITURA();
             esc = ((mecanografia.ESCRITURA)Owner);
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.Text = "Modo Personalizado " + esc.usuario_sesion;
 =======
             this.Text = "Dificultad " + esc.usuario_sesion;
 >>>>>>> Agregar archivos de proyecto.
+=======
+            this.Text = "Modo Personalizado " + esc.usuario_sesion;
+>>>>>>> prueba
             btnreiniciar.Enabled = false;
         }
 
@@ -171,8 +175,11 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
                 item.SubItems.Add(L_PosM.ToString());
                 item.SubItems.Add(L_added.ToString());
 
+<<<<<<< HEAD
 
 >>>>>>> Agregar archivos de proyecto.
+=======
+>>>>>>> prueba
                 txtpalabrasescritas.Clear();
                 lblSEGUNDOS.Text = "60";
                 btnIniciar.Enabled = false;
@@ -253,15 +260,9 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
                     LAddedM = datosLV.SubItems[6].Text;
                 }
 
-
                 mecanografia.ESCRITURA esc = new mecanografia.ESCRITURA();
-                if (esc.usuario_sesion != "")
-                {
-                    DB.guardar("RECORDS_PERSONALIZADO","USUARIO,NFILE,PPM,C,I,PREC,L_O,L_POS_M,L_ADDED",
-                        $"'{esc.usuario_sesion}','{Path.GetFileName(filePath)}',{Convert.ToInt32(ppm)},{Convert.ToInt32(pc)},{Convert.ToInt32(pi)}," +
-                        $"'{Math.Round(((float)correctas / pcompletadas) * 100, 3).ToString() + "%"}',{Convert.ToInt32(Lomitida)},{Convert.ToInt32(LPosM)}," +
-                        $"{Convert.ToInt32(LAddedM)}");
-                }
+                esc = ((mecanografia.ESCRITURA)Owner);
+                if (esc.usuario_sesion != string.Empty)DB.guardar("RECORDS_PERSONALIZADO", "USUARIO,NFILE,PPM,C,I,PREC,L_O,L_POS_M,L_ADDED",$"'{esc.usuario_sesion}','{Path.GetFileName(filePath)}',{Convert.ToInt32(ppm)},{Convert.ToInt32(pc)},{Convert.ToInt32(pi)},'{Math.Round(((float)correctas / pcompletadas) * 100, 3).ToString() + "%"}',{Convert.ToInt32(Lomitida)},{Convert.ToInt32(LPosM)},{Convert.ToInt32(LAddedM)}");
             }
         }
 
@@ -324,6 +325,7 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
             txtpalabrasescritas.Enabled = true;
             txtpalabrasescritas.Focus();
 <<<<<<< HEAD
+<<<<<<< HEAD
             txtpalabrasescritas.Clear();
             t.correctas = 0; t.incorrectas = 0; t.pcompletadas = 0; t.L_omitidas = 0; t.L_PosM = 0; t.L_added = 0;
             btnsubirtexto.Enabled = false;
@@ -342,11 +344,17 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
             }
 =======
             RELOJ.Start();
+=======
+>>>>>>> prueba
             txtpalabrasescritas.Clear();
             correctas = 0; incorrectas = 0; pcompletadas = 0; L_omitidas = 0; L_PosM = 0; L_added = 0;
             content = File.ReadAllText(filePath);
             txtpalabrasmostradas.Text = content;
+<<<<<<< HEAD
 >>>>>>> Agregar archivos de proyecto.
+=======
+            RELOJ.Start();
+>>>>>>> prueba
         }
 
         private void txtpalabrasescritas_KeyDown(object sender, KeyEventArgs e)

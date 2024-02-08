@@ -57,10 +57,14 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
                         prec = r["PRECISION"].ToString();
                         fec = Convert.ToDateTime(r["FECHA"].ToString());
 <<<<<<< HEAD
+<<<<<<< HEAD
                         DGVdatos.Rows.Add(ppm, c, i, prec,LO, LPOS, LA,fec);
 =======
                         DGVdatos.Rows.Add(ppm, c, i, LO, LPOS, LA, prec, fec);
 >>>>>>> Agregar archivos de proyecto.
+=======
+                        DGVdatos.Rows.Add(ppm, c, i, prec,LO, LPOS, LA,fec);
+>>>>>>> prueba
                     }
                     d.Dispose();
                 }

@@ -41,18 +41,25 @@
             this.CLletraAggIncorrecta = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.BTNsalir = new System.Windows.Forms.ToolStripButton();
 =======
 >>>>>>> Agregar archivos de proyecto.
+=======
+            this.BTNsalir = new System.Windows.Forms.ToolStripButton();
+>>>>>>> prueba
             this.lbl1 = new System.Windows.Forms.Label();
             this.txtpalabrasmostradas = new System.Windows.Forms.TextBox();
             this.lblSEGUNDOS = new System.Windows.Forms.Label();
             this.RELOJ = new System.Windows.Forms.Timer(this.components);
             this.btnsubirtexto = new System.Windows.Forms.Button();
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             this.BTNsalir = new System.Windows.Forms.ToolStripButton();
 >>>>>>> Agregar archivos de proyecto.
+=======
+>>>>>>> prueba
             this.btnIniciar = new System.Windows.Forms.Button();
             this.btnreiniciar = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
@@ -61,10 +68,14 @@
             // txtpalabrasescritas
             // 
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.txtpalabrasescritas.BackColor = System.Drawing.Color.SteelBlue;
 =======
             this.txtpalabrasescritas.BackColor = System.Drawing.SystemColors.Control;
 >>>>>>> Agregar archivos de proyecto.
+=======
+            this.txtpalabrasescritas.BackColor = System.Drawing.Color.SteelBlue;
+>>>>>>> prueba
             this.txtpalabrasescritas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtpalabrasescritas.Font = new System.Drawing.Font("Humnst777 Blk BT", 15.75F);
             this.txtpalabrasescritas.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -80,10 +91,14 @@
             // lvPalabras
             // 
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.lvPalabras.BackColor = System.Drawing.Color.SteelBlue;
 =======
             this.lvPalabras.BackColor = System.Drawing.Color.Brown;
 >>>>>>> Agregar archivos de proyecto.
+=======
+            this.lvPalabras.BackColor = System.Drawing.Color.SteelBlue;
+>>>>>>> prueba
             this.lvPalabras.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.PALABRAS_POR_MINUTO,
             this.PCORRECTAS,
@@ -148,9 +163,13 @@
             // toolStrip1
             // 
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.toolStrip1.BackColor = System.Drawing.Color.Lavender;
 =======
 >>>>>>> Agregar archivos de proyecto.
+=======
+            this.toolStrip1.BackColor = System.Drawing.Color.Lavender;
+>>>>>>> prueba
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.BTNsalir});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -160,6 +179,9 @@
             this.toolStrip1.Text = "toolStrip1";
             // 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> prueba
             // BTNsalir
             // 
             this.BTNsalir.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -170,16 +192,23 @@
             this.BTNsalir.Text = "SALIR";
             this.BTNsalir.Click += new System.EventHandler(this.BTNsalir_Click);
             // 
+<<<<<<< HEAD
 =======
 >>>>>>> Agregar archivos de proyecto.
+=======
+>>>>>>> prueba
             // lbl1
             // 
             this.lbl1.AutoSize = true;
             this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.lbl1.ForeColor = System.Drawing.Color.White;
 =======
 >>>>>>> Agregar archivos de proyecto.
+=======
+            this.lbl1.ForeColor = System.Drawing.Color.White;
+>>>>>>> prueba
             this.lbl1.Location = new System.Drawing.Point(436, 127);
             this.lbl1.Name = "lbl1";
             this.lbl1.Size = new System.Drawing.Size(104, 31);
@@ -189,9 +218,13 @@
             // txtpalabrasmostradas
             // 
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.txtpalabrasmostradas.BackColor = System.Drawing.Color.SteelBlue;
 =======
 >>>>>>> Agregar archivos de proyecto.
+=======
+            this.txtpalabrasmostradas.BackColor = System.Drawing.Color.SteelBlue;
+>>>>>>> prueba
             this.txtpalabrasmostradas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtpalabrasmostradas.Cursor = System.Windows.Forms.Cursors.No;
             this.txtpalabrasmostradas.Enabled = false;
@@ -211,9 +244,13 @@
             this.lblSEGUNDOS.AutoSize = true;
             this.lblSEGUNDOS.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.lblSEGUNDOS.ForeColor = System.Drawing.Color.White;
 =======
 >>>>>>> Agregar archivos de proyecto.
+=======
+            this.lblSEGUNDOS.ForeColor = System.Drawing.Color.White;
+>>>>>>> prueba
             this.lblSEGUNDOS.Location = new System.Drawing.Point(468, 97);
             this.lblSEGUNDOS.Name = "lblSEGUNDOS";
             this.lblSEGUNDOS.Size = new System.Drawing.Size(44, 31);
@@ -228,11 +265,17 @@
             // btnsubirtexto
             // 
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.btnsubirtexto.FlatAppearance.BorderSize = 0;
             this.btnsubirtexto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsubirtexto.ForeColor = System.Drawing.Color.White;
 =======
 >>>>>>> Agregar archivos de proyecto.
+=======
+            this.btnsubirtexto.FlatAppearance.BorderSize = 0;
+            this.btnsubirtexto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnsubirtexto.ForeColor = System.Drawing.Color.White;
+>>>>>>> prueba
             this.btnsubirtexto.Location = new System.Drawing.Point(460, 337);
             this.btnsubirtexto.Name = "btnsubirtexto";
             this.btnsubirtexto.Size = new System.Drawing.Size(151, 33);
@@ -241,6 +284,7 @@
             this.btnsubirtexto.UseVisualStyleBackColor = true;
             this.btnsubirtexto.Click += new System.EventHandler(this.btnsubirtexto_Click);
             // 
+<<<<<<< HEAD
 <<<<<<< HEAD
             // btnIniciar
             // 
@@ -260,6 +304,12 @@
             // btnIniciar
             // 
 >>>>>>> Agregar archivos de proyecto.
+=======
+            // btnIniciar
+            // 
+            this.btnIniciar.FlatAppearance.BorderSize = 0;
+            this.btnIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+>>>>>>> prueba
             this.btnIniciar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciar.Image = global::MECANOGRAFIA.Properties.Resources.boton_de_play;
             this.btnIniciar.Location = new System.Drawing.Point(541, 100);
@@ -272,10 +322,15 @@
             // btnreiniciar
             // 
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.btnreiniciar.FlatAppearance.BorderSize = 0;
             this.btnreiniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 =======
 >>>>>>> Agregar archivos de proyecto.
+=======
+            this.btnreiniciar.FlatAppearance.BorderSize = 0;
+            this.btnreiniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+>>>>>>> prueba
             this.btnreiniciar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnreiniciar.Image = global::MECANOGRAFIA.Properties.Resources.sincronizacion;
             this.btnreiniciar.Location = new System.Drawing.Point(580, 101);
@@ -289,9 +344,13 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.BackColor = System.Drawing.Color.Navy;
 =======
 >>>>>>> Agregar archivos de proyecto.
+=======
+            this.BackColor = System.Drawing.Color.Navy;
+>>>>>>> prueba
             this.ClientSize = new System.Drawing.Size(623, 372);
             this.Controls.Add(this.btnsubirtexto);
             this.Controls.Add(this.txtpalabrasescritas);

@@ -59,10 +59,14 @@ namespace MECANOGRAFIA.clases
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         public void Info(string msg, string titulo = "INFORMACION")
 =======
         public void Info(string msg, string titulo = "INFO")
 >>>>>>> Agregar archivos de proyecto.
+=======
+        public void Info(string msg, string titulo = "INFORMACION")
+>>>>>>> prueba
         {
             MessageBoxButtons boton = MessageBoxButtons.OK;
             MessageBoxIcon icono = MessageBoxIcon.Information;

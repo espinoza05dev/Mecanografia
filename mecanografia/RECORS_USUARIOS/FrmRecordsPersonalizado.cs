@@ -42,7 +42,7 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
             this.Close();
         }
 
-        private void listar_datos(string nfile)
+        private void listar_datos()
         {
             mecanografia.ESCRITURA esc = new mecanografia.ESCRITURA();
             esc = ((mecanografia.ESCRITURA)Owner);
@@ -51,6 +51,7 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
             int ppm, c, i,Lo,LposM,Ladded;
             DateTime fecha;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
             if (esc.usuario_sesion != string.Empty) {
                 DataTable datos = DB.consulta(query + condicion);
@@ -66,6 +67,13 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
                     foreach (DataRow r in datos.Rows)
                     {
 >>>>>>> Agregar archivos de proyecto.
+=======
+            if (esc.usuario_sesion != string.Empty) {
+                DataTable datos = DB.recuperar("RECORDS_PERSONALIZADO", "*", $"NFILE = '{CMBpersonalizado.Text}' AND USUARIO = '{esc.usuario_sesion}'");
+                DGVdatos.Rows.Clear();
+                if (datos.Rows.Count > 0){
+                    foreach (DataRow r in datos.Rows){
+>>>>>>> prueba
                         ppm = Convert.ToInt32(r["PPM"]);
                         c = Convert.ToInt32(r["C"]);
                         i = Convert.ToInt32(r["I"]);
@@ -77,6 +85,7 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
                         DGVdatos.Rows.Add(ppm, c, i, prec, Lo, LposM, Ladded, fecha);
                     }
                     datos.Dispose();
+<<<<<<< HEAD
 <<<<<<< HEAD
                 }DGVdatos.Rows.Clear();
                 if (d.Rows.Count > 0){
@@ -109,7 +118,16 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
 =======
                 } else h.Warning($"El usuuario {esc.usuario_sesion} no cuenta con registros"); 
 >>>>>>> Agregar archivos de proyecto.
+=======
+                } else h.Warning($"El usuario {esc.usuario_sesion} no cuenta con registros"); 
+>>>>>>> prueba
             }
+        }
+        private void cargarcmb()
+        { 
+            CMBpersonalizado.DataSource = DB.recuperar("RECORDS_PERSONALIZADO", "*");
+            CMBpersonalizado.DisplayMember = "NFILE";
+            CMBpersonalizado.ValueMember = "NFILE";
         }
 
         private void FrmRecordsPersonalizado_Load(object sender, EventArgs e)
@@ -128,12 +146,17 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
             listar_datos();
 =======
             this.Text = " Records Personalizado: " + esc.usuario_sesion;
+            cargarcmb();
         }
 
-        private void CMBdificultades_SelectedIndexChanged(object sender, EventArgs e)
+        private void CMBpersonalizado_SelectedIndexChanged(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             listar_datos(CMBpersonalizado.Text);
 >>>>>>> Agregar archivos de proyecto.
+=======
+            listar_datos();
+>>>>>>> prueba
         }
     }
 }
