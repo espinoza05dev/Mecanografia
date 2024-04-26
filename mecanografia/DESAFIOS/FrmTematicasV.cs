@@ -17,11 +17,16 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
         clases.db DB = new clases.db();
         int correctas, pcompletadas, incorrectas, L_omitidas = 0, L_PosM = 0, L_added = 0, i, j;
 <<<<<<< HEAD
+<<<<<<< HEAD
         string p, p_escrita, ppm = "", pc = "", pi = "", Lomitida = "", LPosM = "", LAddedM = "";
         mecanografia.ESCRITURA esc = new mecanografia.ESCRITURA();
 =======
         string p, p_escrita;
 >>>>>>> Agregar archivos de proyecto.
+=======
+        string p, p_escrita, ppm = "", pc = "", pi = "", Lomitida = "", LPosM = "", LAddedM = "";
+        mecanografia.ESCRITURA esc = new mecanografia.ESCRITURA();
+>>>>>>> actualizacion
 
         public FrmTematicasV()
         {
@@ -529,10 +534,14 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
         private void BTNsalir_Click(object sender, EventArgs e)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.Close();
 =======
             this.Dispose();
 >>>>>>> Agregar archivos de proyecto.
+=======
+            this.Close();
+>>>>>>> actualizacion
         }
 
         private void btnIniciar_Click(object sender, EventArgs e)
@@ -582,6 +591,7 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
             conteo--;
             lblSEGUNDOS.Text = conteo.ToString();
 <<<<<<< HEAD
+<<<<<<< HEAD
 
             if (conteo == 45 && pcompletadas == 0){
                 RELOJ.Stop();
@@ -601,6 +611,12 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
                 item.SubItems.Add(L_added.ToString());
 
 >>>>>>> Agregar archivos de proyecto.
+=======
+
+            if (conteo == 45 && pcompletadas == 0){
+                RELOJ.Stop();
+                h.Info("Te encuentras lejos del teclado?");
+>>>>>>> actualizacion
                 txtpalabrasescritas.Clear();
                 lblSEGUNDOS.Text = "60";
                 btnIniciar.Enabled = false;
@@ -608,6 +624,9 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
                 txtpalabrasescritas.Enabled = false;
                 CMBtematicas.Enabled = true;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> actualizacion
             }else if (incorrectas >= 10){
                 RELOJ.Stop();
                 h.Warning("!Demasiadas palabras incorrectas!");
@@ -644,6 +663,7 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
                         LPosM = datosLV.SubItems[5].Text;
                         LAddedM = datosLV.SubItems[6].Text;
                     }
+<<<<<<< HEAD
 
                     esc = ((mecanografia.ESCRITURA)Owner);
                     if (esc.usuario_sesion != "") savedata();
@@ -682,21 +702,46 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
             else if (CMBtematicas.Text == "Programacion") DB.guardar("TEMA", "USUARIO,TEMA,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{esc.usuario_sesion}','{CMBtematicas.Text}','{ppm}','{pc}','{pi}','{Math.Round(((float)correctas / pcompletadas) * 100, 3).ToString() + "%"}','{Lomitida}','{LPosM}','{LAddedM}'");
 
 =======
+=======
+>>>>>>> actualizacion
 
-                string ppm = "", pc = "", pi = "", Lomitida = "", LPosM = "", LAddedM = "";
-                foreach (ListViewItem datosLV in lvPalabras.Items)
-                {
-                    ppm = datosLV.SubItems[0].Text;
-                    pc = datosLV.SubItems[1].Text;
-                    pi = datosLV.SubItems[2].Text;
-                    Lomitida = datosLV.SubItems[4].Text;
-                    LPosM = datosLV.SubItems[5].Text;
-                    LAddedM = datosLV.SubItems[6].Text;
+                    esc = ((mecanografia.ESCRITURA)Owner);
+                    if (esc.usuario_sesion != "") savedata();
                 }
+            }
+        }
 
-                mecanografia.ESCRITURA esc = new mecanografia.ESCRITURA();
-                esc = ((mecanografia.ESCRITURA)Owner);
+        private void savedata()
+        {
+            if (CMBtematicas.Text == "Ciencia y Tecnología") DB.guardar("TEMA", "USUARIO,TEMA,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{esc.usuario_sesion}','{CMBtematicas.Text}','{ppm}','{pc}','{pi}','{Math.Round(((float)correctas / pcompletadas) * 100, 3).ToString() + "%"}','{Lomitida}','{LPosM}','{LAddedM}'");
+            else if (CMBtematicas.Text == "Cultura y Entretenimiento") DB.guardar("TEMA", "USUARIO,TEMA,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{esc.usuario_sesion}','{CMBtematicas.Text}','{ppm}','{pc}','{pi}','{Math.Round(((float)correctas / pcompletadas) * 100, 3).ToString() + "%"}','{Lomitida}','{LPosM}','{LAddedM}'");
+            else if (CMBtematicas.Text == "Ciencias Sociales") DB.guardar("TEMA", "USUARIO,TEMA,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{esc.usuario_sesion}','{CMBtematicas.Text}','{ppm}','{pc}','{pi}','{Math.Round(((float)correctas / pcompletadas) * 100, 3).ToString() + "%"}','{Lomitida}','{LPosM}','{LAddedM}'");
+            else if (CMBtematicas.Text == "Historia y Eventos Actuales") DB.guardar("TEMA", "USUARIO,TEMA,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{esc.usuario_sesion}','{CMBtematicas.Text}','{ppm}','{pc}','{pi}','{Math.Round(((float)correctas / pcompletadas) * 100, 3).ToString() + "%"}','{Lomitida}','{LPosM}','{LAddedM}'");
+            else if (CMBtematicas.Text == "Salud y Bienestar ") DB.guardar("TEMA", "USUARIO,TEMA,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{esc.usuario_sesion}','{CMBtematicas.Text}','{ppm}','{pc}','{pi}','{Math.Round(((float)correctas / pcompletadas) * 100, 3).ToString() + "%"}','{Lomitida}','{LPosM}','{LAddedM}'");
+            else if (CMBtematicas.Text == "Medio Ambiente") DB.guardar("TEMA", "USUARIO,TEMA,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{esc.usuario_sesion}','{CMBtematicas.Text}','{ppm}','{pc}','{pi}','{Math.Round(((float)correctas / pcompletadas) * 100, 3).ToString() + "%"}','{Lomitida}','{LPosM}','{LAddedM}'");
+            else if (CMBtematicas.Text == "Educación") DB.guardar("TEMA", "USUARIO,TEMA,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{esc.usuario_sesion}','{CMBtematicas.Text}','{ppm}','{pc}','{pi}','{Math.Round(((float)correctas / pcompletadas) * 100, 3).ToString() + "%"}','{Lomitida}','{LPosM}','{LAddedM}'");
+            else if (CMBtematicas.Text == "Tendencias en Estilo de Vida") DB.guardar("TEMA", "USUARIO,TEMA,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{esc.usuario_sesion}','{CMBtematicas.Text}','{ppm}','{pc}','{pi}','{Math.Round(((float)correctas / pcompletadas) * 100, 3).ToString() + "%"}','{Lomitida}','{LPosM}','{LAddedM}'");
+            else if (CMBtematicas.Text == "Viajes y Culturas") DB.guardar("TEMA", "USUARIO,TEMA,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{esc.usuario_sesion}','{CMBtematicas.Text}','{ppm}','{pc}','{pi}','{Math.Round(((float)correctas / pcompletadas) * 100, 3).ToString() + "%"}','{Lomitida}','{LPosM}','{LAddedM}'");
+            else if (CMBtematicas.Text == "Exploración Espacial") DB.guardar("TEMA", "USUARIO,TEMA,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{esc.usuario_sesion}','{CMBtematicas.Text}','{ppm}','{pc}','{pi}','{Math.Round(((float)correctas / pcompletadas) * 100, 3).ToString() + "%"}','{Lomitida}','{LPosM}','{LAddedM}'");
+            else if (CMBtematicas.Text == "misiones espaciales y descubrimientos") DB.guardar("TEMA", "USUARIO,TEMA,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{esc.usuario_sesion}','{CMBtematicas.Text}','{ppm}','{pc}','{pi}','{Math.Round(((float)correctas / pcompletadas) * 100, 3).ToString() + "%"}','{Lomitida}','{LPosM}','{LAddedM}'");
+            else if (CMBtematicas.Text == "Tecnologías Emergentes") DB.guardar("TEMA", "USUARIO,TEMA,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{esc.usuario_sesion}','{CMBtematicas.Text}','{ppm}','{pc}','{pi}','{Math.Round(((float)correctas / pcompletadas) * 100, 3).ToString() + "%"}','{Lomitida}','{LPosM}','{LAddedM}'");
+            else if (CMBtematicas.Text == "Realidad virtual") DB.guardar("TEMA", "USUARIO,TEMA,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{esc.usuario_sesion}','{CMBtematicas.Text}','{ppm}','{pc}','{pi}','{Math.Round(((float)correctas / pcompletadas) * 100, 3).ToString() + "%"}','{Lomitida}','{LPosM}','{LAddedM}'");
+            else if (CMBtematicas.Text == "Blockchain y criptomonedas") DB.guardar("TEMA", "USUARIO,TEMA,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{esc.usuario_sesion}','{CMBtematicas.Text}','{ppm}','{pc}','{pi}','{Math.Round(((float)correctas / pcompletadas) * 100, 3).ToString() + "%"}','{Lomitida}','{LPosM}','{LAddedM}'");
+            else if (CMBtematicas.Text == "Desarrollos en robótica y automatización") DB.guardar("TEMA", "USUARIO,TEMA,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{esc.usuario_sesion}','{CMBtematicas.Text}','{ppm}','{pc}','{pi}','{Math.Round(((float)correctas / pcompletadas) * 100, 3).ToString() + "%"}','{Lomitida}','{LPosM}','{LAddedM}'");
+            else if (CMBtematicas.Text == "Psicología y Bienestar Mental") DB.guardar("TEMA", "USUARIO,TEMA,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{esc.usuario_sesion}','{CMBtematicas.Text}','{ppm}','{pc}','{pi}','{Math.Round(((float)correctas / pcompletadas) * 100, 3).ToString() + "%"}','{Lomitida}','{LPosM}','{LAddedM}'");
+            else if (CMBtematicas.Text == "Nutrición y Alimentación") DB.guardar("TEMA", "USUARIO,TEMA,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{esc.usuario_sesion}','{CMBtematicas.Text}','{ppm}','{pc}','{pi}','{Math.Round(((float)correctas / pcompletadas) * 100, 3).ToString() + "%"}','{Lomitida}','{LPosM}','{LAddedM}'");
+            else if (CMBtematicas.Text == "Innovación Empresarial") DB.guardar("TEMA", "USUARIO,TEMA,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{esc.usuario_sesion}','{CMBtematicas.Text}','{ppm}','{pc}','{pi}','{Math.Round(((float)correctas / pcompletadas) * 100, 3).ToString() + "%"}','{Lomitida}','{LPosM}','{LAddedM}'");
+            else if (CMBtematicas.Text == "Arquitectura y Diseño Urbano") DB.guardar("TEMA", "USUARIO,TEMA,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{esc.usuario_sesion}','{CMBtematicas.Text}','{ppm}','{pc}','{pi}','{Math.Round(((float)correctas / pcompletadas) * 100, 3).ToString() + "%"}','{Lomitida}','{LPosM}','{LAddedM}'");
+            else if (CMBtematicas.Text == "Deportes y Rendimiento Físico") DB.guardar("TEMA", "USUARIO,TEMA,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{esc.usuario_sesion}','{CMBtematicas.Text}','{ppm}','{pc}','{pi}','{Math.Round(((float)correctas / pcompletadas) * 100, 3).ToString() + "%"}','{Lomitida}','{LPosM}','{LAddedM}'");
+            else if (CMBtematicas.Text == "Arqueología y Descubrimientos Históricos") DB.guardar("TEMA", "USUARIO,TEMA,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{esc.usuario_sesion}','{CMBtematicas.Text}','{ppm}','{pc}','{pi}','{Math.Round(((float)correctas / pcompletadas) * 100, 3).ToString() + "%"}','{Lomitida}','{LPosM}','{LAddedM}'");
+            else if (CMBtematicas.Text == "Desarrollo Personal") DB.guardar("TEMA", "USUARIO,TEMA,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{esc.usuario_sesion}','{CMBtematicas.Text}','{ppm}','{pc}','{pi}','{Math.Round(((float)correctas / pcompletadas) * 100, 3).ToString() + "%"}','{Lomitida}','{LPosM}','{LAddedM}'");
+            else if (CMBtematicas.Text == "Ciencia de Datos y Analítica") DB.guardar("TEMA", "USUARIO,TEMA,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{esc.usuario_sesion}','{CMBtematicas.Text}','{ppm}','{pc}','{pi}','{Math.Round(((float)correctas / pcompletadas) * 100, 3).ToString() + "%"}','{Lomitida}','{LPosM}','{LAddedM}'");
+            else if (CMBtematicas.Text == "Derechos Humanos y Justicia Social") DB.guardar("TEMA", "USUARIO,TEMA,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{esc.usuario_sesion}','{CMBtematicas.Text}','{ppm}','{pc}','{pi}','{Math.Round(((float)correctas / pcompletadas) * 100, 3).ToString() + "%"}','{Lomitida}','{LPosM}','{LAddedM}'");
+            else if (CMBtematicas.Text == "Noticias") DB.guardar("TEMA", "USUARIO,TEMA,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{esc.usuario_sesion}','{CMBtematicas.Text}','{ppm}','{pc}','{pi}','{Math.Round(((float)correctas / pcompletadas) * 100, 3).ToString() + "%"}','{Lomitida}','{LPosM}','{LAddedM}'");
+            else if (CMBtematicas.Text == "Literatura") DB.guardar("TEMA", "USUARIO,TEMA,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{esc.usuario_sesion}','{CMBtematicas.Text}','{ppm}','{pc}','{pi}','{Math.Round(((float)correctas / pcompletadas) * 100, 3).ToString() + "%"}','{Lomitida}','{LPosM}','{LAddedM}'");
+            else if (CMBtematicas.Text == "Programacion") DB.guardar("TEMA", "USUARIO,TEMA,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{esc.usuario_sesion}','{CMBtematicas.Text}','{ppm}','{pc}','{pi}','{Math.Round(((float)correctas / pcompletadas) * 100, 3).ToString() + "%"}','{Lomitida}','{LPosM}','{LAddedM}'");
 
+<<<<<<< HEAD
                 if (esc.usuario_sesion != "")
                 {
                     if (CMBtematicas.Text == "Ciencia y Tecnología")                            DB.guardar("TEMA", "USUARIO,TEMA,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{esc.usuario_sesion}','{CMBtematicas.Text}','{ppm}','{pc}','{pi}','{Math.Round(((float)correctas / pcompletadas) * 100, 3).ToString() + "%"}','{Lomitida}','{LPosM}','{LAddedM}'");
@@ -729,6 +774,8 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
                 }
             }
 >>>>>>> Agregar archivos de proyecto.
+=======
+>>>>>>> actualizacion
         }
 
         private void CMBdificultades_SelectedIndexChanged(object sender, EventArgs e)

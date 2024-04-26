@@ -23,8 +23,14 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
         
 =======
         int correctas = 0, incorrectas = 0, pcompletadas = 0, L_omitidas = 0, L_PosM = 0, L_added = 0, i, j;
+<<<<<<< HEAD
         string p, p_escrita,content = "",filePath = "";
 >>>>>>> Agregar archivos de proyecto.
+=======
+        string p, p_escrita,content = "",filePath = "", ppm = "", pc = "", pi = "", Lomitida = "", LPosM = "", LAddedM = "";
+        mecanografia.ESCRITURA esc = new mecanografia.ESCRITURA();
+        
+>>>>>>> actualizacion
         public FrmPersonalizado()
         {
             InitializeComponent();
@@ -157,6 +163,7 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
             conteo--;
             lblSEGUNDOS.Text = conteo.ToString();
 <<<<<<< HEAD
+<<<<<<< HEAD
 
             if (conteo == 45 && t.pcompletadas == 0){
                 RELOJ.Stop();
@@ -180,10 +187,17 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
 >>>>>>> Agregar archivos de proyecto.
 =======
 >>>>>>> prueba
+=======
+
+            if (conteo == 45 && pcompletadas == 0){
+                RELOJ.Stop();
+                h.Info("Te encuentras lejos del teclado?");
+>>>>>>> actualizacion
                 txtpalabrasescritas.Clear();
                 lblSEGUNDOS.Text = "60";
                 btnIniciar.Enabled = false;
                 btnreiniciar.Enabled = true;
+<<<<<<< HEAD
 <<<<<<< HEAD
                 btnsubirtexto.Enabled = true;
                 txtpalabrasescritas.Enabled = false;
@@ -247,34 +261,80 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
         {
             if (content != ""){
 =======
+=======
+                btnsubirtexto.Enabled = true;
+>>>>>>> actualizacion
                 txtpalabrasescritas.Enabled = false;
+            }else if (incorrectas >= 10){
+                RELOJ.Stop();
+                h.Warning("!Demasiadas palabras incorrectas!");
+                txtpalabrasescritas.Clear();
+                lblSEGUNDOS.Text = "60";
+                btnreiniciar.Enabled = true;
+                txtpalabrasescritas.Enabled = false;
+                btnsubirtexto.Enabled = true;
+            }else{
+                if (conteo == 0){
+                    RELOJ.Stop();
+                    MessageBox.Show("!Se ha agotado el tiempo!");
 
-                string ppm = "", pc = "", pi = "", Lomitida = "", LPosM = "", LAddedM = "";
-                foreach (ListViewItem datosLV in lvPalabras.Items)
-                {
-                    ppm = datosLV.SubItems[0].Text;
-                    pc = datosLV.SubItems[1].Text;
-                    pi = datosLV.SubItems[2].Text;
-                    Lomitida = datosLV.SubItems[4].Text;
-                    LPosM = datosLV.SubItems[5].Text;
-                    LAddedM = datosLV.SubItems[6].Text;
+                    ListViewItem item = item = lvPalabras.Items.Add(pcompletadas.ToString());
+                    item.SubItems.Add(correctas.ToString());
+                    item.SubItems.Add(incorrectas.ToString());
+                    item.SubItems.Add(Math.Round(((float)correctas / pcompletadas) * 100, 3).ToString() + "%");
+                    item.SubItems.Add(L_omitidas.ToString());
+                    item.SubItems.Add(L_PosM.ToString());
+                    item.SubItems.Add(L_added.ToString());
+
+                    btnsubirtexto.Enabled = true;
+                    txtpalabrasescritas.Clear();
+                    lblSEGUNDOS.Text = "60";
+                    btnIniciar.Enabled = false;
+                    btnreiniciar.Enabled = true;
+                    txtpalabrasescritas.Enabled = false;
+
+                    foreach (ListViewItem datosLV in lvPalabras.Items){
+                        ppm = datosLV.SubItems[0].Text;
+                        pc = datosLV.SubItems[1].Text;
+                        pi = datosLV.SubItems[2].Text;
+                        Lomitida = datosLV.SubItems[4].Text;
+                        LPosM = datosLV.SubItems[5].Text;
+                        LAddedM = datosLV.SubItems[6].Text;
+                    }
+
+                    esc = ((mecanografia.ESCRITURA)Owner);
+                    if (esc.usuario_sesion != string.Empty) SaveRecords();
                 }
-
-                mecanografia.ESCRITURA esc = new mecanografia.ESCRITURA();
-                esc = ((mecanografia.ESCRITURA)Owner);
-                if (esc.usuario_sesion != string.Empty)DB.guardar("RECORDS_PERSONALIZADO", "USUARIO,NFILE,PPM,C,I,PREC,L_O,L_POS_M,L_ADDED",$"'{esc.usuario_sesion}','{Path.GetFileName(filePath)}',{Convert.ToInt32(ppm)},{Convert.ToInt32(pc)},{Convert.ToInt32(pi)},'{Math.Round(((float)correctas / pcompletadas) * 100, 3).ToString() + "%"}',{Convert.ToInt32(Lomitida)},{Convert.ToInt32(LPosM)},{Convert.ToInt32(LAddedM)}");
             }
         }
 
+        private void SaveRecords()
+        {
+            esc = ((mecanografia.ESCRITURA)Owner);
+            DataTable datos_records_repetidos = DB.recuperar("R_RECORDS_PERSONALIZADO", "*", "R_NFILE = '" + Path.GetFileName(filePath) + "'");
+            DataTable datos_records = DB.recuperar("RECORDS_PERSONALIZADO", "*", "NFILE = '" + Path.GetFileName(filePath) + "'");
+
+            if (datos_records.Rows.Count == 0 && datos_records_repetidos.Rows.Count == 0){
+                DB.guardar("RECORDS_PERSONALIZADO", "USUARIO,NFILE,PPM,C,I,PREC,L_O,L_POS_M,L_ADDED", $"'{esc.usuario_sesion}','{Path.GetFileName(filePath)}',{Convert.ToInt32(ppm)},{Convert.ToInt32(pc)},{Convert.ToInt32(pi)},'{Math.Round(((float)correctas / pcompletadas) * 100, 3).ToString() + "%"}',{Convert.ToInt32(Lomitida)},{Convert.ToInt32(LPosM)},{Convert.ToInt32(LAddedM)}");
+                DB.guardar("R_RECORDS_PERSONALIZADO", "USUARIO,R_NFILE", $"'{esc.usuario_sesion}','{Path.GetFileName(filePath)}'");
+            }else if (datos_records.Rows.Count > 0 && datos_records_repetidos.Rows.Count == 1 )DB.guardar("RECORDS_PERSONALIZADO", "USUARIO,NFILE,PPM,C,I,PREC,L_O,L_POS_M,L_ADDED", $"'{esc.usuario_sesion}','{Path.GetFileName(filePath)}',{Convert.ToInt32(ppm)},{Convert.ToInt32(pc)},{Convert.ToInt32(pi)},'{Math.Round(((float)correctas / pcompletadas) * 100, 3).ToString() + "%"}',{Convert.ToInt32(Lomitida)},{Convert.ToInt32(LPosM)},{Convert.ToInt32(LAddedM)}");
+        }
+
+
         private void btnIniciar_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             if (content != "")
             {
 >>>>>>> Agregar archivos de proyecto.
+=======
+            if (content != ""){
+>>>>>>> actualizacion
                 btnIniciar.Enabled = false;
                 btnreiniciar.Enabled = false;
                 txtpalabrasescritas.Enabled = true;
                 txtpalabrasescritas.Focus();
+<<<<<<< HEAD
 <<<<<<< HEAD
                 txtpalabrasescritas.Clear();
                 t.correctas = 0;
@@ -307,18 +367,42 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
         private void botonR()
 =======
                 RELOJ.Start();
+=======
+>>>>>>> actualizacion
                 txtpalabrasescritas.Clear();
                 correctas = 0;
                 incorrectas = 0;
                 pcompletadas = 0;
                 L_omitidas = 0; L_PosM = 0; L_added = 0;
                 lvPalabras.Items.Clear();
-            }
-            else h.Warning("Presione el boton de buscar texto y seleccione algun texto que tenga");
+                btnsubirtexto.Enabled = false;
+                RELOJ.Start();
+            }else h.Warning("Presione el boton de buscar texto y seleccione algun texto que tenga");
         }
 
+        private void RandomWords()
+        {
+            content = File.ReadAllText(filePath);
+            string[] c = content.Split(' ');
+
+            Random randomwords = new Random();
+            for (int i = c.Length - 1; i > 0; i--)
+            {
+                int j = randomwords.Next(0, i + 1);
+                string temp = c[i];
+                c[i] = c[j];
+                c[j] = temp;
+            }
+
+            txtpalabrasmostradas.Text = string.Join(" ", c);
+        }
+
+<<<<<<< HEAD
         private void btnreiniciar_Click(object sender, EventArgs e)
 >>>>>>> Agregar archivos de proyecto.
+=======
+        private void botonR()
+>>>>>>> actualizacion
         {
             lblSEGUNDOS.Text = "60";
             btnreiniciar.Enabled = false;
@@ -348,23 +432,43 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
 >>>>>>> prueba
             txtpalabrasescritas.Clear();
             correctas = 0; incorrectas = 0; pcompletadas = 0; L_omitidas = 0; L_PosM = 0; L_added = 0;
+<<<<<<< HEAD
             content = File.ReadAllText(filePath);
             txtpalabrasmostradas.Text = content;
 <<<<<<< HEAD
 >>>>>>> Agregar archivos de proyecto.
 =======
+=======
+            btnsubirtexto.Enabled = false;
+>>>>>>> actualizacion
             RELOJ.Start();
 >>>>>>> prueba
+        }
+       
+        private void btnreiniciar_Click(object sender, EventArgs e)
+        {
+            if (h.Question("¿Desea que el texto del archivo sea aleatorio?")){
+                RandomWords();
+                botonR();
+            }else{
+                content = File.ReadAllText(filePath);
+                txtpalabrasescritas.Text = content;
+                botonR();
+            }
         }
 
         private void txtpalabrasescritas_KeyDown(object sender, KeyEventArgs e)
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
             if (e.KeyCode == Keys.Space){
 =======
             if (e.KeyCode == Keys.Space)
             {
 >>>>>>> Agregar archivos de proyecto.
+=======
+            if (e.KeyCode == Keys.Space){
+>>>>>>> actualizacion
                 WrongLetterPosition();
                 SkippedLetters();
                 LetterAddedWrongly();
@@ -381,6 +485,7 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
         private bool ContienePalabras(string filePath)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             try{
                 string content = File.ReadAllText(filePath);
                 return !string.IsNullOrWhiteSpace(content);
@@ -394,6 +499,12 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
             catch (Exception ex)
             {
 >>>>>>> Agregar archivos de proyecto.
+=======
+            try{
+                string content = File.ReadAllText(filePath);
+                return !string.IsNullOrWhiteSpace(content);
+            }catch (Exception ex){
+>>>>>>> actualizacion
                 MessageBox.Show($"Error al leer el archivo: {ex.Message}");
                 return false;
             }
@@ -401,6 +512,7 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
 
         private void MostrarPalabrasEnTextBox(string filePath)
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
             try{
                  content = File.ReadAllText(filePath);
@@ -414,11 +526,18 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
             }
             catch (Exception ex) { h.Warning($"Error al leer el archivo: {ex.Message}"); }
 >>>>>>> Agregar archivos de proyecto.
+=======
+            try{
+                 content = File.ReadAllText(filePath);
+                txtpalabrasmostradas.Text = content;
+            }catch (Exception ex) { h.Warning($"Error al leer el archivo: {ex.Message}"); }
+>>>>>>> actualizacion
         }
 
         private void btnsubirtexto_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
+<<<<<<< HEAD
 <<<<<<< HEAD
             openFileDialog.Filter = "Archivos de texto (*.txt)|*.txt";
             openFileDialog.FilterIndex = 1;
@@ -433,6 +552,13 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
 >>>>>>> Agregar archivos de proyecto.
+=======
+            openFileDialog.Filter = "Archivos de texto (*.txt)|*.txt";
+            openFileDialog.FilterIndex = 1;
+            openFileDialog.RestoreDirectory = true;
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK){
+>>>>>>> actualizacion
                 filePath = openFileDialog.FileName;
 
                 if (ContienePalabras(filePath)) MostrarPalabrasEnTextBox(filePath);

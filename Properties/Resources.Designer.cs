@@ -194,6 +194,9 @@ namespace MECANOGRAFIA.Properties {
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> actualizacion
         internal static System.Drawing.Bitmap PalabraMalEscrita {
             get {
                 object obj = ResourceManager.GetObject("PalabraMalEscrita", resourceCulture);
@@ -204,8 +207,11 @@ namespace MECANOGRAFIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+<<<<<<< HEAD
 =======
 >>>>>>> Agregar archivos de proyecto.
+=======
+>>>>>>> actualizacion
         internal static System.Drawing.Bitmap saeg_logo {
             get {
                 object obj = ResourceManager.GetObject("saeg-logo", resourceCulture);

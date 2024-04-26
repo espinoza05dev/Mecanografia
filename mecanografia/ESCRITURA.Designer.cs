@@ -38,8 +38,12 @@
             this.btncambiarmodos = new System.Windows.Forms.Button();
 =======
             this.lblregistro = new System.Windows.Forms.Label();
+<<<<<<< HEAD
             this.button1 = new System.Windows.Forms.Button();
 >>>>>>> prueba
+=======
+            this.btncambiarmodos = new System.Windows.Forms.Button();
+>>>>>>> actualizacion
             this.lblINCIAR_SESION = new System.Windows.Forms.Label();
             this.btnIniciar = new System.Windows.Forms.Button();
             this.txtpalabrasescritas = new System.Windows.Forms.TextBox();
@@ -113,9 +117,13 @@
             this.rECORDSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OPTlogros = new System.Windows.Forms.ToolStripMenuItem();
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.pALABRASMALESCRITASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 =======
 >>>>>>> Agregar archivos de proyecto.
+=======
+            this.pALABRASMALESCRITASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+>>>>>>> actualizacion
             this.dESAFIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OPTdificultades = new System.Windows.Forms.ToolStripMenuItem();
             this.OPTrecordsdifi = new System.Windows.Forms.ToolStripMenuItem();
@@ -123,6 +131,7 @@
             this.rECORDSTEMATICASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mODOPERSONALIZADOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rECORDSMODOPERSONALIZADOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -137,6 +146,8 @@
 =======
             this.pALABRASMALESCRITASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 >>>>>>> prueba
+=======
+>>>>>>> actualizacion
             this.P_ESCRITURA.SuspendLayout();
             this.P_modo.SuspendLayout();
             this.P_REGISTRO.SuspendLayout();
@@ -160,9 +171,13 @@
 =======
 =======
             this.P_ESCRITURA.Controls.Add(this.lblregistro);
+<<<<<<< HEAD
 >>>>>>> prueba
             this.P_ESCRITURA.Controls.Add(this.button1);
 >>>>>>> Agregar archivos de proyecto.
+=======
+            this.P_ESCRITURA.Controls.Add(this.btncambiarmodos);
+>>>>>>> actualizacion
             this.P_ESCRITURA.Controls.Add(this.lblINCIAR_SESION);
             this.P_ESCRITURA.Controls.Add(this.btnIniciar);
             this.P_ESCRITURA.Controls.Add(this.txtpalabrasescritas);
@@ -202,6 +217,7 @@
             this.lblregistro.Click += new System.EventHandler(this.lblregistro_Click);
             // 
 <<<<<<< HEAD
+<<<<<<< HEAD
             // btncambiarmodos
             // 
             this.btncambiarmodos.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -226,17 +242,20 @@
 =======
 =======
             // button1
+=======
+            // btncambiarmodos
+>>>>>>> actualizacion
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Image = global::MECANOGRAFIA.Properties.Resources.dia_y_noche;
-            this.button1.Location = new System.Drawing.Point(7, 274);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(26, 21);
-            this.button1.TabIndex = 12;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btncambiarmodos.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btncambiarmodos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btncambiarmodos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btncambiarmodos.Image = global::MECANOGRAFIA.Properties.Resources.dia_y_noche;
+            this.btncambiarmodos.Location = new System.Drawing.Point(7, 274);
+            this.btncambiarmodos.Name = "btncambiarmodos";
+            this.btncambiarmodos.Size = new System.Drawing.Size(26, 21);
+            this.btncambiarmodos.TabIndex = 12;
+            this.btncambiarmodos.UseVisualStyleBackColor = false;
+            this.btncambiarmodos.Click += new System.EventHandler(this.btncambiarmodos_Click_1);
             // 
 >>>>>>> prueba
             // lblINCIAR_SESION
@@ -732,6 +751,7 @@
 <<<<<<< HEAD
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(10, 183);
+<<<<<<< HEAD
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(161, 50);
 =======
@@ -742,6 +762,10 @@
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(161, 52);
 >>>>>>> Agregar archivos de proyecto.
+=======
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(161, 50);
+>>>>>>> actualizacion
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Recordar Usuario:";
@@ -749,6 +773,7 @@
             // RDno
             // 
             this.RDno.AutoSize = true;
+<<<<<<< HEAD
 <<<<<<< HEAD
             this.RDno.ForeColor = System.Drawing.Color.White;
             this.RDno.Location = new System.Drawing.Point(82, 20);
@@ -762,6 +787,13 @@
             this.RDno.TabIndex = 23;
             this.RDno.TabStop = true;
 >>>>>>> Agregar archivos de proyecto.
+=======
+            this.RDno.ForeColor = System.Drawing.Color.White;
+            this.RDno.Location = new System.Drawing.Point(82, 20);
+            this.RDno.Name = "RDno";
+            this.RDno.Size = new System.Drawing.Size(54, 25);
+            this.RDno.TabIndex = 23;
+>>>>>>> actualizacion
             this.RDno.Text = "NO";
             this.RDno.UseVisualStyleBackColor = true;
             this.RDno.CheckedChanged += new System.EventHandler(this.RDno_CheckedChanged);
@@ -769,6 +801,7 @@
             // RDsi
             // 
             this.RDsi.AutoSize = true;
+<<<<<<< HEAD
 <<<<<<< HEAD
             this.RDsi.ForeColor = System.Drawing.Color.White;
             this.RDsi.Location = new System.Drawing.Point(24, 20);
@@ -782,6 +815,13 @@
             this.RDsi.TabIndex = 22;
             this.RDsi.TabStop = true;
 >>>>>>> Agregar archivos de proyecto.
+=======
+            this.RDsi.ForeColor = System.Drawing.Color.White;
+            this.RDsi.Location = new System.Drawing.Point(24, 20);
+            this.RDsi.Name = "RDsi";
+            this.RDsi.Size = new System.Drawing.Size(41, 25);
+            this.RDsi.TabIndex = 22;
+>>>>>>> actualizacion
             this.RDsi.Text = "SI";
             this.RDsi.UseVisualStyleBackColor = true;
             this.RDsi.CheckedChanged += new System.EventHandler(this.RDsi_CheckedChanged);
@@ -1155,6 +1195,7 @@
             this.pALABRASMALESCRITASToolStripMenuItem.Text = "PALABRAS MAL ESCRITAS";
             this.pALABRASMALESCRITASToolStripMenuItem.Click += new System.EventHandler(this.pALABRASMALESCRITASToolStripMenuItem_Click);
             // 
+<<<<<<< HEAD
 =======
             this.OPTlogros.Size = new System.Drawing.Size(130, 22);
 =======
@@ -1164,6 +1205,8 @@
             this.OPTlogros.Click += new System.EventHandler(this.OPTlogros_Click);
             // 
 >>>>>>> Agregar archivos de proyecto.
+=======
+>>>>>>> actualizacion
             // dESAFIOSToolStripMenuItem
             // 
             this.dESAFIOSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1240,6 +1283,7 @@
             this.rECORDSMODOPERSONALIZADOToolStripMenuItem.Click += new System.EventHandler(this.rECORDSMODOPERSONALIZADOToolStripMenuItem_Click);
 >>>>>>> prueba
             // 
+<<<<<<< HEAD
             // pALABRASMALESCRITASToolStripMenuItem
             // 
 <<<<<<< HEAD
@@ -1285,6 +1329,8 @@
             this.pALABRASMALESCRITASToolStripMenuItem.Click += new System.EventHandler(this.pALABRASMALESCRITASToolStripMenuItem_Click);
 >>>>>>> prueba
             // 
+=======
+>>>>>>> actualizacion
             // ESCRITURA
             // 
             this.AccessibleDescription = "";
@@ -1311,10 +1357,14 @@
             this.MaximizeBox = false;
             this.Name = "ESCRITURA";
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.Text = "REVISA CODIGO NO HAY NOMBRE";
 =======
             this.Text = "ESCRITURA";
 >>>>>>> Agregar archivos de proyecto.
+=======
+            this.Text = "REVISA CODIGO NO HAY NOMBRE";
+>>>>>>> actualizacion
             this.Load += new System.EventHandler(this.ESCRITURA_Load);
             this.P_ESCRITURA.ResumeLayout(false);
             this.P_ESCRITURA.PerformLayout();
@@ -1374,10 +1424,14 @@
         private System.Windows.Forms.Label lbl5;
         private System.Windows.Forms.Panel panel1;
 <<<<<<< HEAD
+<<<<<<< HEAD
         private System.Windows.Forms.Button btncambiarmodos;
 =======
         private System.Windows.Forms.Button button1;
 >>>>>>> Agregar archivos de proyecto.
+=======
+        private System.Windows.Forms.Button btncambiarmodos;
+>>>>>>> actualizacion
         private System.Windows.Forms.Button btnVolverASesion;
         private System.Windows.Forms.Button btnVolverAEscritura;
         public System.Windows.Forms.Panel P_ESCRITURA;

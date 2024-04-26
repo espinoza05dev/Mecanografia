@@ -68,6 +68,7 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
         private void btnicio_Click(object sender, EventArgs e)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             mecanografia.ESCRITURA esc = new mecanografia.ESCRITURA();
             this.AddOwnedForm(esc);
             this.Close();
@@ -75,6 +76,12 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
 =======
             this.Close();
 >>>>>>> Agregar archivos de proyecto.
+=======
+            mecanografia.ESCRITURA esc = new mecanografia.ESCRITURA();
+            this.AddOwnedForm(esc);
+            this.Close();
+            esc.Show();
+>>>>>>> actualizacion
         }
     }
 }

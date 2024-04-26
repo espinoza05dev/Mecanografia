@@ -14,9 +14,13 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
     {
         clases.db DB = new clases.db();
 <<<<<<< HEAD
+<<<<<<< HEAD
         clases.helpers h = new clases.helpers();
 =======
 >>>>>>> Agregar archivos de proyecto.
+=======
+        clases.helpers h = new clases.helpers();
+>>>>>>> actualizacion
         
         public RECORDS()
         {
@@ -37,11 +41,16 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
             DateTime fec;
             DGVdatos.Rows.Clear();
 <<<<<<< HEAD
+<<<<<<< HEAD
             if (datos.Rows.Count > 0)
             {
 =======
             if (datos.Rows.Count > 0) {
 >>>>>>> Agregar archivos de proyecto.
+=======
+            if (datos.Rows.Count > 0)
+            {
+>>>>>>> actualizacion
                 foreach (DataRow r in datos.Rows)
                 {
                     ppm = r["PALABRAS_POR_MINUTO"].ToString();
@@ -54,10 +63,14 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
                     LA = r["L_ADDED_M"].ToString();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                     DGVdatos.Rows.Add(ppm, pc, pi, prec, LO, LPOS, LA, fec);
 =======
                     DGVdatos.Rows.Add(ppm, pc, pi,prec,LO,LPOS,LA, fec);
 >>>>>>> Agregar archivos de proyecto.
+=======
+                    DGVdatos.Rows.Add(ppm, pc, pi, prec, LO, LPOS, LA, fec);
+>>>>>>> actualizacion
                 }
                 datos.Dispose();
             }
@@ -68,14 +81,20 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
             mecanografia.ESCRITURA esc = new mecanografia.ESCRITURA();
             esc = ((mecanografia.ESCRITURA)Owner);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> actualizacion
             if (esc.usuario_sesion != string.Empty){
                 this.Text = "RECORDS: " + esc.usuario_sesion;
                 cargardatosLV(esc.usuario_sesion);
             }else { h.Warning("Incie sesión para ver sus registro"); this.Dispose(); }
+<<<<<<< HEAD
 =======
             this.Text = "RECORDS: "+ esc.usuario_sesion;
             cargardatosLV(esc.usuario_sesion);
 >>>>>>> Agregar archivos de proyecto.
+=======
+>>>>>>> actualizacion
         }
 
         private void button1_Click(object sender, EventArgs e)

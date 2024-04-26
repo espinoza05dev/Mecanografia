@@ -718,6 +718,7 @@
     <Content Include="resources\logros\PPMcorrectas\90Correctas.png" />
     <Content Include="resources\medal.png" />
     <Content Include="resources\mosaico.png" />
+    <Content Include="resources\PalabraMalEscrita.png" />
     <Content Include="resources\search 16px.png" />
     <None Include="resources\sincronizacion.png" />
     <None Include="resources\teclado.png" />

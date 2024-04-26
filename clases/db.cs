@@ -132,6 +132,9 @@ namespace MECANOGRAFIA.clases
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> actualizacion
 
         public DataTable consulta(string query, int debug = 0)
         {
@@ -164,7 +167,10 @@ namespace MECANOGRAFIA.clases
 
             return datos;
         }
+<<<<<<< HEAD
 =======
 >>>>>>> Agregar archivos de proyecto.
+=======
+>>>>>>> actualizacion
     }
 }

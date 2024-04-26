@@ -25,6 +25,7 @@ namespace MECANOGRAFIA.mecanografia.PALABRAS_MAL_ESCRITAS
             mecanografia.ESCRITURA esc = new mecanografia.ESCRITURA();
             esc = ((mecanografia.ESCRITURA)Owner);
 <<<<<<< HEAD
+<<<<<<< HEAD
             DataTable d = DB.recuperar("LISTA_P_M_E", "P_MAL_E,FECHA", $"USUARIO = '{esc.usuario_sesion}' AND FECHA = '{DTPfecha.Value.ToShortDateString()}'");
             string p,fec;
             if (d.Rows.Count > 0) {
@@ -39,15 +40,26 @@ namespace MECANOGRAFIA.mecanografia.PALABRAS_MAL_ESCRITAS
                 foreach (DataRow r in d.Rows)
                 {
 >>>>>>> prueba
+=======
+            DataTable d = DB.recuperar("LISTA_P_M_E", "P_MAL_E,FECHA", $"USUARIO = '{esc.usuario_sesion}' AND FECHA = '{DTPfecha.Value.ToShortDateString()}'");
+            string p,fec;
+            if (d.Rows.Count > 0) {
+                DGVdatos.Rows.Clear();
+                foreach (DataRow r in d.Rows) {
+>>>>>>> actualizacion
                     p = r["P_MAL_E"].ToString();
                     fec = Convert.ToDateTime(r["FECHA"]).ToShortDateString();
                     DGVdatos.Rows.Add(p, fec);
                 }
 <<<<<<< HEAD
+<<<<<<< HEAD
             } else h.Succes(esc.usuario_sesion + " No cuenta con registros la fecha de: " + DTPfecha.Text);
 =======
             }else { h.Succes(esc.usuario_sesion + " NO cuenta con palabras mal escritas"); this.Close(); }
 >>>>>>> prueba
+=======
+            } else h.Succes(esc.usuario_sesion + " No cuenta con registros la fecha de: " + DTPfecha.Text);
+>>>>>>> actualizacion
         }
 
         private void FrmP_M_E_Load(object sender, EventArgs e)
@@ -55,6 +67,9 @@ namespace MECANOGRAFIA.mecanografia.PALABRAS_MAL_ESCRITAS
             mecanografia.ESCRITURA esc = new mecanografia.ESCRITURA();
             esc = ((mecanografia.ESCRITURA)Owner);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> actualizacion
             if (esc.usuario_sesion != string.Empty) {
 
                 DataTable d = DB.recuperar("LISTA_P_M_E", "P_MAL_E,FECHA", $"USUARIO = '{esc.usuario_sesion}' AND FECHA = '{DTPfecha.Value.ToShortDateString()}'");
@@ -66,6 +81,7 @@ namespace MECANOGRAFIA.mecanografia.PALABRAS_MAL_ESCRITAS
         private void button1_Click(object sender, EventArgs e)
         {
             cargardatos();
+<<<<<<< HEAD
 =======
             if (esc.usuario_sesion != string.Empty)
             {
@@ -74,6 +90,8 @@ namespace MECANOGRAFIA.mecanografia.PALABRAS_MAL_ESCRITAS
             }
             else{ h.Info("Debe Inicar sesion o registrarse"); this.Close();}
 >>>>>>> prueba
+=======
+>>>>>>> actualizacion
         }
     }
 }

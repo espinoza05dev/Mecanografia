@@ -15,9 +15,13 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
         clases.helpers h = new clases.helpers();
         clases.db DB = new clases.db();
 <<<<<<< HEAD
+<<<<<<< HEAD
         string query, condicion;
 =======
 >>>>>>> Agregar archivos de proyecto.
+=======
+        string query, condicion;
+>>>>>>> actualizacion
         public FrmRecordsPersonalizado()
         {
             InitializeComponent();
@@ -26,6 +30,9 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
         private void btnicio_Click(object sender, EventArgs e)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> actualizacion
             mecanografia.ESCRITURA esc = new mecanografia.ESCRITURA();
             this.AddOwnedForm(esc);
             this.Close();
@@ -38,6 +45,7 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
             esc = ((mecanografia.ESCRITURA)Owner);
             query = "SELECT * FROM RECORDS_PERSONALIZADO RP INNER JOIN R_RECORDS_PERSONALIZADO R ON (RP.ID = R.ID) ";
             condicion = $"WHERE RP.NFILE = '{CMBpersonalizado.Text}' AND RP.USUARIO = '{esc.usuario_sesion}'";
+<<<<<<< HEAD
 =======
             this.Close();
         }
@@ -47,6 +55,8 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
             mecanografia.ESCRITURA esc = new mecanografia.ESCRITURA();
             esc = ((mecanografia.ESCRITURA)Owner);
 >>>>>>> Agregar archivos de proyecto.
+=======
+>>>>>>> actualizacion
             string prec;
             int ppm, c, i,Lo,LposM,Ladded;
             DateTime fecha;
@@ -69,7 +79,8 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
 >>>>>>> Agregar archivos de proyecto.
 =======
             if (esc.usuario_sesion != string.Empty) {
-                DataTable datos = DB.recuperar("RECORDS_PERSONALIZADO", "*", $"NFILE = '{CMBpersonalizado.Text}' AND USUARIO = '{esc.usuario_sesion}'");
+                DataTable datos = DB.consulta(query + condicion);
+                DataTable d = DB.recuperar("RECORDS_PERSONALIZADO", "*", $"NFILE = '{CMBpersonalizado.Text}' AND USUARIO = '{esc.usuario_sesion}'");
                 DGVdatos.Rows.Clear();
                 if (datos.Rows.Count > 0){
                     foreach (DataRow r in datos.Rows){
@@ -87,6 +98,9 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
                     datos.Dispose();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> actualizacion
                 }DGVdatos.Rows.Clear();
                 if (d.Rows.Count > 0){
                     foreach (DataRow r in d.Rows){
@@ -102,6 +116,7 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
                     }
                     d.Dispose();
                 }
+<<<<<<< HEAD
             }
         }
         private void cargarcmb()
@@ -121,19 +136,29 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
 =======
                 } else h.Warning($"El usuario {esc.usuario_sesion} no cuenta con registros"); 
 >>>>>>> prueba
+=======
+>>>>>>> actualizacion
             }
         }
         private void cargarcmb()
-        { 
-            CMBpersonalizado.DataSource = DB.recuperar("RECORDS_PERSONALIZADO", "*");
-            CMBpersonalizado.DisplayMember = "NFILE";
-            CMBpersonalizado.ValueMember = "NFILE";
+        {
+            mecanografia.ESCRITURA esc = new mecanografia.ESCRITURA();
+            esc = ((mecanografia.ESCRITURA)Owner);
+            DataTable d1 = DB.recuperar("R_RECORDS_PERSONALIZADO", "*", $"USUARIO = '{esc.usuario_sesion}'");
+            if (d1.Rows.Count > 0) {
+                CMBpersonalizado.DataSource = d1;
+                CMBpersonalizado.DisplayMember = "R_NFILE";
+            }else if (d1.Rows.Count == 0){
+                CMBpersonalizado.DataSource = DB.recuperar("RECORDS_PERSONALIZADO", "NFILE",$"USUARIO = '{esc.usuario_sesion}'");
+                CMBpersonalizado.DisplayMember = "NFILE";
+            }
         }
 
         private void FrmRecordsPersonalizado_Load(object sender, EventArgs e)
         {
             mecanografia.ESCRITURA esc = new mecanografia.ESCRITURA();
             esc = ((mecanografia.ESCRITURA)Owner);
+<<<<<<< HEAD
 <<<<<<< HEAD
             DataTable d = DB.recuperar("RECORDS_PERSONALIZADO", "*");
             if (d.Rows.Count == 0){ h.Warning($"El usuario {esc.usuario_sesion} no cuenta con registros"); this.Close(); }
@@ -145,6 +170,10 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
         {
             listar_datos();
 =======
+=======
+            DataTable d = DB.recuperar("RECORDS_PERSONALIZADO", "*");
+            if (d.Rows.Count == 0){ h.Warning($"El usuario {esc.usuario_sesion} no cuenta con registros"); this.Close(); }
+>>>>>>> actualizacion
             this.Text = " Records Personalizado: " + esc.usuario_sesion;
             cargarcmb();
         }

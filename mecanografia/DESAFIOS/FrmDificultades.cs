@@ -17,9 +17,13 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
         int correctas = 0, incorrectas = 0, pcompletadas = 0,L_added = 0, L_PosM = 0, L_omitidas = 0,i,j;
         string p, p_escrita;
 <<<<<<< HEAD
+<<<<<<< HEAD
         mecanografia.ESCRITURA esc = new mecanografia.ESCRITURA();
 =======
 >>>>>>> Agregar archivos de proyecto.
+=======
+        mecanografia.ESCRITURA esc = new mecanografia.ESCRITURA();
+>>>>>>> actualizacion
         public FrmDificultades()
         {
             InitializeComponent();
@@ -213,6 +217,7 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
             }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             if (conteo == 45 && pcompletadas == 0){
                 RELOJ.Stop();
                 h.Info("Te encuentras lejos del teclado?");
@@ -231,6 +236,11 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
                 item.SubItems.Add(L_added.ToString());
 
 >>>>>>> Agregar archivos de proyecto.
+=======
+            if (conteo == 45 && pcompletadas == 0){
+                RELOJ.Stop();
+                h.Info("Te encuentras lejos del teclado?");
+>>>>>>> actualizacion
                 txtpalabrasescritas.Clear();
                 lblSEGUNDOS.Text = "60";
                 btnIniciar.Enabled = false;
@@ -238,6 +248,9 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
                 txtpalabrasescritas.Enabled = false;
                 CMBdificultades.Enabled = true;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> actualizacion
             }else if (incorrectas >= 10){
                 RELOJ.Stop();
                 h.Warning("!Demasiadas palabras incorrectas!");
@@ -276,6 +289,7 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
                         LPosM = datosLV.SubItems[5].Text;
                         LAddedM = datosLV.SubItems[6].Text;
                     }
+<<<<<<< HEAD
 
                     esc = ((mecanografia.ESCRITURA)Owner);
                     if (esc.usuario_sesion != ""){
@@ -284,33 +298,23 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
                         else if (CMBdificultades.Text == "dificil") DB.guardar("RECORDS_DIFICULTADES", "USUARIO,DIFICULTAD,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{esc.usuario_sesion}','DIFICIL','{ppm}','{pc}','{pi}','{Convert.ToDouble(Math.Round(((float)correctas / pcompletadas) * 100, 3)) + "%"}','{Lomitida}','{LPosM}','{LAddedM}'");
                     }
 =======
+=======
+>>>>>>> actualizacion
 
-                string ppm = "", pc = "", pi = "", Lomitida = "", LPosM = "", LAddedM = "";
-                foreach (ListViewItem datosLV in lvPalabras.Items)
-                {
-                    ppm = datosLV.SubItems[0].Text;
-                    pc = datosLV.SubItems[1].Text;
-                    pi = datosLV.SubItems[2].Text;
-                    Lomitida = datosLV.SubItems[4].Text;
-                    LPosM = datosLV.SubItems[5].Text;
-                    LAddedM = datosLV.SubItems[6].Text;
-                }
-
-                mecanografia.ESCRITURA esc = new mecanografia.ESCRITURA();
-                esc = ((mecanografia.ESCRITURA)Owner);
-                if (esc.usuario_sesion != "") {
-                    if (CMBdificultades.Text == "facil")
-                    {
-                        DB.guardar("RECORDS_DIFICULTADES", "USUARIO,DIFICULTAD,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{esc.usuario_sesion}','FACIL','{ppm}','{pc}','{pi}','{Convert.ToDouble(Math.Round(((float)correctas / pcompletadas) * 100, 3)) + "%"}','{Lomitida}','{LPosM}','{LAddedM}'"); 
-                    } else if (CMBdificultades.Text == "intermedio")
-                    {
-                        DB.guardar("RECORDS_DIFICULTADES", "USUARIO,DIFICULTAD,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{esc.usuario_sesion}','INTERMEDIO','{ppm}','{pc}','{pi}','{Convert.ToDouble(Math.Round(((float)correctas / pcompletadas) * 100, 3)) + "%"}','{Lomitida}','{LPosM}','{LAddedM}'");
+                    esc = ((mecanografia.ESCRITURA)Owner);
+                    if (esc.usuario_sesion != ""){
+                        if (CMBdificultades.Text == "facil") DB.guardar("RECORDS_DIFICULTADES", "USUARIO,DIFICULTAD,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{esc.usuario_sesion}','FACIL','{ppm}','{pc}','{pi}','{Convert.ToDouble(Math.Round(((float)correctas / pcompletadas) * 100, 3)) + "%"}','{Lomitida}','{LPosM}','{LAddedM}'");
+                        else if (CMBdificultades.Text == "intermedio") DB.guardar("RECORDS_DIFICULTADES", "USUARIO,DIFICULTAD,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{esc.usuario_sesion}','INTERMEDIO','{ppm}','{pc}','{pi}','{Convert.ToDouble(Math.Round(((float)correctas / pcompletadas) * 100, 3)) + "%"}','{Lomitida}','{LPosM}','{LAddedM}'");
+                        else if (CMBdificultades.Text == "dificil") DB.guardar("RECORDS_DIFICULTADES", "USUARIO,DIFICULTAD,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{esc.usuario_sesion}','DIFICIL','{ppm}','{pc}','{pi}','{Convert.ToDouble(Math.Round(((float)correctas / pcompletadas) * 100, 3)) + "%"}','{Lomitida}','{LPosM}','{LAddedM}'");
                     }
+<<<<<<< HEAD
                     else if (CMBdificultades.Text == "dificil")
                     {
                         DB.guardar("RECORDS_DIFICULTADES", "USUARIO,DIFICULTAD,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{esc.usuario_sesion}','DIFICIL','{ppm}','{pc}','{pi}','{Convert.ToDouble(Math.Round(((float)correctas / pcompletadas) * 100, 3)) + "%"}','{Lomitida}','{LPosM}','{LAddedM}'");
                     } 
 >>>>>>> Agregar archivos de proyecto.
+=======
+>>>>>>> actualizacion
                 }
             }
         }
@@ -323,11 +327,15 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
         private void txtpalabrasescritas_KeyDown(object sender, KeyEventArgs e)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             if (e.KeyCode == Keys.Space ){
 =======
             if (e.KeyCode == Keys.Space )
             {
 >>>>>>> Agregar archivos de proyecto.
+=======
+            if (e.KeyCode == Keys.Space ){
+>>>>>>> actualizacion
                 WrongLetterPosition();
                 SkippedLetters();
                 LetterAddedWrongly();
@@ -352,6 +360,7 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
                 lvPalabras.Items.Clear();
                 CMBdificultades.Enabled = false;
 <<<<<<< HEAD
+<<<<<<< HEAD
             }else h.Warning("Seleccione una dificultad");
 =======
             }
@@ -360,6 +369,9 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
                 h.Warning("Seleccione una dificultad");
             }
 >>>>>>> Agregar archivos de proyecto.
+=======
+            }else h.Warning("Seleccione una dificultad");
+>>>>>>> actualizacion
         }
 
         private void btnreiniciar_Click(object sender, EventArgs e)
