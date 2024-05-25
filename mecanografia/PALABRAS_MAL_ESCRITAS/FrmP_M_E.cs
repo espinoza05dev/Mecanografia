@@ -64,6 +64,7 @@ namespace MECANOGRAFIA.mecanografia.PALABRAS_MAL_ESCRITAS
 
         private void FrmP_M_E_Load(object sender, EventArgs e)
         {
+            DTPfecha.Text = DateTime.Today.ToShortDateString();
             mecanografia.ESCRITURA esc = new mecanografia.ESCRITURA();
             esc = ((mecanografia.ESCRITURA)Owner);
 <<<<<<< HEAD
