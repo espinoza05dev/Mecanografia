@@ -379,7 +379,7 @@ namespace MECANOGRAFIA.mecanografia
                     ListViewItem item = item = lvPalabras.Items.Add(pcompletadas.ToString());
                     item.SubItems.Add(correctas.ToString());
                     item.SubItems.Add(incorrectas.ToString());
-                    item.SubItems.Add(Math.Round(((float)correctas / pcompletadas) * 100, 3).ToString() + "%");
+                    item.SubItems.Add(Math.Round(((float)correctas / pcompletadas) * 100, 1).ToString() + "%");
                     item.SubItems.Add(L_omitidas.ToString());
                     item.SubItems.Add(L_PosM.ToString());
                     item.SubItems.Add(L_added.ToString());

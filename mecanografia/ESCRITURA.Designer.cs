@@ -209,7 +209,7 @@
             this.lblregistro.AutoSize = true;
             this.lblregistro.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblregistro.ForeColor = System.Drawing.Color.White;
-            this.lblregistro.Location = new System.Drawing.Point(459, 232);
+            this.lblregistro.Location = new System.Drawing.Point(465, 232);
             this.lblregistro.Name = "lblregistro";
             this.lblregistro.Size = new System.Drawing.Size(142, 26);
             this.lblregistro.TabIndex = 101;
@@ -236,7 +236,7 @@
             this.lblINCIAR_SESION.AutoSize = true;
             this.lblINCIAR_SESION.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblINCIAR_SESION.ForeColor = System.Drawing.Color.White;
-            this.lblINCIAR_SESION.Location = new System.Drawing.Point(444, 274);
+            this.lblINCIAR_SESION.Location = new System.Drawing.Point(450, 274);
             this.lblINCIAR_SESION.Name = "lblINCIAR_SESION";
             this.lblINCIAR_SESION.Size = new System.Drawing.Size(157, 26);
 =======
@@ -428,7 +428,7 @@
             this.lvPalabras.LabelWrap = false;
             this.lvPalabras.Location = new System.Drawing.Point(7, 120);
             this.lvPalabras.Name = "lvPalabras";
-            this.lvPalabras.Size = new System.Drawing.Size(440, 130);
+            this.lvPalabras.Size = new System.Drawing.Size(422, 130);
             this.lvPalabras.TabIndex = 3;
             this.lvPalabras.UseCompatibleStateImageBehavior = false;
             this.lvPalabras.View = System.Windows.Forms.View.Details;
@@ -454,7 +454,7 @@
             // 
             this.CLPRECISION.Text = "PREC";
             this.CLPRECISION.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.CLPRECISION.Width = 80;
+            this.CLPRECISION.Width = 55;
             // 
             // CLletrasomitidas
             // 
