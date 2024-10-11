@@ -635,7 +635,7 @@
             // 
             // OPTLogoSAEG
             // 
-            this.OPTLogoSAEG.BackColor = System.Drawing.Color.Silver;
+            this.OPTLogoSAEG.BackColor = System.Drawing.Color.Transparent;
             this.OPTLogoSAEG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.OPTLogoSAEG.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.OPTLogoSAEG.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

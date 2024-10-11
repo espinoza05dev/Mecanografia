@@ -67,7 +67,6 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Image = global::MECANOGRAFIA.Properties.Resources.dia_y_noche;
             this.button1.Location = new System.Drawing.Point(15, 5);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button1.Name = "button1";
