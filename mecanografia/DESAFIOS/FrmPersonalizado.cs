@@ -106,22 +106,19 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
             }else if (datos_records.Rows.Count > 0 && datos_records_repetidos.Rows.Count == 1 )DB.guardar("RECORDS_PERSONALIZADO", "USUARIO,NFILE,PPM,C,I,PREC,L_O,L_POS_M,L_ADDED", $"'{a.usuario_sesion}','{Path.GetFileName(filePath)}',{Convert.ToInt32(t.ppm)},{Convert.ToInt32(t.pc)},{Convert.ToInt32(t.pi)},'{Math.Round(((float)t.correctas / t.pcompletadas) * 100, 3).ToString() + "%"}',{Convert.ToInt32(t.Lomitida)},{Convert.ToInt32(t.LPosM)},{Convert.ToInt32(t.LAddedM)}");
         }
 
+
         private void btnIniciar_Click(object sender, EventArgs e)
         {
-            if (content != string.Empty){
+            if (content != ""){
                 btnIniciar.Enabled = false;
                 btnreiniciar.Enabled = false;
                 txtpalabrasescritas.Enabled = true;
                 txtpalabrasescritas.Focus();
                 txtpalabrasescritas.Clear();
-<<<<<<< HEAD
-                correctas = 0;incorrectas = 0;pcompletadas = 0;L_omitidas = 0; L_PosM = 0; L_added = 0;
-=======
                 t.correctas = 0;
                 t.incorrectas = 0;
                 t.pcompletadas = 0;
                 t.L_omitidas = 0; t.L_PosM = 0; t.L_added = 0;
->>>>>>> optimizacion de codigo en ESCRITURA se agregaron carpetas  una interface y se optimizo la arquitectura arquitectura
                 lvPalabras.Items.Clear();
                 btnsubirtexto.Enabled = false;
                 RELOJ.Start();
@@ -163,6 +160,7 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
                 RandomWords();
                 botonR();
             }else{
+                content = File.ReadAllText(filePath);
                 txtpalabrasescritas.Text = content;
                 botonR();
             }
@@ -187,7 +185,7 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
         private bool ContienePalabras(string filePath)
         {
             try{
-                content = File.ReadAllText(filePath);
+                string content = File.ReadAllText(filePath);
                 return !string.IsNullOrWhiteSpace(content);
             }catch (Exception ex){
                 MessageBox.Show($"Error al leer el archivo: {ex.Message}");

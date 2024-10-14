@@ -9,20 +9,7 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
         clases.auth a = new clases.auth();
         clases.helpers h = new clases.helpers();
         clases.db DB = new clases.db();
-<<<<<<< HEAD
-        int correctas = 0, incorrectas = 0, pcompletadas = 0,L_added = 0, L_PosM = 0, L_omitidas = 0,i,j;
-        string p, p_escrita;
-<<<<<<< HEAD
-<<<<<<< HEAD
-        mecanografia.ESCRITURA esc = new mecanografia.ESCRITURA();
-=======
->>>>>>> Agregar archivos de proyecto.
-=======
-        mecanografia.ESCRITURA esc = new mecanografia.ESCRITURA();
->>>>>>> actualizacion
-=======
         clases.TypeResults t = new clases.TypeResults();
->>>>>>> optimizacion de codigo en ESCRITURA se agregaron carpetas  una interface y se optimizo la arquitectura arquitectura
         public FrmDificultades()
         {
             InitializeComponent();
@@ -123,50 +110,16 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
                 listar_palabras(0, 1);
             }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-            if (conteo == 45 && pcompletadas == 0){
-                RELOJ.Stop();
-                h.Info("Te encuentras lejos del teclado?");
-=======
-            if (conteo == 0){
-                CMBFalsaDificultad.Visible = false;
-                RELOJ.Stop();
-                MessageBox.Show("!Se ha agotado el tiempo!");
-
-                ListViewItem item = item = lvPalabras.Items.Add(pcompletadas.ToString());
-                item.SubItems.Add(correctas.ToString());
-                item.SubItems.Add(incorrectas.ToString());
-                item.SubItems.Add(Math.Round(((float)correctas / pcompletadas) * 100, 3).ToString() + "%");
-                item.SubItems.Add(L_omitidas.ToString());
-                item.SubItems.Add(L_PosM.ToString());
-                item.SubItems.Add(L_added.ToString());
-
->>>>>>> Agregar archivos de proyecto.
-=======
-            if (conteo == 45 && pcompletadas == 0){
-=======
             if (conteo == 45 && t.pcompletadas == 0){
->>>>>>> optimizacion de codigo en ESCRITURA se agregaron carpetas  una interface y se optimizo la arquitectura arquitectura
                 RELOJ.Stop();
                 h.Info("Te encuentras lejos del teclado?");
->>>>>>> actualizacion
                 txtpalabrasescritas.Clear();
                 lblSEGUNDOS.Text = "60";
                 btnIniciar.Enabled = false;
                 btnreiniciar.Enabled = true;
                 txtpalabrasescritas.Enabled = false;
                 CMBdificultades.Enabled = true;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> actualizacion
-            }else if (incorrectas >= 10){
-=======
             }else if (t.incorrectas >= 10){
->>>>>>> optimizacion de codigo en ESCRITURA se agregaron carpetas  una interface y se optimizo la arquitectura arquitectura
                 RELOJ.Stop();
                 h.Warning("!Demasiadas palabras t.incorrectas!");
                 txtpalabrasescritas.Clear();
@@ -203,31 +156,12 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
                         t.LPosM = datosLV.SubItems[5].Text;
                         t.LAddedM = datosLV.SubItems[6].Text;
                     }
-<<<<<<< HEAD
 
                     if (a.usuario_sesion != string.Empty){
                         if (CMBdificultades.Text == "facil") DB.guardar("RECORDS_DIFICULTADES", "USUARIO,DIFICULTAD,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{a.usuario_sesion}','FACIL','{t.ppm}','{t.pc}','{t.pi}','{Convert.ToDouble(Math.Round(((float)t.correctas / t.pcompletadas) * 100, 3)) + "%"}','{t.Lomitida}','{t.LPosM}','{t.LAddedM}'");
                         else if (CMBdificultades.Text == "intermedio") DB.guardar("RECORDS_DIFICULTADES", "USUARIO,DIFICULTAD,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{a.usuario_sesion}','INTERMEDIO','{t.ppm}','{t.pc}','{t.pi}','{Convert.ToDouble(Math.Round(((float)t.correctas / t.pcompletadas) * 100, 3)) + "%"}','{t.Lomitida}','{t.LPosM}','{t.LAddedM}'");
                         else if (CMBdificultades.Text == "dificil") DB.guardar("RECORDS_DIFICULTADES", "USUARIO,DIFICULTAD,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{a.usuario_sesion}','DIFICIL','{t.ppm}','{t.pc}','{t.pi}','{Convert.ToDouble(Math.Round(((float)t.correctas / t.pcompletadas) * 100, 3)) + "%"}','{t.Lomitida}','{t.LPosM}','{t.LAddedM}'");
                     }
-=======
-=======
->>>>>>> actualizacion
-
-                    esc = ((mecanografia.ESCRITURA)Owner);
-                    if (esc.usuario_sesion != ""){
-                        if (CMBdificultades.Text == "facil") DB.guardar("RECORDS_DIFICULTADES", "USUARIO,DIFICULTAD,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{esc.usuario_sesion}','FACIL','{ppm}','{pc}','{pi}','{Convert.ToDouble(Math.Round(((float)correctas / pcompletadas) * 100, 3)) + "%"}','{Lomitida}','{LPosM}','{LAddedM}'");
-                        else if (CMBdificultades.Text == "intermedio") DB.guardar("RECORDS_DIFICULTADES", "USUARIO,DIFICULTAD,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{esc.usuario_sesion}','INTERMEDIO','{ppm}','{pc}','{pi}','{Convert.ToDouble(Math.Round(((float)correctas / pcompletadas) * 100, 3)) + "%"}','{Lomitida}','{LPosM}','{LAddedM}'");
-                        else if (CMBdificultades.Text == "dificil") DB.guardar("RECORDS_DIFICULTADES", "USUARIO,DIFICULTAD,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{esc.usuario_sesion}','DIFICIL','{ppm}','{pc}','{pi}','{Convert.ToDouble(Math.Round(((float)correctas / pcompletadas) * 100, 3)) + "%"}','{Lomitida}','{LPosM}','{LAddedM}'");
-                    }
-<<<<<<< HEAD
-                    else if (CMBdificultades.Text == "dificil")
-                    {
-                        DB.guardar("RECORDS_DIFICULTADES", "USUARIO,DIFICULTAD,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{esc.usuario_sesion}','DIFICIL','{ppm}','{pc}','{pi}','{Convert.ToDouble(Math.Round(((float)correctas / pcompletadas) * 100, 3)) + "%"}','{Lomitida}','{LPosM}','{LAddedM}'");
-                    } 
->>>>>>> Agregar archivos de proyecto.
-=======
->>>>>>> actualizacion
                 }
             }
         }
@@ -239,27 +173,11 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
 
         private void txtpalabrasescritas_KeyDown(object sender, KeyEventArgs e)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
             if (e.KeyCode == Keys.Space ){
-=======
-            if (e.KeyCode == Keys.Space )
-            {
->>>>>>> Agregar archivos de proyecto.
-=======
-            if (e.KeyCode == Keys.Space ){
-<<<<<<< HEAD
->>>>>>> actualizacion
-                WrongLetterPosition();
-                SkippedLetters();
-                LetterAddedWrongly();
-                verificar_palabras();
-=======
                 t.WrongLetterPosition(1);
                 t.SkippedLetters(1);
                 t.LetterAddedWrongly(1);
                 t.Verificar_palabras(1);
->>>>>>> optimizacion de codigo en ESCRITURA se agregaron carpetas  una interface y se optimizo la arquitectura arquitectura
                 txtpalabrasescritas.Clear();
             }
         }
@@ -276,19 +194,7 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
                 t.correctas = 0;t.incorrectas = 0;t.pcompletadas = 0;t.L_omitidas = 0; t.L_PosM = 0; t.L_added = 0;
                 lvPalabras.Items.Clear();
                 CMBdificultades.Enabled = false;
-<<<<<<< HEAD
-<<<<<<< HEAD
             }else h.Warning("Seleccione una dificultad");
-=======
-            }
-            else
-            {
-                h.Warning("Seleccione una dificultad");
-            }
->>>>>>> Agregar archivos de proyecto.
-=======
-            }else h.Warning("Seleccione una dificultad");
->>>>>>> actualizacion
         }
 
         private void btnreiniciar_Click(object sender, EventArgs e)

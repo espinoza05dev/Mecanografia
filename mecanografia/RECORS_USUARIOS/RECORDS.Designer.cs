@@ -52,20 +52,10 @@
             // 
             // btnicio
             // 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> prueba
             this.btnicio.FlatAppearance.BorderSize = 0;
             this.btnicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnicio.ForeColor = System.Drawing.Color.White;
             this.btnicio.Location = new System.Drawing.Point(572, 4);
-<<<<<<< HEAD
-=======
-            this.btnicio.Location = new System.Drawing.Point(283, 6);
->>>>>>> Agregar archivos de proyecto.
-=======
->>>>>>> prueba
             this.btnicio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnicio.Name = "btnicio";
             this.btnicio.Size = new System.Drawing.Size(88, 27);
@@ -77,10 +67,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
-<<<<<<< HEAD
-=======
             this.button1.Image = global::MECANOGRAFIA.Properties.Resources.dia_y_noche;
->>>>>>> Agregar archivos de proyecto.
             this.button1.Location = new System.Drawing.Point(15, 5);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button1.Name = "button1";

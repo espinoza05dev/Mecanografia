@@ -125,22 +125,10 @@ namespace MECANOGRAFIA.mecanografia.LOGROS
                 this.Text = "LOGROS: " + a.usuario_sesion;
                 show_achievments();
             }else{
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> prueba
                 //disablePBS();
                 //disableCPBS();
                 //this.Size = new Size(835, 300);
                 this.Close();
-<<<<<<< HEAD
-=======
-                disablePBS();
-                disableCPBS();
-                this.Size = new Size(835, 300);
->>>>>>> Agregar archivos de proyecto.
-=======
->>>>>>> prueba
                 h.Warning("Debe registrarse o inciar sesion para ver sus logros");
             }
         }

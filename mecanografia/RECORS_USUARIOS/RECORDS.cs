@@ -13,18 +13,8 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
     public partial class RECORDS : Form
     {
         clases.db DB = new clases.db();
-<<<<<<< HEAD
-<<<<<<< HEAD
         clases.helpers h = new clases.helpers();
-<<<<<<< HEAD
-=======
->>>>>>> Agregar archivos de proyecto.
-=======
-        clases.helpers h = new clases.helpers();
->>>>>>> actualizacion
-=======
         clases.auth a = new clases.auth();
->>>>>>> optimizacion de codigo en ESCRITURA se agregaron carpetas  una interface y se optimizo la arquitectura arquitectura
         
         public RECORDS()
         {
@@ -44,17 +34,8 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
             string ppm, pc, pi,LO, LPOS, LA,prec; 
             DateTime fec;
             DGVdatos.Rows.Clear();
-<<<<<<< HEAD
-<<<<<<< HEAD
             if (datos.Rows.Count > 0)
             {
-=======
-            if (datos.Rows.Count > 0) {
->>>>>>> Agregar archivos de proyecto.
-=======
-            if (datos.Rows.Count > 0)
-            {
->>>>>>> actualizacion
                 foreach (DataRow r in datos.Rows)
                 {
                     ppm = r["PALABRAS_POR_MINUTO"].ToString();
@@ -66,15 +47,7 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
                     LPOS = r["L_POS_M"].ToString();
                     LA = r["L_ADDED_M"].ToString();
 
-<<<<<<< HEAD
-<<<<<<< HEAD
                     DGVdatos.Rows.Add(ppm, pc, pi, prec, LO, LPOS, LA, fec);
-=======
-                    DGVdatos.Rows.Add(ppm, pc, pi,prec,LO,LPOS,LA, fec);
->>>>>>> Agregar archivos de proyecto.
-=======
-                    DGVdatos.Rows.Add(ppm, pc, pi, prec, LO, LPOS, LA, fec);
->>>>>>> actualizacion
                 }
                 datos.Dispose();
             }
@@ -82,29 +55,10 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
 
         private void RECORDS_Load(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-            mecanografia.ESCRITURA esc = new mecanografia.ESCRITURA();
-            esc = ((mecanografia.ESCRITURA)Owner);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> actualizacion
-            if (esc.usuario_sesion != string.Empty){
-                this.Text = "RECORDS: " + esc.usuario_sesion;
-                cargardatosLV(esc.usuario_sesion);
-=======
             if (a.usuario_sesion != string.Empty){
                 this.Text = "RECORDS: " + a.usuario_sesion;
                 cargardatosLV(a.usuario_sesion);
->>>>>>> optimizacion de codigo en ESCRITURA se agregaron carpetas  una interface y se optimizo la arquitectura arquitectura
             }else { h.Warning("Incie sesión para ver sus registro"); this.Dispose(); }
-<<<<<<< HEAD
-=======
-            this.Text = "RECORDS: "+ esc.usuario_sesion;
-            cargardatosLV(esc.usuario_sesion);
->>>>>>> Agregar archivos de proyecto.
-=======
->>>>>>> actualizacion
         }
 
         private void button1_Click(object sender, EventArgs e)

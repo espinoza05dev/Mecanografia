@@ -37,10 +37,9 @@
             this.CLPI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CLFECHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DTPfecha = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnbuscar = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.DGVdatos)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // DGVdatos
@@ -118,38 +117,34 @@
             // DTPfecha
             // 
             this.DTPfecha.CustomFormat = "YYYY-MM-DD";
-            this.DTPfecha.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DTPfecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DTPfecha.Location = new System.Drawing.Point(6, 27);
+            this.DTPfecha.Location = new System.Drawing.Point(290, 424);
             this.DTPfecha.MaxDate = new System.DateTime(2050, 1, 1, 0, 0, 0, 0);
             this.DTPfecha.MinDate = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
             this.DTPfecha.Name = "DTPfecha";
-            this.DTPfecha.Size = new System.Drawing.Size(114, 27);
+            this.DTPfecha.Size = new System.Drawing.Size(94, 21);
             this.DTPfecha.TabIndex = 17;
             this.DTPfecha.Value = new System.DateTime(2024, 2, 7, 0, 0, 0, 0);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(253, 398);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(182, 23);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Seleccionar Fecha";
+            // 
             // btnbuscar
             // 
-            this.btnbuscar.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnbuscar.Location = new System.Drawing.Point(126, 25);
+            this.btnbuscar.Location = new System.Drawing.Point(495, 422);
             this.btnbuscar.Name = "btnbuscar";
-            this.btnbuscar.Size = new System.Drawing.Size(94, 29);
+            this.btnbuscar.Size = new System.Drawing.Size(75, 23);
             this.btnbuscar.TabIndex = 19;
             this.btnbuscar.Text = "BUSCAR";
             this.btnbuscar.UseVisualStyleBackColor = true;
             this.btnbuscar.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.DTPfecha);
-            this.groupBox1.Controls.Add(this.btnbuscar);
-            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(290, 386);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(235, 66);
-            this.groupBox1.TabIndex = 20;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "SELECCIONAR FECHA:";
             // 
             // FrmP_M_E
             // 
@@ -157,7 +152,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(870, 457);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btnbuscar);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.DTPfecha);
             this.Controls.Add(this.DGVdatos);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -169,8 +166,8 @@
             this.Text = " ";
             this.Load += new System.EventHandler(this.FrmP_M_E_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVdatos)).EndInit();
-            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -178,9 +175,9 @@
 
         private System.Windows.Forms.DataGridView DGVdatos;
         private System.Windows.Forms.DateTimePicker DTPfecha;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn CLPI;
         private System.Windows.Forms.DataGridViewTextBoxColumn CLFECHA;
         private System.Windows.Forms.Button btnbuscar;
-        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
