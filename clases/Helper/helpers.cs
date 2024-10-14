@@ -1,39 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> actualizacion
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Web;
-<<<<<<< HEAD
-=======
-using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
-using System.Threading.Tasks;
->>>>>>> Agregar archivos de proyecto.
-=======
->>>>>>> actualizacion
 using System.Windows.Forms;
 
 namespace MECANOGRAFIA.clases
 {
-    internal class helpers
+    public class helpers
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-       
->>>>>>> Agregar archivos de proyecto.
-=======
->>>>>>> actualizacion
+        public void SeeRawSQLQuery(string query, int debug)
+        {
+            if (debug > 0){
+                Clipboard.SetText(query);
+                MessageBox.Show(query);
+            }
+        }
+
         public void ShowNumber(int num = 0,double num1 = 0,float num2 = 0,long num3 = 0, short num4 = 0)
         {
             if (num > 0) MessageBox.Show(num.ToString());
@@ -67,15 +46,7 @@ namespace MECANOGRAFIA.clases
             MessageBox.Show(msg, titulo);
         }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
         public void Info(string msg, string titulo = "INFORMACION")
-=======
-        public void Info(string msg, string titulo = "INFO")
->>>>>>> Agregar archivos de proyecto.
-=======
-        public void Info(string msg, string titulo = "INFORMACION")
->>>>>>> prueba
         {
             MessageBoxButtons boton = MessageBoxButtons.OK;
             MessageBoxIcon icono = MessageBoxIcon.Information;
@@ -89,26 +60,10 @@ namespace MECANOGRAFIA.clases
             int i, j;
             int coinc;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
             for (i = 0; i < str.Length; i++){
                 coinc = 0;
                 for (j = 0; j < forbiddenchars.Length; j++){
                     coinc = str.Substring(i, 1) == forbiddenchars[j] ? coinc + 1 : coinc = 0;
-=======
-            for (i = 0; i < str.Length; i++)
-            {
-                coinc = 0;
-                for (j = 0; j < forbiddenchars.Length; j++)
-                {
-                    coinc = str.Substring(i, 1) == forbiddenchars[j] ? coinc + 1 : coinc + 0;
->>>>>>> Agregar archivos de proyecto.
-=======
-            for (i = 0; i < str.Length; i++){
-                coinc = 0;
-                for (j = 0; j < forbiddenchars.Length; j++){
-                    coinc = str.Substring(i, 1) == forbiddenchars[j] ? coinc + 1 : coinc = 0;
->>>>>>> actualizacion
                 }
                 strout = coinc == 0 ? strout + str.Substring(i, 1) : strout;
             }
@@ -118,20 +73,8 @@ namespace MECANOGRAFIA.clases
         public Boolean goodtyped(KeyPressEventArgs e)
         {
             Boolean res = false;
-<<<<<<< HEAD
-<<<<<<< HEAD
 
             if(char.IsLetter(e.KeyChar) || char.IsSymbol(e.KeyChar) || char.IsPunctuation(e.KeyChar) || e.KeyChar == (char)8)res = true;
-=======
-            if(char.IsLetter(e.KeyChar) || char.IsSymbol(e.KeyChar) || char.IsPunctuation(e.KeyChar) || e.KeyChar == (char)8)
-            {
-                res = true;
-            }
->>>>>>> Agregar archivos de proyecto.
-=======
-
-            if(char.IsLetter(e.KeyChar) || char.IsSymbol(e.KeyChar) || char.IsPunctuation(e.KeyChar) || e.KeyChar == (char)8)res = true;
->>>>>>> actualizacion
 
             return res;
         }
@@ -139,30 +82,11 @@ namespace MECANOGRAFIA.clases
         public Boolean Onlystrings(KeyPressEventArgs e)
         {
             Boolean res = false;
-<<<<<<< HEAD
-<<<<<<< HEAD
 
             if (char.IsLetter(e.KeyChar) || e.KeyChar == (char)8) res = true;
 
             return res;
         }
 
-=======
-            if (char.IsLetter(e.KeyChar) || e.KeyChar == (char)8)
-            {
-                res = true;
-            }
-
-            return res;
-        }
->>>>>>> Agregar archivos de proyecto.
-=======
-
-            if (char.IsLetter(e.KeyChar) || e.KeyChar == (char)8) res = true;
-
-            return res;
-        }
-
->>>>>>> actualizacion
     }
 }

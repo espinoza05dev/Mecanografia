@@ -1,34 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Diagnostics;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace MECANOGRAFIA.clases
 {
     internal class db:conexion
     {
-        clases.helpers h = new clases.helpers();
         string query;
+        Int32 res;
         SqlCommand com;
         SqlDataReader reader;
         DataTable datos;
+        clases.helpers h;
 
         public Int32 guardar(string tabla,string campos,string valores,int debug = 0)
         {
-            Int32 res = 0;
+            res = 0;
             query = "INSERT INTO " + tabla + " (" + campos + ") VALUES (" + valores + ")";
 
-            if (debug > 0)
-            {
-                Clipboard.SetText(query);
-                MessageBox.Show(query);
-            }
+            h.SeeRawSQLQuery(query, debug);
 
             try
             {
@@ -52,22 +42,12 @@ namespace MECANOGRAFIA.clases
 
         public Int32 actualizar(string tabla,string campos,string condicion = "",int debug = 0)
         {
-            int res = 0;
+            res = 0;
+            h = new helpers();
+            if (condicion == "") query = "UPDATE " + tabla + " SET " + campos;
+            else query = "UPDATE " + tabla + " SET " + campos + " WHERE " + condicion;
 
-            if (condicion == "")
-            {
-                query = "UPDATE " + tabla + " SET " + campos;
-            }
-            else
-            {
-                query = "UPDATE " + tabla + " SET " + campos + " WHERE " + condicion;
-            }
-
-            if (debug > 0)
-            {
-                Clipboard.SetText(query);
-                MessageBox.Show(query);
-            }
+            h.SeeRawSQLQuery(query, debug);
 
             try
             {
@@ -92,21 +72,11 @@ namespace MECANOGRAFIA.clases
         public DataTable recuperar(string tabla,string campos,string condicion ="",int debug = 0)
         {
             datos = new DataTable();
+            h = new helpers();
+            if (condicion == "") query = "SELECT " + campos + " FROM " + tabla ;
+            else query = "SELECT " + campos + " FROM " + tabla + " WHERE " + condicion;
 
-            if (condicion == "")
-            {
-                query = "SELECT " + campos + " FROM " + tabla ;
-            }
-            else
-            {
-                query = "SELECT " + campos + " FROM " + tabla + " WHERE " + condicion;
-            }
-
-            if (debug > 0)
-            {
-                Clipboard.SetText(query);
-                MessageBox.Show(query);
-            }
+            h.SeeRawSQLQuery(query, debug);
 
             try
             {
@@ -131,19 +101,10 @@ namespace MECANOGRAFIA.clases
             return datos;
         }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> actualizacion
-
         public DataTable consulta(string query, int debug = 0)
         {
             datos = new DataTable();
-
-            if (debug > 0){
-                Clipboard.SetText(query);
-                MessageBox.Show(query);
-            }
+            h.SeeRawSQLQuery(query, debug);
 
             try
             {
@@ -167,10 +128,5 @@ namespace MECANOGRAFIA.clases
 
             return datos;
         }
-<<<<<<< HEAD
-=======
->>>>>>> Agregar archivos de proyecto.
-=======
->>>>>>> actualizacion
     }
 }

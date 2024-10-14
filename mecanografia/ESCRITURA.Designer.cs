@@ -1,4 +1,6 @@
-﻿namespace MECANOGRAFIA.mecanografia
+﻿using MECANOGRAFIA.clases;
+
+namespace MECANOGRAFIA.mecanografia
 {
     partial class ESCRITURA
     {
@@ -1358,6 +1360,7 @@
             this.Name = "ESCRITURA";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.Text = "REVISA CODIGO NO HAY NOMBRE";
 =======
             this.Text = "ESCRITURA";
@@ -1365,6 +1368,9 @@
 =======
             this.Text = "REVISA CODIGO NO HAY NOMBRE";
 >>>>>>> actualizacion
+=======
+            this.Text = a.APPNAME;
+>>>>>>> optimizacion de codigo en ESCRITURA se agregaron carpetas  una interface y se optimizo la arquitectura arquitectura
             this.Load += new System.EventHandler(this.ESCRITURA_Load);
             this.P_ESCRITURA.ResumeLayout(false);
             this.P_ESCRITURA.PerformLayout();
@@ -1387,9 +1393,7 @@
         private System.Windows.Forms.Timer RELOJ;
         private System.Windows.Forms.Label lblINCIAR_SESION;
         private System.Windows.Forms.Button btnIniciar;
-        private System.Windows.Forms.TextBox txtpalabrasescritas;
         private System.Windows.Forms.Label lbl1;
-        private System.Windows.Forms.TextBox txtpalabrasmostradas;
         private System.Windows.Forms.Button btnreiniciar;
         private System.Windows.Forms.ListView lvPalabras;
         private System.Windows.Forms.ColumnHeader PALABRAS_POR_MINUTO;
@@ -1435,10 +1439,7 @@
         private System.Windows.Forms.Button btnVolverASesion;
         private System.Windows.Forms.Button btnVolverAEscritura;
         public System.Windows.Forms.Panel P_ESCRITURA;
-        private System.Windows.Forms.ComboBox CBusuario;
-        private System.Windows.Forms.RadioButton RDsi;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton RDno;
         private System.Windows.Forms.MenuStrip MenuOpciones;
         private System.Windows.Forms.ToolStripMenuItem OPTLogoSAEG;
         private System.Windows.Forms.ToolStripMenuItem eSCRITURAToolStripMenuItem;
@@ -1464,6 +1465,14 @@
 =======
         private System.Windows.Forms.Label lblregistro;
         private System.Windows.Forms.ToolStripMenuItem pALABRASMALESCRITASToolStripMenuItem;
+<<<<<<< HEAD
 >>>>>>> prueba
+=======
+        public System.Windows.Forms.RadioButton RDsi;
+        public System.Windows.Forms.RadioButton RDno;
+        public System.Windows.Forms.ComboBox CBusuario;
+        public System.Windows.Forms.TextBox txtpalabrasescritas;
+        public System.Windows.Forms.TextBox txtpalabrasmostradas;
+>>>>>>> optimizacion de codigo en ESCRITURA se agregaron carpetas  una interface y se optimizo la arquitectura arquitectura
     }
 }

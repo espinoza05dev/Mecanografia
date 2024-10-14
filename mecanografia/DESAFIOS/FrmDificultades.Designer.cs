@@ -431,7 +431,6 @@
 
         private System.Windows.Forms.Button btnIniciar;
         private System.Windows.Forms.Label lbl1;
-        private System.Windows.Forms.TextBox txtpalabrasmostradas;
         private System.Windows.Forms.Button btnreiniciar;
         private System.Windows.Forms.Label lblSEGUNDOS;
         private System.Windows.Forms.Timer RELOJ;
@@ -448,6 +447,7 @@
         private System.Windows.Forms.ColumnHeader CLletrasomitidas;
         private System.Windows.Forms.ColumnHeader CLLetraPosIncorrecta;
         private System.Windows.Forms.ColumnHeader CLletraAggIncorrecta;
-        private System.Windows.Forms.TextBox txtpalabrasescritas;
+        public System.Windows.Forms.TextBox txtpalabrasmostradas;
+        public System.Windows.Forms.TextBox txtpalabrasescritas;
     }
 }

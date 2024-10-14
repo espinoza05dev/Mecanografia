@@ -123,17 +123,17 @@
             this.BTNsalir});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(619, 28);
+            this.toolStrip1.Size = new System.Drawing.Size(619, 25);
             this.toolStrip1.TabIndex = 30;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // BTNsalir
             // 
-            this.BTNsalir.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNsalir.Font = new System.Drawing.Font("Humnst777 Blk BT", 9F);
             this.BTNsalir.Image = global::MECANOGRAFIA.Properties.Resources.exit_24px;
             this.BTNsalir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BTNsalir.Name = "BTNsalir";
-            this.BTNsalir.Size = new System.Drawing.Size(73, 25);
+            this.BTNsalir.Size = new System.Drawing.Size(61, 22);
             this.BTNsalir.Text = "SALIR";
             this.BTNsalir.Click += new System.EventHandler(this.BTNsalir_Click);
             // 
@@ -167,7 +167,11 @@
 >>>>>>> Agregar archivos de proyecto.
 =======
             this.txtpalabrasescritas.BackColor = System.Drawing.Color.SteelBlue;
+<<<<<<< HEAD
 >>>>>>> prueba
+=======
+            this.txtpalabrasescritas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+>>>>>>> optimizacion de codigo en ESCRITURA se agregaron carpetas  una interface y se optimizo la arquitectura arquitectura
             this.txtpalabrasescritas.Font = new System.Drawing.Font("Humnst777 Blk BT", 15.75F);
             this.txtpalabrasescritas.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtpalabrasescritas.Location = new System.Drawing.Point(19, 102);
@@ -382,9 +386,7 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton BTNsalir;
         private System.Windows.Forms.Button btnIniciar;
-        private System.Windows.Forms.TextBox txtpalabrasescritas;
         private System.Windows.Forms.Label lbl1;
-        private System.Windows.Forms.TextBox txtpalabrasmostradas;
         private System.Windows.Forms.Button btnreiniciar;
         private System.Windows.Forms.Label lblSEGUNDOS;
         private System.Windows.Forms.Timer RELOJ;
@@ -396,5 +398,7 @@
         private System.Windows.Forms.ColumnHeader CLletrasomitidas;
         private System.Windows.Forms.ColumnHeader CLLetraPosIncorrecta;
         private System.Windows.Forms.ColumnHeader CLletraAggIncorrecta;
+        public System.Windows.Forms.TextBox txtpalabrasescritas;
+        public System.Windows.Forms.TextBox txtpalabrasmostradas;
     }
 }

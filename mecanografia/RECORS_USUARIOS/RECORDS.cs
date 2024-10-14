@@ -16,11 +16,15 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
 <<<<<<< HEAD
 <<<<<<< HEAD
         clases.helpers h = new clases.helpers();
+<<<<<<< HEAD
 =======
 >>>>>>> Agregar archivos de proyecto.
 =======
         clases.helpers h = new clases.helpers();
 >>>>>>> actualizacion
+=======
+        clases.auth a = new clases.auth();
+>>>>>>> optimizacion de codigo en ESCRITURA se agregaron carpetas  una interface y se optimizo la arquitectura arquitectura
         
         public RECORDS()
         {
@@ -78,6 +82,7 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
 
         private void RECORDS_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             mecanografia.ESCRITURA esc = new mecanografia.ESCRITURA();
             esc = ((mecanografia.ESCRITURA)Owner);
 <<<<<<< HEAD
@@ -87,6 +92,11 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
             if (esc.usuario_sesion != string.Empty){
                 this.Text = "RECORDS: " + esc.usuario_sesion;
                 cargardatosLV(esc.usuario_sesion);
+=======
+            if (a.usuario_sesion != string.Empty){
+                this.Text = "RECORDS: " + a.usuario_sesion;
+                cargardatosLV(a.usuario_sesion);
+>>>>>>> optimizacion de codigo en ESCRITURA se agregaron carpetas  una interface y se optimizo la arquitectura arquitectura
             }else { h.Warning("Incie sesión para ver sus registro"); this.Dispose(); }
 <<<<<<< HEAD
 =======

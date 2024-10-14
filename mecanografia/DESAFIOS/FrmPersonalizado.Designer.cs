@@ -174,7 +174,7 @@
             this.BTNsalir});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(623, 28);
+            this.toolStrip1.Size = new System.Drawing.Size(623, 25);
             this.toolStrip1.TabIndex = 30;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -184,11 +184,11 @@
 >>>>>>> prueba
             // BTNsalir
             // 
-            this.BTNsalir.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNsalir.Font = new System.Drawing.Font("Humnst777 Blk BT", 9F);
             this.BTNsalir.Image = global::MECANOGRAFIA.Properties.Resources.exit_24px;
             this.BTNsalir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BTNsalir.Name = "BTNsalir";
-            this.BTNsalir.Size = new System.Drawing.Size(73, 25);
+            this.BTNsalir.Size = new System.Drawing.Size(61, 22);
             this.BTNsalir.Text = "SALIR";
             this.BTNsalir.Click += new System.EventHandler(this.BTNsalir_Click);
             // 
@@ -378,8 +378,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtpalabrasescritas;
         private System.Windows.Forms.ListView lvPalabras;
         private System.Windows.Forms.ColumnHeader PALABRAS_POR_MINUTO;
         private System.Windows.Forms.ColumnHeader PCORRECTAS;
@@ -392,10 +390,11 @@
         private System.Windows.Forms.ToolStripButton BTNsalir;
         private System.Windows.Forms.Button btnIniciar;
         private System.Windows.Forms.Label lbl1;
-        private System.Windows.Forms.TextBox txtpalabrasmostradas;
         private System.Windows.Forms.Button btnreiniciar;
         private System.Windows.Forms.Label lblSEGUNDOS;
         private System.Windows.Forms.Timer RELOJ;
         private System.Windows.Forms.Button btnsubirtexto;
+        public System.Windows.Forms.TextBox txtpalabrasescritas;
+        public System.Windows.Forms.TextBox txtpalabrasmostradas;
     }
 }

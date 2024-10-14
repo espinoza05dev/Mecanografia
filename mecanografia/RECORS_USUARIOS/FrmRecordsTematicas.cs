@@ -1,13 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
 using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
@@ -16,6 +8,7 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
     {
         clases.helpers h = new clases.helpers();
         clases.db DB = new clases.db();
+        clases.auth a = new clases.auth();
         public FrmRecordsTematicas()
         {
             InitializeComponent();
@@ -42,9 +35,7 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
 
         private void listar_tematicas(string tema)
         {
-            mecanografia.ESCRITURA esc = new mecanografia.ESCRITURA();
-            esc = ((mecanografia.ESCRITURA)Owner);
-            DataTable d = DB.recuperar("TEMA", "*", $"USUARIO = '{esc.usuario_sesion}' AND TEMA = '{tema}'");
+            DataTable d = DB.recuperar("TEMA", "*", $"USUARIO = '{a.usuario_sesion}' AND TEMA = '{tema}'");
             int ppm, c, i, LO, LPOS, LA;
             string prec;
             DateTime fec;
@@ -75,7 +66,7 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
                     }
                     d.Dispose();
                 }
-            } else h.Warning($"{esc.usuario_sesion} no ha jugado en la tematica {CMBtematicas.Text} por lo tanto no tiene datos");
+            } else h.Warning($"{a.usuario_sesion} no ha jugado en la tematica {CMBtematicas.Text} por lo tanto no tiene datos");
         }
 
         private void CMBtematicas_SelectedIndexChanged(object sender, EventArgs e)
@@ -85,9 +76,7 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
 
         private void FrmRecordsTematicas_Load(object sender, EventArgs e)
         {
-            mecanografia.ESCRITURA esc = new mecanografia.ESCRITURA();
-            esc = ((mecanografia.ESCRITURA)Owner);
-            this.Text = " Records Tematicas: " + esc.usuario_sesion;
+            this.Text = " Records Tematicas: " + a.usuario_sesion;
         }
     }
 }

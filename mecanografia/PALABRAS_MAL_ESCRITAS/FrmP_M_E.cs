@@ -15,6 +15,7 @@ namespace MECANOGRAFIA.mecanografia.PALABRAS_MAL_ESCRITAS
     {
         clases.db DB = new clases.db();
         clases.helpers h = new clases.helpers();
+        clases.auth a = new clases.auth();
         public FrmP_M_E()
         {
             InitializeComponent();
@@ -22,9 +23,7 @@ namespace MECANOGRAFIA.mecanografia.PALABRAS_MAL_ESCRITAS
 
         private void cargardatos()
         {
-            mecanografia.ESCRITURA esc = new mecanografia.ESCRITURA();
-            esc = ((mecanografia.ESCRITURA)Owner);
-            DataTable d = DB.recuperar("LISTA_P_M_E", "P_MAL_E,FECHA", $"USUARIO = '{esc.usuario_sesion}' AND FECHA = '{DTPfecha.Value.ToShortDateString()}'");
+            DataTable d = DB.recuperar("LISTA_P_M_E", "P_MAL_E,FECHA", $"USUARIO = '{a.usuario_sesion}' AND FECHA = '{DTPfecha.Value.ToShortDateString()}'");
             string p,fec;
             if (d.Rows.Count > 0) {
                 DGVdatos.Rows.Clear();
@@ -33,18 +32,28 @@ namespace MECANOGRAFIA.mecanografia.PALABRAS_MAL_ESCRITAS
                     fec = Convert.ToDateTime(r["FECHA"]).ToShortDateString();
                     DGVdatos.Rows.Add(p, fec);
                 }
+<<<<<<< HEAD
             } else h.Info(esc.usuario_sesion + " No cuenta con registros la fecha de: " + DTPfecha.Text);
+=======
+            } else h.Succes(a.usuario_sesion + " No cuenta con registros la fecha de: " + DTPfecha.Text);
+>>>>>>> optimizacion de codigo en ESCRITURA se agregaron carpetas  una interface y se optimizo la arquitectura arquitectura
         }
 
         private void FrmP_M_E_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             DTPfecha.Text = DateTime.Today.ToShortDateString();
             mecanografia.ESCRITURA esc = new mecanografia.ESCRITURA();
             esc = ((mecanografia.ESCRITURA)Owner);
             if (esc.usuario_sesion != string.Empty) {
                 DataTable d = DB.recuperar("LISTA_P_M_E", "P_MAL_E,FECHA", $"USUARIO = '{esc.usuario_sesion}' AND FECHA = '{DTPfecha.Value.ToShortDateString()}'");
+=======
+            if (a.usuario_sesion != string.Empty) {
+
+                DataTable d = DB.recuperar("LISTA_P_M_E", "P_MAL_E,FECHA", $"USUARIO = '{a.usuario_sesion}' AND FECHA = '{DTPfecha.Value.ToShortDateString()}'");
+>>>>>>> optimizacion de codigo en ESCRITURA se agregaron carpetas  una interface y se optimizo la arquitectura arquitectura
                 if (d.Rows.Count == 0) { h.Succes("No cuneta con registros"); this.Close(); }
-                else { this.Text = "LISTADO DE PALABRAS MAL ESCRITAS - USUARIO: " + esc.usuario_sesion; cargardatos();}
+                else { this.Text = "LISTADO DE PALABRAS MAL ESCRITAS - USUARIO: " + a.usuario_sesion; cargardatos();}
             }else { h.Info("Debe Inicar sesion o registrarse");  this.Close(); }
         }
 

@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Security.Permissions;
 using System.Net;
 
 namespace MECANOGRAFIA.clases
@@ -19,34 +13,24 @@ namespace MECANOGRAFIA.clases
 
         public void Abrirconexion()
         {
-            try
-            {
+            try{
                 SQLCon.Open();
-            }
-            catch (SqlException error)
-            {
+            }catch (SqlException error){
                 MessageBox.Show(error.Message);
             }
         }
 
         public void Cerrarconexion()
         {
-            try
-            {
+            try{
                 SQLCon.Close();
-            }
-            catch (SqlException error)
-            {
+            }catch (SqlException error){
                 MessageBox.Show(error.Message);
             }
         }
 
-        public void Terminarconexion()
-        {
-            if (SQLCon.State == ConnectionState.Open)
-            {
-                SQLCon.Close();
-            }
+        public void Terminarconexion(){
+            if (SQLCon.State == ConnectionState.Open)SQLCon.Close(); 
         }
     }
 }

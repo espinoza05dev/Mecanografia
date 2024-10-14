@@ -16,6 +16,10 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
         clases.db DB = new clases.db();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        clases.auth a = new clases.auth();
+>>>>>>> optimizacion de codigo en ESCRITURA se agregaron carpetas  una interface y se optimizo la arquitectura arquitectura
         string query, condicion;
 =======
 >>>>>>> Agregar archivos de proyecto.
@@ -41,9 +45,8 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
 
         private void listar_datos()
         {
-            mecanografia.ESCRITURA esc = new mecanografia.ESCRITURA();
-            esc = ((mecanografia.ESCRITURA)Owner);
             query = "SELECT * FROM RECORDS_PERSONALIZADO RP INNER JOIN R_RECORDS_PERSONALIZADO R ON (RP.ID = R.ID) ";
+<<<<<<< HEAD
             condicion = $"WHERE RP.NFILE = '{CMBpersonalizado.Text}' AND RP.USUARIO = '{esc.usuario_sesion}'";
 <<<<<<< HEAD
 =======
@@ -57,10 +60,14 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
 >>>>>>> Agregar archivos de proyecto.
 =======
 >>>>>>> actualizacion
+=======
+            condicion = $"WHERE RP.NFILE = '{CMBpersonalizado.Text}' AND RP.USUARIO = '{a.usuario_sesion}'";
+>>>>>>> optimizacion de codigo en ESCRITURA se agregaron carpetas  una interface y se optimizo la arquitectura arquitectura
             string prec;
             int ppm, c, i,Lo,LposM,Ladded;
             DateTime fecha;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             if (esc.usuario_sesion != string.Empty) {
@@ -79,8 +86,11 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
 >>>>>>> Agregar archivos de proyecto.
 =======
             if (esc.usuario_sesion != string.Empty) {
+=======
+            if (a.usuario_sesion != string.Empty) {
+>>>>>>> optimizacion de codigo en ESCRITURA se agregaron carpetas  una interface y se optimizo la arquitectura arquitectura
                 DataTable datos = DB.consulta(query + condicion);
-                DataTable d = DB.recuperar("RECORDS_PERSONALIZADO", "*", $"NFILE = '{CMBpersonalizado.Text}' AND USUARIO = '{esc.usuario_sesion}'");
+                DataTable d = DB.recuperar("RECORDS_PERSONALIZADO", "*", $"NFILE = '{CMBpersonalizado.Text}' AND USUARIO = '{a.usuario_sesion}'");
                 DGVdatos.Rows.Clear();
                 if (datos.Rows.Count > 0){
                     foreach (DataRow r in datos.Rows){
@@ -142,20 +152,19 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
         }
         private void cargarcmb()
         {
-            mecanografia.ESCRITURA esc = new mecanografia.ESCRITURA();
-            esc = ((mecanografia.ESCRITURA)Owner);
-            DataTable d1 = DB.recuperar("R_RECORDS_PERSONALIZADO", "*", $"USUARIO = '{esc.usuario_sesion}'");
+            DataTable d1 = DB.recuperar("R_RECORDS_PERSONALIZADO", "*", $"USUARIO = '{a.usuario_sesion}'");
             if (d1.Rows.Count > 0) {
                 CMBpersonalizado.DataSource = d1;
                 CMBpersonalizado.DisplayMember = "R_NFILE";
             }else if (d1.Rows.Count == 0){
-                CMBpersonalizado.DataSource = DB.recuperar("RECORDS_PERSONALIZADO", "NFILE",$"USUARIO = '{esc.usuario_sesion}'");
+                CMBpersonalizado.DataSource = DB.recuperar("RECORDS_PERSONALIZADO", "NFILE",$"USUARIO = '{a.usuario_sesion}'");
                 CMBpersonalizado.DisplayMember = "NFILE";
             }
         }
 
         private void FrmRecordsPersonalizado_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             mecanografia.ESCRITURA esc = new mecanografia.ESCRITURA();
             esc = ((mecanografia.ESCRITURA)Owner);
 <<<<<<< HEAD
@@ -175,6 +184,11 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
             if (d.Rows.Count == 0){ h.Warning($"El usuario {esc.usuario_sesion} no cuenta con registros"); this.Close(); }
 >>>>>>> actualizacion
             this.Text = " Records Personalizado: " + esc.usuario_sesion;
+=======
+            DataTable d = DB.recuperar("RECORDS_PERSONALIZADO", "*");
+            if (d.Rows.Count == 0){ h.Warning($"El usuario {a.usuario_sesion} no cuenta con registros"); this.Close(); }
+            this.Text = " Records Personalizado: " + a.usuario_sesion;
+>>>>>>> optimizacion de codigo en ESCRITURA se agregaron carpetas  una interface y se optimizo la arquitectura arquitectura
             cargarcmb();
         }
 
