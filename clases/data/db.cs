@@ -17,7 +17,7 @@ namespace MECANOGRAFIA.clases
         {
             res = 0;
             query = "INSERT INTO " + tabla + " (" + campos + ") VALUES (" + valores + ")";
-
+            h = new helpers();
             h.SeeRawSQLQuery(query, debug);
 
             try
@@ -104,6 +104,7 @@ namespace MECANOGRAFIA.clases
         public DataTable consulta(string query, int debug = 0)
         {
             datos = new DataTable();
+            h = new helpers();
             h.SeeRawSQLQuery(query, debug);
 
             try

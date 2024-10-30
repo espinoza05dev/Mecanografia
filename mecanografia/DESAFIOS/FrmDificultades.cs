@@ -10,6 +10,11 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
         clases.helpers h = new clases.helpers();
         clases.db DB = new clases.db();
         clases.TypeResults t = new clases.TypeResults();
+        int correctas, incorrectas, pcompletadas, L_omitidas, L_PosM, L_added, i, j;
+        string palabra_mostrada, palabra_escrita;
+        string[] TextTyped, textshowed;
+        List<string> palabras, palabras_escritas;
+        
         public FrmDificultades()
         {
             InitializeComponent();
@@ -30,12 +35,12 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
                 if (random > 0)
                 {
                     Random randomwords = new Random();
-                    for (t.i = palabras.Length - 1; t.i > 0; t.i--)
+                    for (i = palabras.Length - 1; i > 0; i--)
                     {
-                        t.j = randomwords.Next(0, t.i + 1);
-                        string temp = palabras[t.i];
-                        palabras[t.i] = palabras[t.j];
-                        palabras[t.j] = temp;
+                        j = randomwords.Next(0, i + 1);
+                        string temp = palabras[i];
+                        palabras[i] = palabras[j];
+                        palabras[j] = temp;
                     }
                 }
 
@@ -72,7 +77,7 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
             conteo--;
             lblSEGUNDOS.Text = conteo.ToString();
 
-            if (t.correctas == 20 && t.incorrectas == 0 && CMBdificultades.Text == "facil"){
+            if (correctas == 20 && incorrectas == 0 && CMBdificultades.Text == "facil"){
                 RELOJ.Stop();
                 CMBFalsaDificultad.Visible = true;
                 CMBFalsaDificultad.Text = CMBdificultades.Text;
@@ -80,8 +85,8 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
                 RELOJ.Start();
                 listar_palabras(1, 1);
             }
-            else if (t.correctas == 20 && t.incorrectas > 5 && t.incorrectas <= 10 && CMBdificultades.Text == "intermedio"
-                || t.correctas == 20 && t.incorrectas > 5 && t.incorrectas <= 10 && CMBdificultades.Text == "dificil")
+            else if (correctas == 20 && incorrectas > 5 && incorrectas <= 10 && CMBdificultades.Text == "intermedio"
+                || correctas == 20 && incorrectas > 5 && incorrectas <= 10 && CMBdificultades.Text == "dificil")
             {
                 RELOJ.Stop();
                 CMBFalsaDificultad.Visible = true;
@@ -90,8 +95,8 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
                 RELOJ.Start();
                 listar_palabras(0, 1);
             }
-            else if (t.correctas == 40 && t.incorrectas == 0 && CMBdificultades.Text == "facil"
-                || t.correctas == 40 && t.incorrectas == 0 && CMBdificultades.Text == "intermedio")
+            else if (correctas == 40 && incorrectas == 0 && CMBdificultades.Text == "facil"
+                || correctas == 40 && incorrectas == 0 && CMBdificultades.Text == "intermedio")
             {
                 RELOJ.Stop();
                 CMBFalsaDificultad.Visible = true;
@@ -100,7 +105,7 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
                 RELOJ.Start();
                 listar_palabras(2, 1);
             }
-            else if (t.correctas == 40 && t.incorrectas > 1 && t.incorrectas <= 3 && CMBdificultades.Text == "dificil")
+            else if (correctas == 40 && incorrectas > 1 && incorrectas <= 3 && CMBdificultades.Text == "dificil")
             {
                 RELOJ.Stop();
                 CMBFalsaDificultad.Visible = true;
@@ -110,7 +115,7 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
                 listar_palabras(0, 1);
             }
 
-            if (conteo == 45 && t.pcompletadas == 0){
+            if (conteo == 45 && pcompletadas == 0){
                 RELOJ.Stop();
                 h.Info("Te encuentras lejos del teclado?");
                 txtpalabrasescritas.Clear();
@@ -119,7 +124,7 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
                 btnreiniciar.Enabled = true;
                 txtpalabrasescritas.Enabled = false;
                 CMBdificultades.Enabled = true;
-            }else if (t.incorrectas >= 10){
+            }else if (incorrectas >= 10){
                 RELOJ.Stop();
                 h.Warning("!Demasiadas palabras t.incorrectas!");
                 txtpalabrasescritas.Clear();
@@ -133,13 +138,16 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
                     RELOJ.Stop();
                     MessageBox.Show("!Se ha agotado el tiempo!");
 
-                    ListViewItem item = item = lvPalabras.Items.Add(t.pcompletadas.ToString());
-                    item.SubItems.Add(t.correctas.ToString());
-                    item.SubItems.Add(t.incorrectas.ToString());
-                    item.SubItems.Add(Math.Round(((float)t.correctas / t.pcompletadas) * 100, 3).ToString() + "%");
-                    item.SubItems.Add(t.L_omitidas.ToString());
-                    item.SubItems.Add(t.L_PosM.ToString());
-                    item.SubItems.Add(t.L_added.ToString());
+                    double porcentaje = Convert.ToDouble(Math.Round(((double)correctas / pcompletadas) * 100, 3));
+                    string ShowPorcentaje = porcentaje.ToString() + "%";
+
+                    ListViewItem item = item = lvPalabras.Items.Add(pcompletadas.ToString());
+                    item.SubItems.Add(correctas.ToString());
+                    item.SubItems.Add(incorrectas.ToString());
+                    item.SubItems.Add(ShowPorcentaje);
+                    item.SubItems.Add(L_omitidas.ToString());
+                    item.SubItems.Add(L_PosM.ToString());
+                    item.SubItems.Add(L_added.ToString());
 
                     txtpalabrasescritas.Clear();
                     lblSEGUNDOS.Text = "60";
@@ -158,9 +166,9 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
                     }
 
                     if (a.usuario_sesion != string.Empty){
-                        if (CMBdificultades.Text == "facil") DB.guardar("RECORDS_DIFICULTADES", "USUARIO,DIFICULTAD,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{a.usuario_sesion}','FACIL','{t.ppm}','{t.pc}','{t.pi}','{Convert.ToDouble(Math.Round(((float)t.correctas / t.pcompletadas) * 100, 3)) + "%"}','{t.Lomitida}','{t.LPosM}','{t.LAddedM}'");
-                        else if (CMBdificultades.Text == "intermedio") DB.guardar("RECORDS_DIFICULTADES", "USUARIO,DIFICULTAD,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{a.usuario_sesion}','INTERMEDIO','{t.ppm}','{t.pc}','{t.pi}','{Convert.ToDouble(Math.Round(((float)t.correctas / t.pcompletadas) * 100, 3)) + "%"}','{t.Lomitida}','{t.LPosM}','{t.LAddedM}'");
-                        else if (CMBdificultades.Text == "dificil") DB.guardar("RECORDS_DIFICULTADES", "USUARIO,DIFICULTAD,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{a.usuario_sesion}','DIFICIL','{t.ppm}','{t.pc}','{t.pi}','{Convert.ToDouble(Math.Round(((float)t.correctas / t.pcompletadas) * 100, 3)) + "%"}','{t.Lomitida}','{t.LPosM}','{t.LAddedM}'");
+                        if (CMBdificultades.Text == "facil") DB.guardar("RECORDS_DIFICULTADES", "USUARIO,DIFICULTAD,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{a.usuario_sesion}','FACIL','{t.ppm}','{t.pc}','{t.pi}','{ShowPorcentaje}','{t.Lomitida}','{t.LPosM}','{t.LAddedM}'");
+                        else if (CMBdificultades.Text == "intermedio") DB.guardar("RECORDS_DIFICULTADES", "USUARIO,DIFICULTAD,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{a.usuario_sesion}','INTERMEDIO','{t.ppm}','{t.pc}','{t.pi}','{ShowPorcentaje}','{t.Lomitida}','{t.LPosM}','{t.LAddedM}'");
+                        else if (CMBdificultades.Text == "dificil") DB.guardar("RECORDS_DIFICULTADES", "USUARIO,DIFICULTAD,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{a.usuario_sesion}','DIFICIL','{t.ppm}','{t.pc}','{t.pi}','{ShowPorcentaje}','{t.Lomitida}','{t.LPosM}','{t.LAddedM}'");
                     }
                 }
             }
@@ -171,13 +179,80 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
             this.Dispose();
         }
 
+        private int LetterAddedWrongly()
+        {
+            palabras = new List<string>(txtpalabrasmostradas.Text.Trim().Split(' '));
+            palabras_escritas = new List<string>(txtpalabrasescritas.Text.Trim().Split(' '));
+
+            palabra_mostrada = palabras.Count > 0 ? palabras[0] : string.Empty;
+            palabra_escrita = palabras_escritas.Count > 0 ? palabras_escritas[0] : string.Empty;
+
+            i = palabra_mostrada.Length;
+            j = palabra_escrita.Length;
+
+            while (j > i) { L_added++; j--; }
+            return L_added;
+        }
+
+        private int WrongLetterPosition()
+        {
+            textshowed = (txtpalabrasmostradas.Text.Trim().Split(' '));
+            TextTyped = (txtpalabrasescritas.Text.Trim().Split(' '));
+
+
+            int minLength = Math.Min(textshowed.Length, TextTyped.Length);
+
+            for (i = 0; i < minLength; i++)
+            {
+                palabra_mostrada = textshowed[i];
+                palabra_escrita = TextTyped[i];
+
+                for (j = 0; j < Math.Min(palabra_mostrada.Length, palabra_escrita.Length); j++) { if (palabra_mostrada[j] != palabra_escrita[j]) { L_PosM++; } }
+            }
+            return L_PosM;
+        }
+
+        private int SkippedLetters()
+        {
+            palabras = new List<string>(txtpalabrasmostradas.Text.Trim().Split(' '));
+            palabras_escritas = new List<string>(txtpalabrasescritas.Text.Trim().Split(' '));
+
+            palabra_mostrada = palabras.Count > 0 ? palabras[0] : string.Empty;
+            palabra_escrita = palabras_escritas.Count > 0 ? palabras_escritas[0] : string.Empty;
+
+            i = palabra_mostrada.Length;
+            j = palabra_escrita.Length;
+
+            while (i > j) { L_omitidas++; i--; }
+            return L_omitidas;
+        }
+
+        private void Verificar_palabras()
+        {
+            palabras = new List<string>(txtpalabrasmostradas.Text.Trim().Split(' '));
+            palabras_escritas = new List<string>(txtpalabrasescritas.Text.Trim().Split(' '));
+
+            palabra_mostrada = palabras[0];
+            palabra_escrita = palabras_escritas[0];
+
+            if (palabra_escrita.Length == palabra_mostrada.Length || palabra_escrita.Length != palabra_mostrada.Length)
+            {
+                if (palabra_escrita == palabra_mostrada) { correctas++; }
+                else { incorrectas++; }
+
+                pcompletadas++;
+                palabras.RemoveAt(0);
+                txtpalabrasmostradas.Text = string.Join(" ", palabras);
+            }
+        }
+
         private void txtpalabrasescritas_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Space ){
-                t.WrongLetterPosition(1);
-                t.SkippedLetters(1);
-                t.LetterAddedWrongly(1);
-                t.Verificar_palabras(1);
+                WrongLetterPosition();
+                SkippedLetters();
+                LetterAddedWrongly();
+                Verificar_palabras();
                 txtpalabrasescritas.Clear();
             }
         }
@@ -191,7 +266,7 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
                 txtpalabrasescritas.Focus();
                 RELOJ.Start();
                 txtpalabrasescritas.Clear();
-                t.correctas = 0;t.incorrectas = 0;t.pcompletadas = 0;t.L_omitidas = 0; t.L_PosM = 0; t.L_added = 0;
+                correctas = 0;incorrectas = 0;pcompletadas = 0;L_omitidas = 0; L_PosM = 0; L_added = 0;
                 lvPalabras.Items.Clear();
                 CMBdificultades.Enabled = false;
             }else h.Warning("Seleccione una dificultad");
@@ -205,7 +280,7 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
             txtpalabrasescritas.Focus();
             RELOJ.Start();
             txtpalabrasescritas.Clear();
-            t.correctas = 0;t.incorrectas = 0; t.pcompletadas = 0; t.L_omitidas = 0; t.L_PosM = 0; t.L_added = 0;
+            correctas = 0;incorrectas = 0; pcompletadas = 0; L_omitidas = 0; L_PosM = 0; L_added = 0;
             listar_palabras(CMBdificultades.SelectedIndex, 0);
             CMBdificultades.Enabled = false;
         }

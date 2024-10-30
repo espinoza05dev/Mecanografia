@@ -15,6 +15,10 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
         clases.db DB = new clases.db();
         clases.TypeResults t = new clases.TypeResults();
         string content = "",filePath = "";
+        int correctas, incorrectas, pcompletadas, L_omitidas, L_PosM, L_added, i, j;
+        string palabra_mostrada, palabra_escrita;
+        string[] TextTyped, textshowed;
+        List<string> palabras, palabras_escritas;
         
         public FrmPersonalizado()
         {
@@ -44,7 +48,7 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
             conteo--;
             lblSEGUNDOS.Text = conteo.ToString();
 
-            if (conteo == 45 && t.pcompletadas == 0){
+            if (conteo == 45 && pcompletadas == 0){
                 RELOJ.Stop();
                 h.Info("Te encuentras lejos del teclado?");
                 txtpalabrasescritas.Clear();
@@ -53,7 +57,7 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
                 btnreiniciar.Enabled = true;
                 btnsubirtexto.Enabled = true;
                 txtpalabrasescritas.Enabled = false;
-            }else if (t.incorrectas >= 10){
+            }else if (incorrectas >= 10){
                 RELOJ.Stop();
                 h.Warning("!Demasiadas palabras t.incorrectas!");
                 txtpalabrasescritas.Clear();
@@ -65,14 +69,15 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
                 if (conteo == 0){
                     RELOJ.Stop();
                     MessageBox.Show("!Se ha agotado el tiempo!");
-
-                    ListViewItem item = item = lvPalabras.Items.Add(t.pcompletadas.ToString());
-                    item.SubItems.Add(t.correctas.ToString());
-                    item.SubItems.Add(t.incorrectas.ToString());
-                    item.SubItems.Add(Math.Round(((float)t.correctas / t.pcompletadas) * 100, 3).ToString() + "%");
-                    item.SubItems.Add(t.L_omitidas.ToString());
-                    item.SubItems.Add(t.L_PosM.ToString());
-                    item.SubItems.Add(t.L_added.ToString());
+                    double porcentaje = Convert.ToDouble(Math.Round(((double)correctas / pcompletadas) * 100, 3));
+                    string ShowPorcentaje = porcentaje.ToString() + "%";
+                    ListViewItem item = item = lvPalabras.Items.Add(pcompletadas.ToString());
+                    item.SubItems.Add(correctas.ToString());
+                    item.SubItems.Add(incorrectas.ToString());
+                    item.SubItems.Add(ShowPorcentaje);
+                    item.SubItems.Add(L_omitidas.ToString());
+                    item.SubItems.Add(L_PosM.ToString());
+                    item.SubItems.Add(L_added.ToString());
 
                     btnsubirtexto.Enabled = true;
                     txtpalabrasescritas.Clear();
@@ -99,13 +104,13 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
         {
             DataTable datos_records_repetidos = DB.recuperar("R_RECORDS_PERSONALIZADO", "*", "R_NFILE = '" + Path.GetFileName(filePath) + "'");
             DataTable datos_records = DB.recuperar("RECORDS_PERSONALIZADO", "*", "NFILE = '" + Path.GetFileName(filePath) + "'");
-
+            double porcentaje = Convert.ToDouble(Math.Round(((double)correctas / pcompletadas) * 100, 3));
+            string ShowPorcentaje = porcentaje.ToString() + "%";
             if (datos_records.Rows.Count == 0 && datos_records_repetidos.Rows.Count == 0){
-                DB.guardar("RECORDS_PERSONALIZADO", "USUARIO,NFILE,PPM,C,I,PREC,L_O,L_POS_M,L_ADDED", $"'{a.usuario_sesion}','{Path.GetFileName(filePath)}',{Convert.ToInt32(t.ppm)},{Convert.ToInt32(t.pc)},{Convert.ToInt32(t.pi)},'{Math.Round(((float)t.correctas / t.pcompletadas) * 100, 3).ToString() + "%"}',{Convert.ToInt32(t.Lomitida)},{Convert.ToInt32(t.LPosM)},{Convert.ToInt32(t.LAddedM)}");
+                DB.guardar("RECORDS_PERSONALIZADO", "USUARIO,NFILE,PPM,C,I,PREC,L_O,L_POS_M,L_ADDED", $"'{a.usuario_sesion}','{Path.GetFileName(filePath)}',{Convert.ToInt32(t.ppm)},{Convert.ToInt32(t.pc)},{Convert.ToInt32(t.pi)},'{ShowPorcentaje}',{Convert.ToInt32(t.Lomitida)},{Convert.ToInt32(t.LPosM)},{Convert.ToInt32(t.LAddedM)}");
                 DB.guardar("R_RECORDS_PERSONALIZADO", "USUARIO,R_NFILE", $"'{a.usuario_sesion}','{Path.GetFileName(filePath)}'");
-            }else if (datos_records.Rows.Count > 0 && datos_records_repetidos.Rows.Count == 1 )DB.guardar("RECORDS_PERSONALIZADO", "USUARIO,NFILE,PPM,C,I,PREC,L_O,L_POS_M,L_ADDED", $"'{a.usuario_sesion}','{Path.GetFileName(filePath)}',{Convert.ToInt32(t.ppm)},{Convert.ToInt32(t.pc)},{Convert.ToInt32(t.pi)},'{Math.Round(((float)t.correctas / t.pcompletadas) * 100, 3).ToString() + "%"}',{Convert.ToInt32(t.Lomitida)},{Convert.ToInt32(t.LPosM)},{Convert.ToInt32(t.LAddedM)}");
+            }else if (datos_records.Rows.Count > 0 && datos_records_repetidos.Rows.Count == 1 )DB.guardar("RECORDS_PERSONALIZADO", "USUARIO,NFILE,PPM,C,I,PREC,L_O,L_POS_M,L_ADDED", $"'{a.usuario_sesion}','{Path.GetFileName(filePath)}',{Convert.ToInt32(t.ppm)},{Convert.ToInt32(t.pc)},{Convert.ToInt32(t.pi)},'{ShowPorcentaje}',{Convert.ToInt32(t.Lomitida)},{Convert.ToInt32(t.LPosM)},{Convert.ToInt32(t.LAddedM)}");
         }
-
 
         private void btnIniciar_Click(object sender, EventArgs e)
         {
@@ -115,10 +120,10 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
                 txtpalabrasescritas.Enabled = true;
                 txtpalabrasescritas.Focus();
                 txtpalabrasescritas.Clear();
-                t.correctas = 0;
-                t.incorrectas = 0;
-                t.pcompletadas = 0;
-                t.L_omitidas = 0; t.L_PosM = 0; t.L_added = 0;
+                correctas = 0;
+                incorrectas = 0;
+                pcompletadas = 0;
+                L_omitidas = 0; L_PosM = 0; L_added = 0;
                 lvPalabras.Items.Clear();
                 btnsubirtexto.Enabled = false;
                 RELOJ.Start();
@@ -149,7 +154,7 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
             txtpalabrasescritas.Enabled = true;
             txtpalabrasescritas.Focus();
             txtpalabrasescritas.Clear();
-            t.correctas = 0; t.incorrectas = 0; t.pcompletadas = 0; t.L_omitidas = 0; t.L_PosM = 0; t.L_added = 0;
+            correctas = 0; incorrectas = 0; pcompletadas = 0; L_omitidas = 0; L_PosM = 0; L_added = 0;
             btnsubirtexto.Enabled = false;
             RELOJ.Start();
         }
@@ -166,13 +171,80 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
             }
         }
 
+        private int LetterAddedWrongly()
+        {
+            palabras = new List<string>(txtpalabrasmostradas.Text.Trim().Split(' '));
+            palabras_escritas = new List<string>(txtpalabrasescritas.Text.Trim().Split(' '));
+
+            palabra_mostrada = palabras.Count > 0 ? palabras[0] : string.Empty;
+            palabra_escrita = palabras_escritas.Count > 0 ? palabras_escritas[0] : string.Empty;
+
+            i = palabra_mostrada.Length;
+            j = palabra_escrita.Length;
+
+            while (j > i) { L_added++; j--; }
+            return L_added;
+        }
+
+        private int WrongLetterPosition()
+        {
+            textshowed = (txtpalabrasmostradas.Text.Trim().Split(' '));
+            TextTyped = (txtpalabrasescritas.Text.Trim().Split(' '));
+
+
+            int minLength = Math.Min(textshowed.Length, TextTyped.Length);
+
+            for (i = 0; i < minLength; i++)
+            {
+                palabra_mostrada = textshowed[i];
+                palabra_escrita = TextTyped[i];
+
+                for (j = 0; j < Math.Min(palabra_mostrada.Length, palabra_escrita.Length); j++) { if (palabra_mostrada[j] != palabra_escrita[j]) { L_PosM++; } }
+            }
+            return L_PosM;
+        }
+
+        private int SkippedLetters()
+        {
+            palabras = new List<string>(txtpalabrasmostradas.Text.Trim().Split(' '));
+            palabras_escritas = new List<string>(txtpalabrasescritas.Text.Trim().Split(' '));
+
+            palabra_mostrada = palabras.Count > 0 ? palabras[0] : string.Empty;
+            palabra_escrita = palabras_escritas.Count > 0 ? palabras_escritas[0] : string.Empty;
+
+            i = palabra_mostrada.Length;
+            j = palabra_escrita.Length;
+
+            while (i > j) { L_omitidas++; i--; }
+            return L_omitidas;
+        }
+
+        void Verificar_palabras()
+        {
+            palabras = new List<string>(txtpalabrasmostradas.Text.Trim().Split(' '));
+            palabras_escritas = new List<string>(txtpalabrasescritas.Text.Trim().Split(' '));
+
+            palabra_mostrada = palabras[0];
+            palabra_escrita = palabras_escritas[0];
+
+            if (palabra_escrita.Length == palabra_mostrada.Length || palabra_escrita.Length != palabra_mostrada.Length)
+            {
+                if (palabra_escrita == palabra_mostrada) { correctas++; }
+                else { incorrectas++; }
+
+                pcompletadas++;
+                palabras.RemoveAt(0);
+                txtpalabrasmostradas.Text = string.Join(" ", palabras);
+            }
+        }
+
         private void txtpalabrasescritas_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Space){
-                t.WrongLetterPosition(2);
-                t.SkippedLetters(2);
-                t.LetterAddedWrongly(2);
-                t.Verificar_palabras(2);
+                WrongLetterPosition();
+                SkippedLetters();
+                LetterAddedWrongly();
+                Verificar_palabras();
                 txtpalabrasescritas.Clear();
             }
         }

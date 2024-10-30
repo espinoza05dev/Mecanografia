@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
+using Newtonsoft.Json.Linq;
 
 namespace MECANOGRAFIA.clases
 {
@@ -12,9 +13,10 @@ namespace MECANOGRAFIA.clases
         clases.helpers h;
         clases.db DB;
         mecanografia.ESCRITURA E;
-        public List<string> palabras = new List<string>(c.Split(' '));
-        public static string filePath = @"C:\ProgramData\SeeUsers.txt", c = File.ReadAllText(filePath);
+        public static string filePath = @"C:\ProgramData\SeeUsers.json";
         private string activado = "onn";
+        public Object JSON = new JObject { { "activado", "off" }, { "usuario", "asdasd" } };
+        string contenido;
         Int16 res;
         public string usuario_sesion { get; set; }
         public string APPNAME = "ESCRITURA RAPIDA: ";
@@ -23,12 +25,25 @@ namespace MECANOGRAFIA.clases
         {
             res = 0;
             E = new mecanografia.ESCRITURA();
-
+            
             if (File.Exists(filePath))
             {
-                string contenido = File.ReadAllText(filePath);
-                if (palabras[0].ToString() == activado) { E.RDno.Checked = false; E.RDsi.Checked = true; E.CBusuario.Visible = true; }
-                else { E.RDsi.Checked = false; E.RDno.Checked = true; }
+                contenido = File.ReadAllText(filePath);
+                var palabras = JObject.Parse(contenido);
+                if ((string)palabras["activado"] == activado) { 
+                    E.RDno.Checked = false; 
+                    E.RDsi.Checked = true; 
+                    E.CBusuario.Visible = true; 
+                }else{ 
+                    E.RDsi.Checked = false; 
+                    E.RDno.Checked = true; 
+                }
+                res++;
+            }
+            else
+            {
+                string JsonString = JSON.ToString();
+                File.WriteAllText(filePath,JsonString);
                 res++;
             }
             return res;
@@ -37,10 +52,12 @@ namespace MECANOGRAFIA.clases
         {
             res = 0;
             ev = new clases.ENV();
-            E = new mecanografia.ESCRITURA();
+            E = new mecanografia.ESCRITURA(); 
+            contenido = File.ReadAllText(filePath);
+            var palabras = JObject.Parse(contenido);
             if (ev.ExistsUser() > 0)
             {
-                usuario_sesion = palabras[1].ToString();
+                usuario_sesion = palabras["usuario"].ToString();
                 E.Text = APPNAME + usuario_sesion; 
                 res++;
             }
@@ -58,12 +75,14 @@ namespace MECANOGRAFIA.clases
             E = new mecanografia.ESCRITURA();
             h = new helpers();
             DB = new db();
+            string contenido = File.ReadAllText(filePath);
+            var palabras = JObject.Parse(contenido);
             if (ev.ExistsUser() > 0)
             {
                 h.Info("SE HA CERRADO LA SESION"); 
                 E.Text = APPNAME;
                 usuario_sesion = string.Empty;
-                DB.actualizar("USUARIOS", $"FECHASESION = '{DateTime.Now}'", $"USUARIO = '{palabras[1].ToString()}'");
+                DB.actualizar("USUARIOS", $"FECHASESION = '{DateTime.Now}'", $"USUARIO = '{palabras["activado"].ToString()}'");
             }
         }
 

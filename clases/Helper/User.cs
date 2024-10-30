@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MECANOGRAFIA.clases.Helper
+﻿namespace MECANOGRAFIA.clases.Helper
 {
     public class User
     {
@@ -14,5 +8,6 @@ namespace MECANOGRAFIA.clases.Helper
         public string valores { get; set;}
         public string condicion  { get; set; }
         public string msg { get; set; }
+
     }
 }

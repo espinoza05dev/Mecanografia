@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using System;
 using System.IO;
+using Newtonsoft.Json.Linq;
 
 namespace MECANOGRAFIA.clases
 {
@@ -14,8 +15,10 @@ namespace MECANOGRAFIA.clases
         {
             res = 0;
             DB = new db();
-
-            foreach (DataRow r in DB.recuperar("USUARIOS", "USUARIO").Rows) { if (auth.c.Contains(r["USUARIO"].ToString())) res++; }
+            a = new auth();
+            foreach (DataRow r in DB.recuperar("USUARIOS", "USUARIO").Rows) { 
+                if (auth.filePath.Contains(r["USUARIO"].ToString())) res++; 
+            }
             return res;
         }
 
@@ -26,7 +29,9 @@ namespace MECANOGRAFIA.clases
             a = new auth();
             if (ExistsUser() > 0)
             {
-                DataTable df = DB.recuperar("USUARIOS", "FECHASESION", $"USUARIO = '{a.palabras[1]}'");
+                string contenido = auth.filePath;
+                var palabras = JObject.Parse(contenido);
+                DataTable df = DB.recuperar("USUARIOS", "FECHASESION", $"USUARIO = '{palabras["usuario"].ToString()}'");
                 foreach (DataRow rf in df.Rows)
                 {
                     DateTime t = Convert.ToDateTime(rf["FECHASESION"]);
