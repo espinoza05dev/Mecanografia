@@ -178,7 +178,7 @@ namespace MECANOGRAFIA.mecanografia
             // 
             this.txtpalabrasescritas.BackColor = System.Drawing.Color.SteelBlue;
             this.txtpalabrasescritas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtpalabrasescritas.Font = new System.Drawing.Font("Humnst777 Blk BT", 15.75F);
+            this.txtpalabrasescritas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.txtpalabrasescritas.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtpalabrasescritas.Location = new System.Drawing.Point(7, 72);
             this.txtpalabrasescritas.MaxLength = 29;
@@ -207,7 +207,7 @@ namespace MECANOGRAFIA.mecanografia
             this.txtpalabrasmostradas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtpalabrasmostradas.Cursor = System.Windows.Forms.Cursors.No;
             this.txtpalabrasmostradas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtpalabrasmostradas.Font = new System.Drawing.Font("Humnst777 Blk BT", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpalabrasmostradas.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpalabrasmostradas.ForeColor = System.Drawing.SystemColors.Window;
             this.txtpalabrasmostradas.Location = new System.Drawing.Point(0, 0);
             this.txtpalabrasmostradas.MaxLength = 1000000000;
@@ -245,7 +245,7 @@ namespace MECANOGRAFIA.mecanografia
             this.CLletrasomitidas,
             this.CLLetraPosIncorrecta,
             this.CLletraAggIncorrecta});
-            this.lvPalabras.Font = new System.Drawing.Font("Humnst777 Blk BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvPalabras.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvPalabras.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvPalabras.HideSelection = false;
             this.lvPalabras.LabelWrap = false;
@@ -301,13 +301,13 @@ namespace MECANOGRAFIA.mecanografia
             // 
             this.lblSEGUNDOS.AutoSize = true;
             this.lblSEGUNDOS.BackColor = System.Drawing.Color.Navy;
-            this.lblSEGUNDOS.Font = new System.Drawing.Font("Futura Md BT", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSEGUNDOS.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSEGUNDOS.ForeColor = System.Drawing.Color.White;
             this.lblSEGUNDOS.Location = new System.Drawing.Point(464, 97);
             this.lblSEGUNDOS.Name = "lblSEGUNDOS";
-            this.lblSEGUNDOS.Size = new System.Drawing.Size(51, 35);
+            this.lblSEGUNDOS.Size = new System.Drawing.Size(49, 33);
             this.lblSEGUNDOS.TabIndex = 5;
-            this.lblSEGUNDOS.Text = "60";
+            this.lblSEGUNDOS.Text = "10";
             // 
             // P_modo
             // 
@@ -368,7 +368,7 @@ namespace MECANOGRAFIA.mecanografia
             // 
             this.btnver.FlatAppearance.BorderSize = 0;
             this.btnver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnver.Font = new System.Drawing.Font("Clarendon BT", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnver.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnver.Image = global::MECANOGRAFIA.Properties.Resources.show_pwd;
             this.btnver.Location = new System.Drawing.Point(177, 96);
             this.btnver.Name = "btnver";
@@ -426,22 +426,22 @@ namespace MECANOGRAFIA.mecanografia
             // lbl4
             // 
             this.lbl4.AutoSize = true;
-            this.lbl4.Font = new System.Drawing.Font("Clarendon Blk BT", 12F);
+            this.lbl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lbl4.ForeColor = System.Drawing.Color.White;
             this.lbl4.Location = new System.Drawing.Point(41, 72);
             this.lbl4.Name = "lbl4";
-            this.lbl4.Size = new System.Drawing.Size(130, 19);
+            this.lbl4.Size = new System.Drawing.Size(119, 20);
             this.lbl4.TabIndex = 15;
             this.lbl4.Text = "CONTRASEÑA";
             // 
             // lbl3
             // 
             this.lbl3.AutoSize = true;
-            this.lbl3.Font = new System.Drawing.Font("Clarendon Blk BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl3.ForeColor = System.Drawing.Color.White;
             this.lbl3.Location = new System.Drawing.Point(61, 8);
             this.lbl3.Name = "lbl3";
-            this.lbl3.Size = new System.Drawing.Size(90, 19);
+            this.lbl3.Size = new System.Drawing.Size(84, 20);
             this.lbl3.TabIndex = 13;
             this.lbl3.Text = "USUARIO";
             // 
@@ -527,7 +527,7 @@ namespace MECANOGRAFIA.mecanografia
             // 
             this.btnverSesion.FlatAppearance.BorderSize = 0;
             this.btnverSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnverSesion.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnverSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnverSesion.Image = global::MECANOGRAFIA.Properties.Resources.show_pwd;
             this.btnverSesion.Location = new System.Drawing.Point(230, 95);
             this.btnverSesion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -590,24 +590,24 @@ namespace MECANOGRAFIA.mecanografia
             // lbl6
             // 
             this.lbl6.AutoSize = true;
-            this.lbl6.Font = new System.Drawing.Font("Clarendon Blk BT", 12F);
+            this.lbl6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lbl6.ForeColor = System.Drawing.Color.White;
             this.lbl6.Location = new System.Drawing.Point(85, 69);
             this.lbl6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl6.Name = "lbl6";
-            this.lbl6.Size = new System.Drawing.Size(130, 19);
+            this.lbl6.Size = new System.Drawing.Size(119, 20);
             this.lbl6.TabIndex = 9;
             this.lbl6.Text = "CONTRASEÑA";
             // 
             // lbl5
             // 
             this.lbl5.AutoSize = true;
-            this.lbl5.Font = new System.Drawing.Font("Clarendon Blk BT", 12F);
+            this.lbl5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lbl5.ForeColor = System.Drawing.Color.White;
             this.lbl5.Location = new System.Drawing.Point(103, 6);
             this.lbl5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl5.Name = "lbl5";
-            this.lbl5.Size = new System.Drawing.Size(90, 19);
+            this.lbl5.Size = new System.Drawing.Size(84, 20);
             this.lbl5.TabIndex = 7;
             this.lbl5.Text = "USUARIO";
             // 
@@ -653,10 +653,10 @@ namespace MECANOGRAFIA.mecanografia
             this.rECORDSToolStripMenuItem,
             this.OPTlogros,
             this.pALABRASMALESCRITASToolStripMenuItem});
-            this.eSCRITURAToolStripMenuItem.Font = new System.Drawing.Font("Humnst777 Blk BT", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eSCRITURAToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eSCRITURAToolStripMenuItem.Image = global::MECANOGRAFIA.Properties.Resources.teclado;
             this.eSCRITURAToolStripMenuItem.Name = "eSCRITURAToolStripMenuItem";
-            this.eSCRITURAToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
+            this.eSCRITURAToolStripMenuItem.Size = new System.Drawing.Size(103, 20);
             this.eSCRITURAToolStripMenuItem.Text = "ESCRITURA";
             // 
             // rECORDSToolStripMenuItem
@@ -664,7 +664,7 @@ namespace MECANOGRAFIA.mecanografia
             this.rECORDSToolStripMenuItem.BackColor = System.Drawing.Color.AliceBlue;
             this.rECORDSToolStripMenuItem.Image = global::MECANOGRAFIA.Properties.Resources.verificar;
             this.rECORDSToolStripMenuItem.Name = "rECORDSToolStripMenuItem";
-            this.rECORDSToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.rECORDSToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.rECORDSToolStripMenuItem.Text = "RECORDS";
             this.rECORDSToolStripMenuItem.Click += new System.EventHandler(this.rECORDSToolStripMenuItem_Click_1);
             // 
@@ -672,7 +672,7 @@ namespace MECANOGRAFIA.mecanografia
             // 
             this.OPTlogros.Image = global::MECANOGRAFIA.Properties.Resources.medal;
             this.OPTlogros.Name = "OPTlogros";
-            this.OPTlogros.Size = new System.Drawing.Size(226, 22);
+            this.OPTlogros.Size = new System.Drawing.Size(224, 22);
             this.OPTlogros.Text = "LOGROS";
             this.OPTlogros.Click += new System.EventHandler(this.OPTlogros_Click);
             // 
@@ -680,7 +680,7 @@ namespace MECANOGRAFIA.mecanografia
             // 
             this.pALABRASMALESCRITASToolStripMenuItem.Image = global::MECANOGRAFIA.Properties.Resources.PalabraMalEscrita;
             this.pALABRASMALESCRITASToolStripMenuItem.Name = "pALABRASMALESCRITASToolStripMenuItem";
-            this.pALABRASMALESCRITASToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.pALABRASMALESCRITASToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.pALABRASMALESCRITASToolStripMenuItem.Text = "PALABRAS MAL ESCRITAS";
             this.pALABRASMALESCRITASToolStripMenuItem.Click += new System.EventHandler(this.pALABRASMALESCRITASToolStripMenuItem_Click);
             // 
@@ -690,10 +690,10 @@ namespace MECANOGRAFIA.mecanografia
             this.OPTdificultades,
             this.OPTtematicas,
             this.mODOPERSONALIZADOToolStripMenuItem});
-            this.dESAFIOSToolStripMenuItem.Font = new System.Drawing.Font("Humnst777 Blk BT", 9F);
+            this.dESAFIOSToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.dESAFIOSToolStripMenuItem.Image = global::MECANOGRAFIA.Properties.Resources.desafio;
             this.dESAFIOSToolStripMenuItem.Name = "dESAFIOSToolStripMenuItem";
-            this.dESAFIOSToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
+            this.dESAFIOSToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
             this.dESAFIOSToolStripMenuItem.Text = "DESAFIOS";
             // 
             // OPTdificultades
@@ -703,7 +703,7 @@ namespace MECANOGRAFIA.mecanografia
             this.OPTrecordsdifi});
             this.OPTdificultades.Image = global::MECANOGRAFIA.Properties.Resources.velocimetro;
             this.OPTdificultades.Name = "OPTdificultades";
-            this.OPTdificultades.Size = new System.Drawing.Size(216, 22);
+            this.OPTdificultades.Size = new System.Drawing.Size(215, 22);
             this.OPTdificultades.Text = "DIFICULTADES";
             this.OPTdificultades.Click += new System.EventHandler(this.OPTdificultades_Click);
             // 
@@ -712,7 +712,7 @@ namespace MECANOGRAFIA.mecanografia
             this.OPTrecordsdifi.BackColor = System.Drawing.Color.AliceBlue;
             this.OPTrecordsdifi.Image = global::MECANOGRAFIA.Properties.Resources.verificar;
             this.OPTrecordsdifi.Name = "OPTrecordsdifi";
-            this.OPTrecordsdifi.Size = new System.Drawing.Size(240, 22);
+            this.OPTrecordsdifi.Size = new System.Drawing.Size(242, 22);
             this.OPTrecordsdifi.Text = "RECORDS DE DIFICULTADES";
             this.OPTrecordsdifi.Click += new System.EventHandler(this.OPTrecordsdifi_Click);
             // 
@@ -723,7 +723,7 @@ namespace MECANOGRAFIA.mecanografia
             this.rECORDSTEMATICASToolStripMenuItem});
             this.OPTtematicas.Image = global::MECANOGRAFIA.Properties.Resources.mosaico;
             this.OPTtematicas.Name = "OPTtematicas";
-            this.OPTtematicas.Size = new System.Drawing.Size(216, 22);
+            this.OPTtematicas.Size = new System.Drawing.Size(215, 22);
             this.OPTtematicas.Text = "TEMATICAS";
             this.OPTtematicas.Click += new System.EventHandler(this.tEMATICASToolStripMenuItem_Click);
             // 
@@ -732,7 +732,7 @@ namespace MECANOGRAFIA.mecanografia
             this.rECORDSTEMATICASToolStripMenuItem.BackColor = System.Drawing.Color.AliceBlue;
             this.rECORDSTEMATICASToolStripMenuItem.Image = global::MECANOGRAFIA.Properties.Resources.verificar;
             this.rECORDSTEMATICASToolStripMenuItem.Name = "rECORDSTEMATICASToolStripMenuItem";
-            this.rECORDSTEMATICASToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.rECORDSTEMATICASToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.rECORDSTEMATICASToolStripMenuItem.Text = "RECORDS TEMATICAS";
             this.rECORDSTEMATICASToolStripMenuItem.Click += new System.EventHandler(this.rECORDSTEMATICASToolStripMenuItem_Click);
             // 
@@ -742,7 +742,7 @@ namespace MECANOGRAFIA.mecanografia
             this.rECORDSMODOPERSONALIZADOToolStripMenuItem});
             this.mODOPERSONALIZADOToolStripMenuItem.Image = global::MECANOGRAFIA.Properties.Resources.deslizadores;
             this.mODOPERSONALIZADOToolStripMenuItem.Name = "mODOPERSONALIZADOToolStripMenuItem";
-            this.mODOPERSONALIZADOToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.mODOPERSONALIZADOToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.mODOPERSONALIZADOToolStripMenuItem.Text = "MODO PERSONALIZADO";
             this.mODOPERSONALIZADOToolStripMenuItem.Click += new System.EventHandler(this.mODOPERSONALIZADOToolStripMenuItem_Click);
             // 
@@ -750,7 +750,7 @@ namespace MECANOGRAFIA.mecanografia
             // 
             this.rECORDSMODOPERSONALIZADOToolStripMenuItem.Image = global::MECANOGRAFIA.Properties.Resources.verificar;
             this.rECORDSMODOPERSONALIZADOToolStripMenuItem.Name = "rECORDSMODOPERSONALIZADOToolStripMenuItem";
-            this.rECORDSMODOPERSONALIZADOToolStripMenuItem.Size = new System.Drawing.Size(276, 22);
+            this.rECORDSMODOPERSONALIZADOToolStripMenuItem.Size = new System.Drawing.Size(278, 22);
             this.rECORDSMODOPERSONALIZADOToolStripMenuItem.Text = "RECORDS MODO PERSONALIZADO";
             this.rECORDSMODOPERSONALIZADOToolStripMenuItem.Click += new System.EventHandler(this.rECORDSMODOPERSONALIZADOToolStripMenuItem_Click);
             // 
@@ -769,7 +769,7 @@ namespace MECANOGRAFIA.mecanografia
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ESCRITURA";
-            this.Text = a.APPNAME;
+            this.Text = "ESCRITURA RAPIDA: ";
             this.Load += new System.EventHandler(this.ESCRITURA_Load);
             this.P_ESCRITURA.ResumeLayout(false);
             this.P_ESCRITURA.PerformLayout();
