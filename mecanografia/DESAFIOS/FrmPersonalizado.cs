@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MECANOGRAFIA.clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,7 +34,7 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
         private void cargarfrm()
         {
             txtpalabrasescritas.Enabled = false;
-            this.Text = "Modo Personalizado " + a.usuario_sesion;
+            this.Text = "Modo Personalizado " + auth.usuario_sesion;
             btnreiniciar.Enabled = false;
         }
 
@@ -95,7 +96,7 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
                         t.LAddedM = datosLV.SubItems[6].Text;
                     }
 
-                    if (a.usuario_sesion != string.Empty) SaveRecords();
+                    if (auth.usuario_sesion != string.Empty) SaveRecords();
                 }
             }
         }
@@ -107,9 +108,9 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
             double porcentaje = Convert.ToDouble(Math.Round(((double)correctas / pcompletadas) * 100, 3));
             string ShowPorcentaje = porcentaje.ToString() + "%";
             if (datos_records.Rows.Count == 0 && datos_records_repetidos.Rows.Count == 0){
-                DB.guardar("RECORDS_PERSONALIZADO", "USUARIO,NFILE,PPM,C,I,PREC,L_O,L_POS_M,L_ADDED", $"'{a.usuario_sesion}','{Path.GetFileName(filePath)}',{Convert.ToInt32(t.ppm)},{Convert.ToInt32(t.pc)},{Convert.ToInt32(t.pi)},'{ShowPorcentaje}',{Convert.ToInt32(t.Lomitida)},{Convert.ToInt32(t.LPosM)},{Convert.ToInt32(t.LAddedM)}");
-                DB.guardar("R_RECORDS_PERSONALIZADO", "USUARIO,R_NFILE", $"'{a.usuario_sesion}','{Path.GetFileName(filePath)}'");
-            }else if (datos_records.Rows.Count > 0 && datos_records_repetidos.Rows.Count == 1 )DB.guardar("RECORDS_PERSONALIZADO", "USUARIO,NFILE,PPM,C,I,PREC,L_O,L_POS_M,L_ADDED", $"'{a.usuario_sesion}','{Path.GetFileName(filePath)}',{Convert.ToInt32(t.ppm)},{Convert.ToInt32(t.pc)},{Convert.ToInt32(t.pi)},'{ShowPorcentaje}',{Convert.ToInt32(t.Lomitida)},{Convert.ToInt32(t.LPosM)},{Convert.ToInt32(t.LAddedM)}");
+                DB.guardar("RECORDS_PERSONALIZADO", "USUARIO,NFILE,PPM,C,I,PREC,L_O,L_POS_M,L_ADDED", $"'{auth.usuario_sesion}','{Path.GetFileName(filePath)}',{Convert.ToInt32(t.ppm)},{Convert.ToInt32(t.pc)},{Convert.ToInt32(t.pi)},'{ShowPorcentaje}',{Convert.ToInt32(t.Lomitida)},{Convert.ToInt32(t.LPosM)},{Convert.ToInt32(t.LAddedM)}");
+                DB.guardar("R_RECORDS_PERSONALIZADO", "USUARIO,R_NFILE", $"'{auth.usuario_sesion}','{Path.GetFileName(filePath)}'");
+            }else if (datos_records.Rows.Count > 0 && datos_records_repetidos.Rows.Count == 1 )DB.guardar("RECORDS_PERSONALIZADO", "USUARIO,NFILE,PPM,C,I,PREC,L_O,L_POS_M,L_ADDED", $"'{auth.usuario_sesion}','{Path.GetFileName(filePath)}',{Convert.ToInt32(t.ppm)},{Convert.ToInt32(t.pc)},{Convert.ToInt32(t.pi)},'{ShowPorcentaje}',{Convert.ToInt32(t.Lomitida)},{Convert.ToInt32(t.LPosM)},{Convert.ToInt32(t.LAddedM)}");
         }
 
         private void btnIniciar_Click(object sender, EventArgs e)
