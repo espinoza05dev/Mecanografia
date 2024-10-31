@@ -16,8 +16,10 @@ namespace MECANOGRAFIA.clases
             res = 0;
             DB = new db();
             a = new auth();
+            string contenido = File.ReadAllText(auth.filePath);
+            var palabras = JObject.Parse(contenido);
             foreach (DataRow r in DB.recuperar("USUARIOS", "USUARIO").Rows) { 
-                if (auth.filePath.Contains(r["USUARIO"].ToString())) res++; 
+                if (palabras["usuario"].ToString() == r["USUARIO"].ToString()) res++; 
             }
             return res;
         }

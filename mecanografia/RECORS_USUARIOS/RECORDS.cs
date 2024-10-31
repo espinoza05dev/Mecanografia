@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MECANOGRAFIA.clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -55,9 +56,9 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
 
         private void RECORDS_Load(object sender, EventArgs e)
         {
-            if (a.usuario_sesion != string.Empty){
-                this.Text = "RECORDS: " + a.usuario_sesion;
-                cargardatosLV(a.usuario_sesion);
+            if (auth.usuario_sesion != string.Empty){
+                this.Text = "RECORDS: " + auth.usuario_sesion;
+                cargardatosLV(auth.usuario_sesion);
             }else { h.Warning("Incie sesión para ver sus registro"); this.Dispose(); }
         }
 

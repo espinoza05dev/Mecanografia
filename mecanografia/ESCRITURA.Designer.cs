@@ -307,7 +307,7 @@ namespace MECANOGRAFIA.mecanografia
             this.lblSEGUNDOS.Name = "lblSEGUNDOS";
             this.lblSEGUNDOS.Size = new System.Drawing.Size(49, 33);
             this.lblSEGUNDOS.TabIndex = 5;
-            this.lblSEGUNDOS.Text = "10";
+            this.lblSEGUNDOS.Text = "60";
             // 
             // P_modo
             // 

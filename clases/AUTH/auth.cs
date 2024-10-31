@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
@@ -15,11 +14,12 @@ namespace MECANOGRAFIA.clases
         mecanografia.ESCRITURA E;
         public static string filePath = @"C:\ProgramData\SeeUsers.json";
         private string activado = "onn";
-        public Object JSON = new JObject { { "activado", "off" }, { "usuario", "asdasd" } };
+        public Object JSON = new JObject { { "activado", "off" }, { "usuario",  usuario_sesion} };
         string contenido;
         Int16 res;
-        public string usuario_sesion { get; set; }
+        public static string usuario_sesion { get; set; }
         public string APPNAME = "ESCRITURA RAPIDA: ";
+        
 
         public Int16 VerifyFile()
         {
@@ -71,9 +71,7 @@ namespace MECANOGRAFIA.clases
 
         public void SesionterminadaAuto()
         {
-            ev = new clases.ENV();
             E = new mecanografia.ESCRITURA();
-            h = new helpers();
             DB = new db();
             string contenido = File.ReadAllText(filePath);
             var palabras = JObject.Parse(contenido);

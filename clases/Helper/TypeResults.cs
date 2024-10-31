@@ -10,7 +10,6 @@ namespace MECANOGRAFIA.clases
         clases.db DB = new clases.db();
         private mecanografia.ESCRITURA E;
         List<string> palabras,palabras_escritas;
-        private string palabra_escrita, palabra_mostrada;
         public int[] CantGot { get; set; }
         public string ppm { get; set; }
         public string pc { get; set; }
@@ -39,7 +38,7 @@ namespace MECANOGRAFIA.clases
 
         public void SaveWrongWords()
         {
-            if (a.usuario_sesion != string.Empty) if (WrongWords() == 1) DB.guardar("LISTA_P_M_E", "USUARIO,P_MAL_E", $"'{a.usuario_sesion}','{E.txtpalabrasescritas.Text.Trim()}'");
+            if (auth.usuario_sesion != string.Empty) if (WrongWords() == 1) DB.guardar("LISTA_P_M_E", "USUARIO,P_MAL_E", $"'{auth.usuario_sesion}','{E.txtpalabrasescritas.Text.Trim()}'");
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MECANOGRAFIA.clases;
+using System;
 using System.Data;
 using System.Windows.Forms;
 
@@ -24,7 +25,7 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
 
         private void listar_tematicas(string tema)
         {
-            DataTable d = DB.recuperar("TEMA", "*", $"USUARIO = '{a.usuario_sesion}' AND TEMA = '{tema}'");
+            DataTable d = DB.recuperar("TEMA", "*", $"USUARIO = '{auth.usuario_sesion}' AND TEMA = '{tema}'");
             int ppm, c, i, LO, LPOS, LA;
             string prec;
             DateTime fec;
@@ -47,7 +48,7 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
                     }
                     d.Dispose();
                 }
-            } else h.Warning($"{a.usuario_sesion} no ha jugado en la tematica {CMBtematicas.Text} por lo tanto no tiene datos");
+            } else h.Warning($"{auth.usuario_sesion} no ha jugado en la tematica {CMBtematicas.Text} por lo tanto no tiene datos");
         }
 
         private void CMBtematicas_SelectedIndexChanged(object sender, EventArgs e)
@@ -57,7 +58,7 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
 
         private void FrmRecordsTematicas_Load(object sender, EventArgs e)
         {
-            this.Text = " Records Tematicas: " + a.usuario_sesion;
+            this.Text = " Records Tematicas: " + auth.usuario_sesion;
         }
     }
 }
