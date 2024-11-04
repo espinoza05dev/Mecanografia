@@ -7,6 +7,7 @@ using System.Net;
 using System.Windows.Forms;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 
 namespace MECANOGRAFIA.mecanografia
 {
@@ -677,6 +678,10 @@ namespace MECANOGRAFIA.mecanografia
                     CBusuario.DataSource = d;
                     CBusuario.DisplayMember = "USUARIO";
                     RDno.Checked = false;
+                    contenido = File.ReadAllText(auth.filePath);
+                    var JSON = JObject.Parse(contenido);
+                    JSON["activado"] = "onn";
+                    File.WriteAllText(auth.filePath, JSON.ToString());
                 }
             }
         }
@@ -707,6 +712,22 @@ namespace MECANOGRAFIA.mecanografia
             lblregistro.Enabled = false;
             btncambiarmodos.Enabled = false;
             RELOJ.Start();
+        }
+
+        public Int16 Activate(bool activated)
+        {
+            Int16 res = 0;
+            if (activated == true) {
+                RDno.Checked = false;
+                RDsi.Checked = true;
+                CBusuario.Visible = true;
+                res++;
+            } else {
+                RDsi.Checked = false;
+                RDno.Checked = true;
+                res++;
+            }
+            return res;
         }
     }
 }
