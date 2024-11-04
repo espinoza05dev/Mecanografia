@@ -2,6 +2,7 @@
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
+using System.Windows.Forms;
 using Newtonsoft.Json.Linq;
 
 namespace MECANOGRAFIA.clases
@@ -30,18 +31,9 @@ namespace MECANOGRAFIA.clases
             {
                 contenido = File.ReadAllText(filePath);
                 var palabras = JObject.Parse(contenido);
-                if ((string)palabras["activado"] == activado) { 
-                    E.RDno.Checked = false; 
-                    E.RDsi.Checked = true; 
-                    E.CBusuario.Visible = true; 
-                }else{ 
-                    E.RDsi.Checked = false; 
-                    E.RDno.Checked = true; 
-                }
-                res++;
-            }
-            else
-            {
+                    
+                res = palabras["activado"].ToString() == activado ? E.Activate(true): E.Activate(false);
+            }else{
                 string JsonString = JSON.ToString();
                 File.WriteAllText(filePath,JsonString);
                 res++;
@@ -73,6 +65,8 @@ namespace MECANOGRAFIA.clases
         {
             E = new mecanografia.ESCRITURA();
             DB = new db();
+            h = new helpers();
+            ev = new ENV();
             string contenido = File.ReadAllText(filePath);
             var palabras = JObject.Parse(contenido);
             if (ev.ExistsUser() > 0)
@@ -80,7 +74,7 @@ namespace MECANOGRAFIA.clases
                 h.Info("SE HA CERRADO LA SESION"); 
                 E.Text = APPNAME;
                 usuario_sesion = string.Empty;
-                DB.actualizar("USUARIOS", $"FECHASESION = '{DateTime.Now}'", $"USUARIO = '{palabras["activado"].ToString()}'");
+                DB.actualizar("USUARIOS", $"FECHASESION = '{DateTime.Now}'", $"USUARIO = '{palabras["usuario"].ToString()}'");
             }
         }
 
