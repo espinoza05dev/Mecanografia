@@ -1,4 +1,5 @@
 ﻿using MECANOGRAFIA.clases;
+using System.Security.Cryptography.X509Certificates;
 
 namespace MECANOGRAFIA.mecanografia
 {
@@ -763,13 +764,12 @@ namespace MECANOGRAFIA.mecanografia
             this.ClientSize = new System.Drawing.Size(1180, 369);
             this.Controls.Add(this.MenuOpciones);
             this.Controls.Add(this.panel1);
-            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ESCRITURA";
-            this.Text = "ESCRITURA RAPIDA: ";
+            this.Text = "Hay un problema";
             this.Load += new System.EventHandler(this.ESCRITURA_Load);
             this.P_ESCRITURA.ResumeLayout(false);
             this.P_ESCRITURA.PerformLayout();

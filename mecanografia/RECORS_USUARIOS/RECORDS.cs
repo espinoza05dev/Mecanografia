@@ -16,7 +16,7 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
         clases.db DB = new clases.db();
         clases.helpers h = new clases.helpers();
         clases.auth a = new clases.auth();
-        
+        mecanografia.ESCRITURA E;
         public RECORDS()
         {
             InitializeComponent();
@@ -56,9 +56,9 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
 
         private void RECORDS_Load(object sender, EventArgs e)
         {
-            if (auth.usuario_sesion != string.Empty){
-                this.Text = "RECORDS: " + auth.usuario_sesion;
-                cargardatosLV(auth.usuario_sesion);
+            if (E.usuario_sesion != string.Empty){
+                this.Text = "RECORDS: " + E.usuario_sesion;
+                cargardatosLV(E.usuario_sesion);
             }else { h.Warning("Incie sesión para ver sus registro"); this.Dispose(); }
         }
 

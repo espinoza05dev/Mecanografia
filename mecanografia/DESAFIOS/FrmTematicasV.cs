@@ -11,6 +11,7 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
         clases.TypeResults t = new clases.TypeResults();
         clases.helpers h = new clases.helpers();
         clases.db DB = new clases.db();
+        mecanografia.ESCRITURA E;
         int correctas, incorrectas, pcompletadas, L_omitidas, L_PosM, L_added, i, j;
         string palabra_mostrada, palabra_escrita;
         string[] TextTyped, textshowed;
@@ -78,7 +79,7 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
 
         private void cargarfrm()
         {
-            this.Text = "Tematicas: " + auth.usuario_sesion;
+            this.Text = "Tematicas: " + E.usuario_sesion;
             listar_palabras();
             btnreiniciar.Enabled = false;
             txtpalabrasescritas.Enabled = false;
@@ -255,7 +256,7 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
                         t.LAddedM = datosLV.SubItems[6].Text;
                     }
 
-                    if (auth.usuario_sesion != string.Empty) savedata();
+                    if (E.usuario_sesion != string.Empty) savedata();
                 }
             }
         }
@@ -267,7 +268,7 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
                     double porcentaje = Convert.ToDouble(Math.Round(((double)correctas / pcompletadas) * 100, 3));
                     string ShowPorcentaje = porcentaje.ToString() + "%";
                     DB.guardar("TEMA", "USUARIO,TEMA,t.ppm,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M",
-                        $"'{auth.usuario_sesion}','{CMBtematicas.Text}','{t.ppm}','{t.pc}','{t.pi}'," +
+                        $"'{E.usuario_sesion}','{CMBtematicas.Text}','{t.ppm}','{t.pc}','{t.pi}'," +
                         $"'{ShowPorcentaje}','{t.Lomitida}','{t.LPosM}','{t.LAddedM}'");
                     break;
                 }

@@ -12,70 +12,40 @@ namespace MECANOGRAFIA.clases
         clases.ENV ev;
         clases.helpers h;
         clases.db DB;
-        mecanografia.ESCRITURA E;
-        public static string filePath = @"C:\ProgramData\SeeUsers.json";
-        private string activado = "onn";
-        public Object JSON = new JObject { { "activado", "off" }, { "usuario",  usuario_sesion} };
-        string contenido;
+        static mecanografia.ESCRITURA E;
+        public static string filePathJson = @"C:\ProgramData\SeeUsers.json";
+        string contenido,user;
         Int16 res;
-        public static string usuario_sesion { get; set; }
-        public string APPNAME = "ESCRITURA RAPIDA: ";
+        public string APPNAME = "ESCRITURA RAPIDA";
         
-
         public Int16 VerifyFile()
         {
-            res = 0;
             E = new mecanografia.ESCRITURA();
-            
-            if (File.Exists(filePath))
-            {
-                contenido = File.ReadAllText(filePath);
-                var palabras = JObject.Parse(contenido);
-                    
-                res = palabras["activado"].ToString() == activado ? E.Activate(true): E.Activate(false);
-            }else{
+            res = 0;
+            if (!File.Exists(filePathJson)){
+                Object JSON = new JObject { { "activado", "off" }, { "usuario", E.usuario_sesion } };
                 string JsonString = JSON.ToString();
-                File.WriteAllText(filePath,JsonString);
+                File.WriteAllText(filePathJson,JsonString);
                 res++;
             }
             return res;
         }
-        public Int16 SesionIniciada()
+        public string SesionIniciada()
         {
-            res = 0;
             ev = new clases.ENV();
-            E = new mecanografia.ESCRITURA(); 
-            contenido = File.ReadAllText(filePath);
+            contenido = File.ReadAllText(filePathJson);
             var palabras = JObject.Parse(contenido);
-            if (ev.ExistsUser() > 0)
-            {
-                usuario_sesion = palabras["usuario"].ToString();
-                E.Text = APPNAME + usuario_sesion; 
-                res++;
-            }
-            else
-            {
-                E.Text = APPNAME;
-            }
-
-            return res;
+            return user = ev.ExistsUser() > 0 ? palabras["usuario"].ToString() : string.Empty;
         }
 
         public void SesionterminadaAuto()
         {
-            E = new mecanografia.ESCRITURA();
             DB = new db();
             h = new helpers();
-            ev = new ENV();
-            string contenido = File.ReadAllText(filePath);
+            contenido = File.ReadAllText(filePathJson);
             var palabras = JObject.Parse(contenido);
-            if (ev.ExistsUser() > 0)
-            {
-                h.Info("SE HA CERRADO LA SESION"); 
-                E.Text = APPNAME;
-                usuario_sesion = string.Empty;
-                DB.actualizar("USUARIOS", $"FECHASESION = '{DateTime.Now}'", $"USUARIO = '{palabras["usuario"].ToString()}'");
-            }
+            h.Info("SE HA CERRADO LA SESION");
+            DB.actualizar("USUARIOS", $"FECHASESION = '{DateTime.Now}'", $"USUARIO = '{palabras["usuario"].ToString()}'");
         }
 
         public string MakeHash(string password)

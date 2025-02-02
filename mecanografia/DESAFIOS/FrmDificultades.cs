@@ -11,6 +11,7 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
         clases.helpers h = new clases.helpers();
         clases.db DB = new clases.db();
         clases.TypeResults t = new clases.TypeResults();
+        mecanografia.ESCRITURA E;
         int correctas, incorrectas, pcompletadas, L_omitidas, L_PosM, L_added, i, j;
         string palabra_mostrada, palabra_escrita;
         string[] TextTyped, textshowed;
@@ -56,8 +57,9 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
 
         private void cargarfrm()
         {
+            E = new mecanografia.ESCRITURA();
             txtpalabrasescritas.Enabled = false;
-            this.Text = "Dificultad " + auth.usuario_sesion;
+            this.Text = "Dificultad " + E.usuario_sesion;
             btnreiniciar.Enabled = false;
             CMBFalsaDificultad.Visible = false;
         }
@@ -166,10 +168,10 @@ namespace MECANOGRAFIA.mecanografia.DESAFIOS
                         t.LAddedM = datosLV.SubItems[6].Text;
                     }
 
-                    if (auth.usuario_sesion != string.Empty){
-                        if (CMBdificultades.Text == "facil") DB.guardar("RECORDS_DIFICULTADES", "USUARIO,DIFICULTAD,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{auth.usuario_sesion}','FACIL','{t.ppm}','{t.pc}','{t.pi}','{ShowPorcentaje}','{t.Lomitida}','{t.LPosM}','{t.LAddedM}'");
-                        else if (CMBdificultades.Text == "intermedio") DB.guardar("RECORDS_DIFICULTADES", "USUARIO,DIFICULTAD,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{auth.usuario_sesion}','INTERMEDIO','{t.ppm}','{t.pc}','{t.pi}','{ShowPorcentaje}','{t.Lomitida}','{t.LPosM}','{t.LAddedM}'");
-                        else if (CMBdificultades.Text == "dificil") DB.guardar("RECORDS_DIFICULTADES", "USUARIO,DIFICULTAD,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{auth.usuario_sesion}','DIFICIL','{t.ppm}','{t.pc}','{t.pi}','{ShowPorcentaje}','{t.Lomitida}','{t.LPosM}','{t.LAddedM}'");
+                    if (E.usuario_sesion != string.Empty){
+                        if (CMBdificultades.Text == "facil") DB.guardar("RECORDS_DIFICULTADES", "USUARIO,DIFICULTAD,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{E.usuario_sesion}','FACIL','{t.ppm}','{t.pc}','{t.pi}','{ShowPorcentaje}','{t.Lomitida}','{t.LPosM}','{t.LAddedM}'");
+                        else if (CMBdificultades.Text == "intermedio") DB.guardar("RECORDS_DIFICULTADES", "USUARIO,DIFICULTAD,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{E.usuario_sesion}','INTERMEDIO','{t.ppm}','{t.pc}','{t.pi}','{ShowPorcentaje}','{t.Lomitida}','{t.LPosM}','{t.LAddedM}'");
+                        else if (CMBdificultades.Text == "dificil") DB.guardar("RECORDS_DIFICULTADES", "USUARIO,DIFICULTAD,PPM,C,I,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{E.usuario_sesion}','DIFICIL','{t.ppm}','{t.pc}','{t.pi}','{ShowPorcentaje}','{t.Lomitida}','{t.LPosM}','{t.LAddedM}'");
                     }
                 }
             }

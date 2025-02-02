@@ -19,6 +19,7 @@ namespace MECANOGRAFIA.mecanografia
         clases.TypeResults t = new clases.TypeResults();
         clases.db DB = new clases.db();
         clases.Helper.User u = new clases.Helper.User();
+        public string usuario_sesion { get; set; }
         int correctas, incorrectas, pcompletadas, L_omitidas,L_PosM,L_added,i,j;
         string contenido, palabra_mostrada, palabra_escrita;
         string[] TextTyped, textshowed;
@@ -26,13 +27,28 @@ namespace MECANOGRAFIA.mecanografia
         
         public ESCRITURA() => InitializeComponent();
                   
+        private void NO_SESION()
+        {
+            this.Text = a.APPNAME;
+            usuario_sesion = string.Empty;
+        }
+
         private void cargarformulario()
         {
-            if (a.VerifyFile() > 0)
-            {
-                if (env.VerifyDate() > 0) a.SesionterminadaAuto();
-                else a.SesionIniciada();
-            }
+            if (a.VerifyFile() == 0){
+                if (env.VerifyDate() > 0){
+                    a.SesionterminadaAuto();
+                    NO_SESION();
+                }
+                else this.Text = $"{a.APPNAME}: {a.SesionIniciada()}";
+            }else NO_SESION();
+
+            contenido = File.ReadAllText(auth.filePathJson);
+            var palabras = JObject.Parse(contenido);
+
+            if (palabras["activado"].ToString() == "onn") RDsi.Checked = true;
+            else  RDno.Checked = true;
+            
             this.Size = new Size(621, 366);
             this.P_ESCRITURA.Location = new Point(3, 3);
             P_ESCRITURA.Size = new Size(602, 297);
@@ -201,10 +217,10 @@ namespace MECANOGRAFIA.mecanografia
             t.CantGot = new int[] { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };
             foreach (int threshold in t.CantGot)
             {
-                DataTable datos = DB.recuperar("LOGROS_USUARIOS", "*", $"CANT = {threshold} AND LOGRO = 'PC' AND USUARIO = '{auth.usuario_sesion}'");
+                DataTable datos = DB.recuperar("LOGROS_USUARIOS", "*", $"CANT = {threshold} AND LOGRO = 'PC' AND USUARIO = '{usuario_sesion}'");
                 if (datos.Rows.Count == 0 && Convert.ToInt32(pc) >= threshold)
                 {
-                    DB.guardar("LOGROS_USUARIOS", "USUARIO,LOGRO,CANT", $"'{auth.usuario_sesion}','PC',{threshold}");
+                    DB.guardar("LOGROS_USUARIOS", "USUARIO,LOGRO,CANT", $"'{usuario_sesion}','PC',{threshold}");
                 }
             }
         }
@@ -215,10 +231,10 @@ namespace MECANOGRAFIA.mecanografia
 
             foreach (int threshold in t.CantGot)
             {
-                DataTable datos = DB.recuperar("LOGROS_USUARIOS", "*", $"CANT = {threshold} AND LOGRO = 'PPM' AND USUARIO = '{auth.usuario_sesion}'");
+                DataTable datos = DB.recuperar("LOGROS_USUARIOS", "*", $"CANT = {threshold} AND LOGRO = 'PPM' AND USUARIO = '{usuario_sesion}'");
                 if (datos.Rows.Count == 0 && Convert.ToInt32(ppm) >= threshold)
                 {
-                    DB.guardar("LOGROS_USUARIOS", "USUARIO,LOGRO,CANT", $"'{auth.usuario_sesion}','PPM',{threshold}");
+                    DB.guardar("LOGROS_USUARIOS", "USUARIO,LOGRO,CANT", $"'{usuario_sesion}','PPM',{threshold}");
                 }
             }
         }
@@ -373,8 +389,8 @@ namespace MECANOGRAFIA.mecanografia
                         t.LAddedM = datosLV.SubItems[6].Text;
                     }
 
-                    if (auth.usuario_sesion != string.Empty){
-                        DB.guardar("RECORDS_USUARIOS", "USUARIO,PALABRAS_POR_MINUTO,PALABRAS_CORRECTAS,PALABRAS_INCORRECTAS,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{auth.usuario_sesion}','{t.ppm}','{t.pc}','{t.pi}','{ShowPorcentaje}','{t.Lomitida}','{t.LPosM}','{t.LAddedM}'");
+                    if (usuario_sesion != string.Empty){
+                        DB.guardar("RECORDS_USUARIOS", "USUARIO,PALABRAS_POR_MINUTO,PALABRAS_CORRECTAS,PALABRAS_INCORRECTAS,PRECISION,L_O,L_POS_M,L_ADDED_M", $"'{usuario_sesion}','{t.ppm}','{t.pc}','{t.pi}','{ShowPorcentaje}','{t.Lomitida}','{t.LPosM}','{t.LAddedM}'");
                         registry_achievements(t.ppm);
                         registry_achievements_C(t.pc);
                     }
@@ -384,7 +400,7 @@ namespace MECANOGRAFIA.mecanografia
 
         private void lblINCIAR_SESION_Click(object sender, EventArgs e)
         {
-            if (auth.usuario_sesion == string.Empty){
+            if (usuario_sesion == string.Empty){
                 P_INICIOSESION.Size = new Size(324, 244);
                 P_INICIOSESION.Location = new Point(-0, -2);
                 this.Size = new Size(340, 310);
@@ -398,7 +414,7 @@ namespace MECANOGRAFIA.mecanografia
             }else{
                 u.msg = "¿Desea Cerrar Sesion?";
                 if (h.Question(u.msg) == true){
-                    auth.usuario_sesion = string.Empty;
+                    usuario_sesion = string.Empty;
                     lvPalabras.Items.Clear();
                     P_ESCRITURA.Visible = false;
                     P_INICIOSESION.Visible = true;
@@ -445,13 +461,13 @@ namespace MECANOGRAFIA.mecanografia
                     {
                         h.Succes("Se ha registrado con exito");
                         MenuOpciones.Enabled = true;
-                        auth.usuario_sesion = txtusuario.Text;
+                        usuario_sesion = txtusuario.Text;
 
-                        DataTable d = DB.recuperar("RACHA_USUARIOS_DS", "*", $"USUARIO = '{auth.usuario_sesion}'");
+                        DataTable d = DB.recuperar("RACHA_USUARIOS_DS", "*", $"USUARIO = '{usuario_sesion}'");
                         if (d.Rows.Count == 0)
                         {
                             u.dias_seguido++;
-                            DB.guardar("RACHA_USUARIOS_DS", "USUARIO,DIAS_S", $"'{auth.usuario_sesion}','{u.dias_seguido}'");
+                            DB.guardar("RACHA_USUARIOS_DS", "USUARIO,DIAS_S", $"'{usuario_sesion}','{u.dias_seguido}'");
                         }
                         d.Dispose();
 
@@ -484,20 +500,20 @@ namespace MECANOGRAFIA.mecanografia
                     if (usuario == user2 && contra == contra2 || usuariocmb == user2 && contra == contra2){
                         h.Succes("Ha inciado sesion con exito");
                         if (CBusuario.Text.Length == 0){
-                            this.Text = a.APPNAME + txtusuario_sesion.Text;
-                            auth.usuario_sesion = txtusuario_sesion.Text;
+                            this.Text = a.APPNAME + ": " + txtusuario_sesion.Text;
+                            usuario_sesion = txtusuario_sesion.Text;
                         }else if (txtusuario_sesion.Text.Length == 0){
-                            this.Text = a.APPNAME + CBusuario.Text;
-                            auth.usuario_sesion = CBusuario.Text;
-                            contenido = File.ReadAllText(auth.filePath);
+                            this.Text = a.APPNAME + ": " + CBusuario.Text;
+                            usuario_sesion = CBusuario.Text;
+                            contenido = File.ReadAllText(auth.filePathJson);
                             var JSON = JObject.Parse(contenido);
                             JSON["activado"] = "onn";
                             JSON["usuario"] = CBusuario.Text;
-                            File.WriteAllText(auth.filePath, JSON.ToString() );
+                            File.WriteAllText(auth.filePathJson, JSON.ToString() );
                         }
 
-                        if (auth.usuario_sesion != string.Empty){
-                            DataTable d_seguidos = DB.recuperar("RACHA_USUARIOS_DS", "*", $"USUARIO = '{auth.usuario_sesion}'");
+                        if (usuario_sesion != string.Empty){
+                            DataTable d_seguidos = DB.recuperar("RACHA_USUARIOS_DS", "*", $"USUARIO = '{usuario_sesion}'");
                             if (d_seguidos.Rows.Count > 0){
                                 DateTime fec_registro_usuario;
                                 int fec = DateTime.Today.Day;
@@ -513,11 +529,11 @@ namespace MECANOGRAFIA.mecanografia
                                            || fec_registro_usuario.Day + 26 == fec || fec_registro_usuario.Day + 27 == fec || fec_registro_usuario.Day + 28 == fec || fec_registro_usuario.Day + 29 == fec || fec_registro_usuario.Day + 30 == fec)
                                     {
                                         u.dias_seguido = 0;
-                                        DB.actualizar("RACHA_USUARIOS_DS", $"DIAS_S = '{u.dias_seguido}',FECHA = '{DateTime.Today}'", $"USUARIO = '{auth.usuario_sesion}'");
+                                        DB.actualizar("RACHA_USUARIOS_DS", $"DIAS_S = '{u.dias_seguido}',FECHA = '{DateTime.Today}'", $"USUARIO = '{usuario_sesion}'");
                                         h.Info($"Tu racha se acabado");
                                     }else if (fec_registro_usuario.Date.Day < fec || fec_registro_usuario.Date.Day > fec){
                                         u.dias_seguido++;
-                                        DB.actualizar("RACHA_USUARIOS_DS", $"DIAS_S = '{u.dias_seguido}',FECHA = '{DateTime.Today}'", $"USUARIO = '{auth.usuario_sesion}'");
+                                        DB.actualizar("RACHA_USUARIOS_DS", $"DIAS_S = '{u.dias_seguido}',FECHA = '{DateTime.Today}'", $"USUARIO = '{usuario_sesion}'");
                                         h.Info($"! Tienes una racha de {u.dias_seguido} días seguidos ¡");
                                     }
                                 }
@@ -537,7 +553,7 @@ namespace MECANOGRAFIA.mecanografia
 
                         MenuOpciones.Enabled = true;
                         this.FormBorderStyle = FormBorderStyle.FixedSingle;
-                        DB.actualizar("USUARIOS", $"FECHASESION = '{DateTime.Now}'", $"USUARIO = '{auth.usuario_sesion}'");
+                        DB.actualizar("USUARIOS", $"FECHASESION = '{DateTime.Now}'", $"USUARIO = '{usuario_sesion}'");
                     }else{
                         h.Warning("Usuario y/o contraseña son incorrectas");
                         txtusuario_sesion.Focus();
@@ -609,7 +625,7 @@ namespace MECANOGRAFIA.mecanografia
         private void btnVolverASesion_Click(object sender, EventArgs e)
         {
             MenuOpciones.Enabled = true;
-            this.Text = a.APPNAME + auth.usuario_sesion;
+            this.Text = a.APPNAME + usuario_sesion;
             P_REGISTRO.Visible = true;
             P_REGISTRO.Visible = false;
             this.Size = new Size(621, 366);
@@ -678,10 +694,10 @@ namespace MECANOGRAFIA.mecanografia
                     CBusuario.DataSource = d;
                     CBusuario.DisplayMember = "USUARIO";
                     RDno.Checked = false;
-                    contenido = File.ReadAllText(auth.filePath);
+                    contenido = File.ReadAllText(auth.filePathJson);
                     var JSON = JObject.Parse(contenido);
                     JSON["activado"] = "onn";
-                    File.WriteAllText(auth.filePath, JSON.ToString());
+                    File.WriteAllText(auth.filePathJson, JSON.ToString());
                 }
             }
         }
@@ -691,10 +707,10 @@ namespace MECANOGRAFIA.mecanografia
             if (RDno.Checked == true){ 
                 CBusuario.Visible = false; 
                 RDsi.Checked = false;
-                contenido = File.ReadAllText(auth.filePath);
+                contenido = File.ReadAllText(auth.filePathJson);
                 var JSON = JObject.Parse(contenido);
                 JSON["activado"] = "off";
-                File.WriteAllText(auth.filePath, JSON.ToString());
+                File.WriteAllText(auth.filePathJson, JSON.ToString());
             }
         }
 
@@ -725,7 +741,6 @@ namespace MECANOGRAFIA.mecanografia
             } else {
                 RDsi.Checked = false;
                 RDno.Checked = true;
-                res++;
             }
             return res;
         }
