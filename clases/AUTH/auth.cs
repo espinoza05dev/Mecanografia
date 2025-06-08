@@ -2,7 +2,6 @@
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
-using System.Windows.Forms;
 using Newtonsoft.Json.Linq;
 
 namespace MECANOGRAFIA.clases
