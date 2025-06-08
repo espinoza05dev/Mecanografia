@@ -13,13 +13,8 @@ namespace MECANOGRAFIA.clases
             }
         }
 
-        public void ShowNumber(int num = 0,double num1 = 0,float num2 = 0,long num3 = 0, short num4 = 0)
-        {
-            if (num > 0) MessageBox.Show(num.ToString());
-            else if (num1 > 0) MessageBox.Show(num1.ToString());
-            else if (num2 > 0) MessageBox.Show(num2.ToString());
-            else if (num3 > 0) MessageBox.Show(num3.ToString());
-            else if (num4 > 0) MessageBox.Show(num4.ToString());
+        public void ShowNumber<T>(T num) where T : struct, IComparable<T>{
+            if (num.CompareTo(default(T)) > 0) MessageBox.Show(num.ToString());
         }
 
         public bool Question(string msg)
@@ -27,10 +22,8 @@ namespace MECANOGRAFIA.clases
             bool resp = false;
             MessageBoxButtons opciones = MessageBoxButtons.YesNo;
             MessageBoxIcon iconos = MessageBoxIcon.Question;
-            if (MessageBox.Show(msg, "CONFIRMAR", opciones, iconos) == DialogResult.Yes)
-            {
-                resp = true;
-            }
+            if (MessageBox.Show(msg, "CONFIRMAR", opciones, iconos) == DialogResult.Yes)resp = true;
+            
             return resp;
         }
 
@@ -41,10 +34,8 @@ namespace MECANOGRAFIA.clases
             MessageBox.Show(msg, titulo, boton, icono);
         }
 
-        public void Warning(string msg, string titulo = "ATENCION")
-        {
-            MessageBox.Show(msg, titulo);
-        }
+        public void Warning(string msg, string titulo = "ATENCION")=>MessageBox.Show(msg, titulo);
+        
 
         public void Info(string msg, string titulo = "INFORMACION")
         {
