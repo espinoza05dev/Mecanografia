@@ -12,6 +12,6 @@ namespace MECANOGRAFIA.clases
         void registry_achievements_C(string pc);
         void registry_achievements(string ppm);
         void cambiarmodos();
-        void iniciar();
+        void iniciar(int inicio);
     }
 }
