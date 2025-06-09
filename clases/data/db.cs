@@ -13,20 +13,23 @@ namespace MECANOGRAFIA.clases
         DataTable datos;
         clases.helpers h;
 
-        public Int32 guardar(string tabla,string campos,string valores,int debug = 0)
+        private void QueryExecutionProcess(string query,bool BringDataOrModification = true)
         {
-            res = 0;
-            query = "INSERT INTO " + tabla + " (" + campos + ") VALUES (" + valores + ")";
-            h = new helpers();
-            h.SeeRawSQLQuery(query, debug);
-
             try
             {
-                com = new SqlCommand(query,SQLCon);
-                SQLCon.Open();
-                res = com.ExecuteNonQuery();
-                SQLCon.Close();
+                com = new SqlCommand(query, SQLCon);
+                Abrirconexion();
+
+                if (BringDataOrModification){
+                    reader = com.ExecuteReader();
+                    datos = new DataTable();
+                    datos.Load(reader);
+                    reader.Close();
+                }
+                else res = com.ExecuteNonQuery();              
+
                 com.Dispose();
+                Cerrarconexion();
             }
             catch (SqlException er)
             {
@@ -36,35 +39,28 @@ namespace MECANOGRAFIA.clases
             {
                 Terminarconexion();
             }
-            
-            return res;
         }
 
-        public Int32 actualizar(string tabla,string campos,string condicion = "",int debug = 0)
+        public Int32 guardar(string tabla,string campos,string valores,int debug = 0)
         {
             res = 0;
             h = new helpers();
-            if (condicion == "") query = "UPDATE " + tabla + " SET " + campos;
-            else query = "UPDATE " + tabla + " SET " + campos + " WHERE " + condicion;
+            query = "INSERT INTO " + tabla + " (" + campos + ") VALUES (" + valores + ")";
 
             h.SeeRawSQLQuery(query, debug);
+            QueryExecutionProcess(query,false);
 
-            try
-            {
-                com = new SqlCommand(query, SQLCon);
-                Abrirconexion();
-                res = com.ExecuteNonQuery();
-                Cerrarconexion();
-                com.Dispose();
-            }
-            catch (SqlException e)
-            {
-                h.Warning(e.Message);
-            }
-            finally
-            {
-                Terminarconexion();
-            }
+            return res;
+        }
+
+        public Int32 actualizar(string tabla, string campos, string condicion = "", int debug = 0)
+        {
+            res = 0;
+            h = new helpers();
+            query = condicion == "" ? $"UPDATE {tabla} SET {campos}": $"UPDATE {tabla} SET {campos} WHERE {condicion} ";
+
+            h.SeeRawSQLQuery(query, debug);
+            QueryExecutionProcess(query, false);
 
             return res;
         }
@@ -73,30 +69,10 @@ namespace MECANOGRAFIA.clases
         {
             datos = new DataTable();
             h = new helpers();
-            if (condicion == "") query = "SELECT " + campos + " FROM " + tabla ;
-            else query = "SELECT " + campos + " FROM " + tabla + " WHERE " + condicion;
+            query = condicion == "" ? $"SELECT {campos} FROM {tabla}" : $"SELECT {campos} FROM {tabla} WHERE {condicion}";
 
             h.SeeRawSQLQuery(query, debug);
-
-            try
-            {
-                com = new SqlCommand(query,SQLCon);
-                SQLCon.Open();
-                reader = com.ExecuteReader();
-                datos.Load(reader);
-
-                com.Dispose();
-                reader.Close();
-                SQLCon.Close();
-            }
-            catch (SqlException er)
-            {
-                h.Warning(er.Message);
-            }
-            finally
-            {
-                Terminarconexion();
-            }
+            QueryExecutionProcess(query, true);
 
             return datos;
         }
@@ -106,26 +82,7 @@ namespace MECANOGRAFIA.clases
             datos = new DataTable();
             h = new helpers();
             h.SeeRawSQLQuery(query, debug);
-
-            try
-            {
-                com = new SqlCommand(query, SQLCon);
-                SQLCon.Open();
-                reader = com.ExecuteReader();
-                datos.Load(reader);
-
-                com.Dispose();
-                reader.Close();
-                SQLCon.Close();
-            }
-            catch (SqlException er)
-            {
-                h.Warning(er.Message);
-            }
-            finally
-            {
-                Terminarconexion();
-            }
+            QueryExecutionProcess(query, true);
 
             return datos;
         }

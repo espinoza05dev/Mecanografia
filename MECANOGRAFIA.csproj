@@ -192,8 +192,10 @@
   <ItemGroup>
     <Compile Include="clases\AUTH\auth.cs" />
     <Compile Include="clases\AUTH\conexion.cs" />
+    <Compile Include="clases\AUTH\SesionManager.cs" />
     <Compile Include="clases\data\db.cs" />
     <Compile Include="clases\Config\ENV.cs" />
+    <Compile Include="clases\Helper\FormInstance.cs" />
     <Compile Include="clases\Helper\helpers.cs" />
     <Compile Include="clases\Helper\User.cs" />
     <Compile Include="clases\Interfaces\IEscritura.cs" />
@@ -371,7 +373,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ImportDataBase\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -2,7 +2,7 @@
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
-using System.Windows.Forms;
+using MECANOGRAFIA.clases.AUTH;
 using Newtonsoft.Json.Linq;
 
 namespace MECANOGRAFIA.clases
@@ -23,7 +23,7 @@ namespace MECANOGRAFIA.clases
             E = new mecanografia.ESCRITURA();
             res = 0;
             if (!File.Exists(filePathJson)){
-                Object JSON = new JObject { { "activado", "off" }, { "usuario", E.usuario_sesion } };
+                Object JSON = new JObject { { "activado", "off" }, { "usuario", SesionManager.usuario_sesion} };
                 string JsonString = JSON.ToString();
                 File.WriteAllText(filePathJson,JsonString);
                 res++;

@@ -1,4 +1,5 @@
 ﻿using MECANOGRAFIA.clases;
+using MECANOGRAFIA.clases.AUTH;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -18,7 +19,7 @@ namespace MECANOGRAFIA.mecanografia.PALABRAS_MAL_ESCRITAS
 
         private void cargardatos()
         {
-            DataTable d = DB.recuperar("LISTA_P_M_E", "P_MAL_E,FECHA", $"USUARIO = '{E.usuario_sesion}' AND FECHA = '{DTPfecha.Value.ToShortDateString()}'");
+            DataTable d = DB.recuperar("LISTA_P_M_E", "P_MAL_E,FECHA", $"USUARIO = '{SesionManager.usuario_sesion}' AND FECHA = '{DTPfecha.Value.ToShortDateString()}'");
             string p,fec;
             if (d.Rows.Count > 0) {
                 DGVdatos.Rows.Clear();
@@ -27,16 +28,16 @@ namespace MECANOGRAFIA.mecanografia.PALABRAS_MAL_ESCRITAS
                     fec = Convert.ToDateTime(r["FECHA"]).ToShortDateString();
                     DGVdatos.Rows.Add(p, fec);
                 }
-            } else h.Succes(E.usuario_sesion + " No cuenta con registros la fecha de: " + DTPfecha.Text);
+            } else h.Succes(SesionManager.usuario_sesion+ " No cuenta con registros la fecha de: " + DTPfecha.Text);
         }
 
         private void FrmP_M_E_Load(object sender, EventArgs e)
         {
-            if (E.usuario_sesion != string.Empty) {
-
-                DataTable d = DB.recuperar("LISTA_P_M_E", "P_MAL_E,FECHA", $"USUARIO = '{E.usuario_sesion}' AND FECHA = '{DTPfecha.Value.ToShortDateString()}'");
-                if (d.Rows.Count == 0) { h.Succes("No cuneta con registros"); this.Close(); }
-                else { this.Text = "LISTADO DE PALABRAS MAL ESCRITAS - USUARIO: " + E.usuario_sesion; cargardatos();}
+            E = new mecanografia.ESCRITURA();
+            if (SesionManager.usuario_sesion!= string.Empty) {
+                DataTable d = DB.recuperar("LISTA_P_M_E", "P_MAL_E,FECHA", $"USUARIO = '{SesionManager.usuario_sesion}' AND FECHA = '{DTPfecha.Value.ToShortDateString()}'");
+                if (d.Rows.Count == 0) { h.Succes($"{SesionManager.usuario_sesion} No cuenta con registros"); this.Close(); }
+                else { this.Text = "LISTADO DE PALABRAS MAL ESCRITAS - USUARIO: " + SesionManager.usuario_sesion; cargardatos();}
             }else { h.Info("Debe Inicar sesion o registrarse");  this.Close(); }
         }
 

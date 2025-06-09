@@ -1,4 +1,5 @@
 ﻿using MECANOGRAFIA.clases;
+using MECANOGRAFIA.clases.AUTH;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,14 +35,14 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
         private void listar_datos()
         {
             query = "SELECT * FROM RECORDS_PERSONALIZADO RP INNER JOIN R_RECORDS_PERSONALIZADO R ON (RP.ID = R.ID) ";
-            condicion = $"WHERE RP.NFILE = '{CMBpersonalizado.Text}' AND RP.USUARIO = '{E.usuario_sesion}'";
+            condicion = $"WHERE RP.NFILE = '{CMBpersonalizado.Text}' AND RP.USUARIO = '{SesionManager.usuario_sesion}'";
             string prec;
             int ppm, c, i,Lo,LposM,Ladded;
             DateTime fecha;
 
-            if (E.usuario_sesion != string.Empty) {
+            if (SesionManager.usuario_sesion!= string.Empty) {
                 DataTable datos = DB.consulta(query + condicion);
-                DataTable d = DB.recuperar("RECORDS_PERSONALIZADO", "*", $"NFILE = '{CMBpersonalizado.Text}' AND USUARIO = '{E.usuario_sesion}'");
+                DataTable d = DB.recuperar("RECORDS_PERSONALIZADO", "*", $"NFILE = '{CMBpersonalizado.Text}' AND USUARIO = '{SesionManager.usuario_sesion}'");
                 DGVdatos.Rows.Clear();
                 if (datos.Rows.Count > 0){
                     foreach (DataRow r in datos.Rows){
@@ -75,21 +76,22 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
         }
         private void cargarcmb()
         {
-            DataTable d1 = DB.recuperar("R_RECORDS_PERSONALIZADO", "*", $"USUARIO = '{E.usuario_sesion}'");
+            DataTable d1 = DB.recuperar("R_RECORDS_PERSONALIZADO", "*", $"USUARIO = '{SesionManager.usuario_sesion}'");
             if (d1.Rows.Count > 0) {
                 CMBpersonalizado.DataSource = d1;
                 CMBpersonalizado.DisplayMember = "R_NFILE";
             }else if (d1.Rows.Count == 0){
-                CMBpersonalizado.DataSource = DB.recuperar("RECORDS_PERSONALIZADO", "NFILE",$"USUARIO = '{E.usuario_sesion}'");
+                CMBpersonalizado.DataSource = DB.recuperar("RECORDS_PERSONALIZADO", "NFILE",$"USUARIO = '{SesionManager.usuario_sesion}'");
                 CMBpersonalizado.DisplayMember = "NFILE";
             }
         }
 
         private void FrmRecordsPersonalizado_Load(object sender, EventArgs e)
         {
+            E = new mecanografia.ESCRITURA();
             DataTable d = DB.recuperar("RECORDS_PERSONALIZADO", "*");
-            if (d.Rows.Count == 0){ h.Warning($"El usuario {E.usuario_sesion} no cuenta con registros"); this.Close(); }
-            this.Text = " Records Personalizado: " + E.usuario_sesion;
+            if (d.Rows.Count == 0){ h.Warning($"El usuario {SesionManager.usuario_sesion} no cuenta con registros"); this.Close(); }
+            this.Text = " Records Personalizado: " + SesionManager.usuario_sesion;
             cargarcmb();
         }
 

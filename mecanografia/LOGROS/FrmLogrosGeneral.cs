@@ -1,4 +1,5 @@
 ﻿using MECANOGRAFIA.clases;
+using MECANOGRAFIA.clases.AUTH;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -61,7 +62,7 @@ namespace MECANOGRAFIA.mecanografia.LOGROS
 
         private void show_Correctw()
         {
-            datos = DB.recuperar("LOGROS_USUARIOS", "*", $"USUARIO = '{E.usuario_sesion}'");
+            datos = DB.recuperar("LOGROS_USUARIOS", "*", $"USUARIO = '{SesionManager.usuario_sesion}'");
             if (datos.Rows.Count > 0){
                 FLPpc.Location = new Point(3, 264);
                 foreach (DataRow r in datos.Rows){
@@ -83,13 +84,13 @@ namespace MECANOGRAFIA.mecanografia.LOGROS
                 disablePBS();
                 disableCPBS();
                 this.Size = new Size(835, 300);
-                h.Warning($"{E.usuario_sesion} no cuenta con con ningun logro de palabras correctas");
+                h.Warning($"{SesionManager.usuario_sesion} no cuenta con con ningun logro de palabras correctas");
             }
         }
 
         private void show_achievments()
         {
-            datos = DB.recuperar("LOGROS_USUARIOS", "*", $"USUARIO = '{E.usuario_sesion}'");
+            datos = DB.recuperar("LOGROS_USUARIOS", "*", $"USUARIO = '{SesionManager.usuario_sesion}'");
             if (datos.Rows.Count > 0){
                 foreach (DataRow r in datos.Rows){
                     ppm = Convert.ToInt32(r["CANT"]);
@@ -113,18 +114,19 @@ namespace MECANOGRAFIA.mecanografia.LOGROS
                 disablePBS();
                 disableCPBS();
                 this.Size = new Size(835, 300);
-                h.Warning($"{E.usuario_sesion} no cuenta con logros");
+                h.Warning($"{SesionManager.usuario_sesion} no cuenta con logros");
             }
         }
 
         private void FrmLogrosGeneral_Load(object sender, EventArgs e)
         {
-            if (E.usuario_sesion != string.Empty){
+            E = new mecanografia.ESCRITURA();
+            if (SesionManager.usuario_sesion!= string.Empty){
                 disableCPBS();
                 disablePBS();
                 this.Size = new Size(835, 300);
                 PBTittleLogros.Visible = true;
-                this.Text = "LOGROS: " + E.usuario_sesion;
+                this.Text = "LOGROS: " + SesionManager.usuario_sesion;
                 show_achievments();
             }else{
                 //disablePBS();
@@ -255,7 +257,7 @@ namespace MECANOGRAFIA.mecanografia.LOGROS
             if (FLPLogrosppm.Visible == true)
             {
 
-                if (E.usuario_sesion == string.Empty) h.Info("Debe iniciar sesion para ver sus logros");
+                if (SesionManager.usuario_sesion== string.Empty) h.Info("Debe iniciar sesion para ver sus logros");
                 else {
                     FLPLogrosppm.Visible = false;
                     FLPpc.Visible = true;
@@ -265,7 +267,7 @@ namespace MECANOGRAFIA.mecanografia.LOGROS
             }
             else if (FLPpc.Visible == true)
             {
-                if (E.usuario_sesion == string.Empty) h.Info("Debe iniciar sesion para ver sus logros ");
+                if (SesionManager.usuario_sesion== string.Empty) h.Info("Debe iniciar sesion para ver sus logros ");
                 else{
                     FLPpc.Visible = false;
                     FLPLogrosppm.Visible = true;

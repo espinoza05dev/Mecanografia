@@ -1,4 +1,5 @@
 ﻿using MECANOGRAFIA.clases;
+using MECANOGRAFIA.clases.AUTH;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,12 +25,12 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
 
         private void listar_datos(string datos = "")
         {
-            DataTable dF = DB.recuperar("RECORDS_DIFICULTADES","*",$"DIFICULTAD = '{datos}' AND USUARIO = '{E.usuario_sesion}'");
+            DataTable dF = DB.recuperar("RECORDS_DIFICULTADES","*",$"DIFICULTAD = '{datos}' AND USUARIO = '{SesionManager.usuario_sesion}'");
             int ppm, C, IC, LO, LPOS, LA; 
             string prec;
             DateTime fec;
             DGVdatos.Rows.Clear();
-            if (E.usuario_sesion != "")
+            if (SesionManager.usuario_sesion!= "")
             {
                 if (dF.Rows.Count > 0)
                 {
@@ -49,14 +50,15 @@ namespace MECANOGRAFIA.mecanografia.RECORS_USUARIOS
                         }
                         dF.Dispose();
                     }
-                }else h.Warning($"{E.usuario_sesion} no ha jugado en la dificultad {CMBdificultades.Text} por lo tanto no cuenta con registros");
+                }else h.Warning($"{SesionManager.usuario_sesion} no ha jugado en la dificultad {CMBdificultades.Text} por lo tanto no cuenta con registros");
             }else h.Warning("No se ha registrado o iniciado sesion");
         }
 
         private void FrmRecordsDificultades_Load(object sender, EventArgs e)
         {
-            this.Text = " Records Dificultades: " + E.usuario_sesion;
-            if (E.usuario_sesion != "") listar_datos(CMBdificultades.Text = "FACIL");
+            E = new mecanografia.ESCRITURA();
+            this.Text = " Records Dificultades: " + SesionManager.usuario_sesion;
+            if (SesionManager.usuario_sesion!= "") listar_datos(CMBdificultades.Text = "FACIL");
         }
 
         private void CMBdificultades_SelectedIndexChanged(object sender, EventArgs e)
