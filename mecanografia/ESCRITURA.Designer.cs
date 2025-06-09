@@ -769,7 +769,7 @@ namespace MECANOGRAFIA.mecanografia
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ESCRITURA";
-            this.Text = "Hay un problema";
+            this.Text = "SI VES ESTO HAY UN PROBLEMA EN EL NOMBRE";
             this.Load += new System.EventHandler(this.ESCRITURA_Load);
             this.P_ESCRITURA.ResumeLayout(false);
             this.P_ESCRITURA.PerformLayout();
