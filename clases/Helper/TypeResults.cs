@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MECANOGRAFIA.clases.AUTH;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -39,7 +40,7 @@ namespace MECANOGRAFIA.clases
         public void SaveWrongWords()
         {
             E = new mecanografia.ESCRITURA();
-            if (E.usuario_sesion != string.Empty) if (WrongWords() == 1) DB.guardar("LISTA_P_M_E", "USUARIO,P_MAL_E", $"'{E.usuario_sesion}','{E.txtpalabrasescritas.Text.Trim()}'");
+            if (SesionManager.usuario_sesion != string.Empty) if (WrongWords() == 1) DB.guardar("LISTA_P_M_E", "USUARIO,P_MAL_E", $"'{SesionManager.usuario_sesion}','{E.txtpalabrasescritas.Text.Trim()}'");
         }
     }
 }
